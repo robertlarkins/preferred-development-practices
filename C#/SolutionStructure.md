@@ -6,9 +6,6 @@ In Visual Studio 2019 a [blank solution][1] (one without any projects) can be cr
 then searching for _blank solution_ in the _Search for templates_ entry box.
 Now follow these next steps.
 
-See:  
-[Creating a Blank Solution][1]
-
 ### Solution Name
 
 The solution will have a high level name which groups the projects together. In Visual Studio 2019 this is entered in *Project name*.

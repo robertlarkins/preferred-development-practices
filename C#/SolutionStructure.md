@@ -7,7 +7,7 @@ then searching for _blank solution_ in the _Search for templates_ entry box.
 Now follow these next steps.
 
 See:  
-[Creating a Blank Solution]
+[Creating a Blank Solution][1]
 
 ### Solution Name
 

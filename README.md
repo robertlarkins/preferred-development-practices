@@ -17,6 +17,12 @@ C#/DevelopmentTools.md
 
 C#/ExamplesArchitectureRepos.md
 
+C#/CustomFiles/SeedWork  
+C#/CustomFiles/.editorconfig
+C#/CustomFiles/LICENSE
+C#/CustomFiles/Directory.Build.props
+C#/CustomFiles/stylecop.json
+
 TypeScript/
 
 Angular/

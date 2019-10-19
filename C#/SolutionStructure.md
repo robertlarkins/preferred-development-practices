@@ -15,10 +15,10 @@ The solution name should follow the [Microsoft naming convention][Microsoft name
 <Company>.(<Product>|<Technology>)
 ```
 
-which for a personal project for a browser calculator could be named:
+which for a personal project for C# Katas could be named:
 
 ```
-Larkins.BrowserCalculator
+Larkins.CSharpKatas
 ```
 
 **Some other examples**:
@@ -67,7 +67,7 @@ $/
 - `samples` (optional) - Sample projects
 - `src` - Main projects (the product code)
 - `tests` - Test projects
-- `.editorconfig` - 
+- [`.editorconfig`][2] - Enforces consistent coding style at the solution level.
 - `.gitignore` - 
 - `.gitattributes` - 
 - `Directory.Build.props` - 
@@ -79,6 +79,8 @@ $/
 - `{solution}.sln`
 
 Having folder names lower case rather than Pascal casing makes them less prominent. They are a way of grouping projects, and lower case makes them less conspicuous. It also helps differentiate these folder from ones that are used inside projects as part of the NameSpacing.
+
+Custom versions of some of these files can be found in C#/CustomFiles.
 
 > #### Note
 > A number of the [dotnet core repositories](https://github.com/dotnet) now use [Arcade](https://github.com/dotnet/arcade) to provide a consistent build experience. These repositories now use an *eng* directory instead of a *build* directory. This may become the new standard from dotnet core 3. But at present this is a wait-and-see.
@@ -131,4 +133,5 @@ Note: Simply renaming the directory to lower case letters will not change it. Re
 A *project items* directory is not created in each project as the items can be put directly under the Project heading.
 
 [1]: https://docs.microsoft.com/en-us/visualstudio/get-started/tutorial-projects-solutions?view=vs-2019#solutions-and-projects
+[2]: https://docs.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options?view=vs-2019
 [Microsoft namespace naming conventions]: https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-namespaces

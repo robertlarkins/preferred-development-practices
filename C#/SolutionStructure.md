@@ -89,7 +89,8 @@ Custom versions of some of these files can be found in C#/CustomFiles.
 > - https://devblogs.microsoft.com/dotnet/the-evolving-infrastructure-of-net-core/
 > - https://github.com/dotnet/arcade/blob/master/Documentation/StartHere.md
 
-### Build Folder
+### `build` Folder
+
 The build folder contains all the necessary templates and scripts to build the application AND the infrastructure required to run the application.
 
     .
@@ -100,17 +101,54 @@ The build folder contains all the necessary templates and scripts to build the a
     └─ ...
 
  - `app` folder  
-     This folder contains everything needed to build the project. This may include:
-    - Build Scripts
-    - Pipelines
-    - Scripts that run tests
+   Contains everything needed to build the project. This may include:
+   - Build Scripts
+   - Pipelines
+   - Scripts that run tests
  - `infra` folder  
-    This folder contains everything needed to build the hosting environment. This is likely going to be:
-    - Network
-    - Application Hosting
+   Contains everything needed to build the hosting environment. This is likely going to be:
+   - Network
+   - Application Hosting
 
 No dependencies between the `app` and `infra` folders should exist, allowing the application or infrastructure templates to be run independently from each other.
 
+### `src` Folder
+
+The `src` folder contains the main projects that comprise the software solution. As a solution has different aspects to it, subfolders are used to further group projects together:
+
+    .
+    ├─ ...
+    ├─ src
+    │  ├─ common                 # 
+    │  ├─ core                   # 
+    │  ├─ infrastructure         # 
+    │  └─ presentation           # 
+    └─ ...
+
+ - `common`  
+   Projects containing classes that are generic and common for other projects are placed here. This will likely have a single *Common* project.
+
+ - `core`  
+   Contains projects that relate to the Domain entities or the Application business rules.
+
+ - `infrastructure`  
+   Any projects that implement or access anything external, such as persistent storage, are placed here.
+ 
+ - `presentation`
+   Projects related to presentation, including Api projects, go here.
+
+### `tests` Folder
+
+The `tests` folder contains the projects used to test the main projects. The subfolders will match the `src` folder:
+
+    .
+    ├─ ...
+    ├─ tests
+    │  ├─ common                 # 
+    │  ├─ core                   # 
+    │  ├─ infrastructure         # 
+    │  └─ presentation           # 
+    └─ ...
 
 ## Solution Folders
 

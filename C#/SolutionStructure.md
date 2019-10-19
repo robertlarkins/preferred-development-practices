@@ -28,10 +28,15 @@ Larkins.BrowserCalculator
 A solution should be stored in a source control repository so that change can be tracked and managed. So create a repository (such as in git), put the solution here and commit any changes.
 
 See SourceControlPractices.md.
+ - This file will have repository naming
+ - atomic commits
+ - Git commit messages
+ - pull requests
+ - branching, rebase, and features
 
 ## Physical Folder Structure
 
-The base structure of a solution is provided by its physical folder layout on the disk. David Fowler provides a [good layout for dotnet folders](https://gist.github.com/davidfowl/ed7564297c61fe9ab814) that has seen wide adoption (eg: [Mvc](https://github.com/aspnet/Mvc)). The following layout is his recommended .NET project structure:
+The base structure of a solution is provided by its physical folder layout on the disk. David Fowler provides a [good layout for dotnet folders](https://gist.github.com/davidfowl/ed7564297c61fe9ab814) that has seen wide adoption (eg: [Mvc](https://github.com/aspnet/Mvc)). The following layout is based on his recommended .NET project structure, but updated for .Net Core 3 or newer:
 
 ```
 $/
@@ -39,36 +44,41 @@ $/
   build/
   docs/
   lib/
-  packages/
   samples/
   src/
   tests/
   .editorconfig
   .gitignore
   .gitattributes
-  build.cmd
-  build.sh
+  Directory.Build.props
   LICENSE
   NuGet.Config
   README.md
+  build.cmd
+  build.sh
+  global.json
   {solution}.sln
 ```
 
-
+- `artifacts` - Build outputs go here. Doing a build.cmd/build.sh generates artifacts here (nupkgs, dlls, pdbs, etc.)
+- `build` - Build customizations (custom msbuild files/psake/fake/albacore/etc) scripts. This also contains any infrastructure templates that build the cloud environment (see [build folder](#build-folder) section)
+- `docs` - Documentation stuff, markdown files, help files etc.
+- `lib` - Things that can **NEVER** exist in a nuget package
+- `samples` (optional) - Sample projects
 - `src` - Main projects (the product code)
 - `tests` - Test projects
-- `docs` - Documentation stuff, markdown files, help files etc.
-- `samples` (optional) - Sample projects
-- `lib` - Things that can **NEVER** exist in a nuget package
-- `artifacts` - Build outputs go here. Doing a build.cmd/build.sh generates artifacts here (nupkgs, dlls, pdbs, etc.)
-- `packages` - NuGet packages. Since .Net Core, NuGet packages are no longer stored with the solution.
-- `build` - Build customizations (custom msbuild files/psake/fake/albacore/etc) scripts. This also contains any infrastructure templates that build the cloud environment (see [build folder](#build-folder) section)
+- `.editorconfig` - 
+- `.gitignore` - 
+- `.gitattributes` - 
+- `Directory.Build.props` - 
+- `LICENSE` - 
+- `NuGet.Config` - 
 - `build.cmd` - Bootstrap the build for windows
 - `build.sh` - Bootstrap the build for *nix
-- `global.json` - ASP.NET vNext only
+- `global.json` (optional) - ASP.NET vNext only
+- `{solution}.sln`
 
-
-The reason for having the folder names lower case rather than Pascal casing seems to be to make them less prominent. They are a way of grouping projects, and with being lower case they are less conspicuous. It also helps differentiate these folder from ones that are used inside projects as part of the NameSpacing.
+Having folder names lower case rather than Pascal casing makes them less prominent. They are a way of grouping projects, and lower case makes them less conspicuous. It also helps differentiate these folder from ones that are used inside projects as part of the NameSpacing.
 
 > #### Note
 > A number of the [dotnet core repositories](https://github.com/dotnet) now use [Arcade](https://github.com/dotnet/arcade) to provide a consistent build experience. These repositories now use an *eng* directory instead of a *build* directory. This may become the new standard from dotnet core 3. But at present this is a wait-and-see.
@@ -81,11 +91,11 @@ The reason for having the folder names lower case rather than Pascal casing seem
 The build folder contains all the necessary templates and scripts to build the application AND the infrastructure required to run the application.
 
     .
-    ├── ...
-    ├── build
-    │   ├── app                 # Resources required to build the application code
-    │   └── infra               # CloudFormation Templates that build the hosting environment
-    └── ...
+    ├─ ...
+    ├─ build
+    │  ├─ app                 # Resources required to build the application code
+    │  └─ infra               # CloudFormation Templates that build the hosting environment
+    └─ ...
 
  - `app` folder
  
@@ -103,11 +113,14 @@ The idea is that anything in there are no dependencies between the `app` and `in
 
 ### Solution Items
 
-When adding items directly to the Solution, Visual Studio creates a *Solution Items* solution directory to hold them as they cannot be put directly under the Solution heading. Visual Studio does not create a corresponding physical directory. This is the only directory that should remain virtual as items in this directory occur in the top-level physical folder for the solution. Examples of items that can be added to this folder are:
+When adding items directly to the Solution, Visual Studio creates a *Solution Items* solution directory to hold them as they cannot be put directly under the Solution heading. Visual Studio does not create a corresponding physical directory. This is the only directory that should remain virtual as items in this directory occur in the top-level physical folder for the solution. Examples of items common to this folder are:
 
- - LICENSE
- - README.md
- - stylecop.json
+ - `.editorconfig`
+ - `Directory.Build.props`
+ - `README.md`
+ - `LICENSE`
+ - `{solution}.ruleset`
+ - `stylecop.json`
 
 Creating a physical version of this folder is pointless, as the items would be put in here should remain at the top level of the directory. This maintains consistency with the recommended Physical Folder layout, which is necessary as other tools (Github) rely on files being at the top-level directory for the solution (eg: README.md, LICENSE).
 

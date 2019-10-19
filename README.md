@@ -34,6 +34,8 @@ SourceControl/RepositoryConstruction.md
 SourceControl/GitPractices.md
  - Atomic Commits
  - Git Commit messages
+ - .gitignore
+ - .gitattributes
  
 SourceControl/PullRequests.md
 

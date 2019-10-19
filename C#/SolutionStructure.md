@@ -21,18 +21,16 @@ which for a personal project for C# Katas could be named:
 Larkins.CSharpKatas
 ```
 
-**Some other examples**:
+**Other examples**:
+
+ - `Larkins.BrowserCalculator`
+
 
 ### Source Control Repository
 
 A solution should be stored in a source control repository so that change can be tracked and managed. So create a repository (such as in git), put the solution here and commit any changes.
 
 See SourceControlPractices.md.
- - This file will have repository naming
- - atomic commits
- - Git commit messages
- - pull requests
- - branching, rebase, and features
 
 ## Physical Folder Structure
 
@@ -51,6 +49,7 @@ $/
   .gitignore
   .gitattributes
   Directory.Build.props
+  Directory.Build.targets
   LICENSE
   NuGet.Config
   README.md
@@ -60,22 +59,23 @@ $/
   {solution}.sln
 ```
 
-- `artifacts` - Build outputs go here. Doing a build.cmd/build.sh generates artifacts here (nupkgs, dlls, pdbs, etc.)
-- `build` - Build customizations (custom msbuild files/psake/fake/albacore/etc) scripts. This also contains any infrastructure templates that build the cloud environment (see [build folder](#build-folder) section)
-- `docs` - Documentation stuff, markdown files, help files etc.
-- `lib` - Things that can **NEVER** exist in a nuget package
-- `samples` (optional) - Sample projects
-- `src` - Main projects (the product code)
-- `tests` - Test projects
+- `artifacts/` - Build outputs go here. Doing a build.cmd/build.sh generates artifacts here (nupkgs, dlls, pdbs, etc.)
+- `build/` - Build customizations (custom msbuild files/psake/fake/albacore/etc) scripts. This also contains any infrastructure templates that build the cloud environment (see [build folder](#build-folder) section)
+- `docs/` - Documentation stuff, markdown files, help files etc.
+- `lib/` - Things that can **NEVER** exist in a nuget package
+- `samples/` (optional) - Sample projects
+- `src/` - Main projects (the product code)
+- `tests/` - Test projects
 - [`.editorconfig`][2] - Enforces consistent coding style at the solution level.
 - `.gitignore` - 
 - `.gitattributes` - 
-- `Directory.Build.props` - 
+- [`Directory.Build.props`][4] - 
+- `Directory.Build.targets` - 
 - `LICENSE` - 
-- `NuGet.Config` - 
+- [`NuGet.Config`][5] (optional) - Specifies NuGet behavior at the solution level.
 - `build.cmd` - Bootstrap the build for windows
 - `build.sh` - Bootstrap the build for *nix
-- `global.json` (optional) - ASP.NET vNext only
+- [`global.json`][3] (optional) - ASP.NET vNext only
 - `{solution}.sln`
 
 Having folder names lower case rather than Pascal casing makes them less prominent. They are a way of grouping projects, and lower case makes them less conspicuous. It also helps differentiate these folder from ones that are used inside projects as part of the NameSpacing.
@@ -99,19 +99,17 @@ The build folder contains all the necessary templates and scripts to build the a
     │  └─ infra               # CloudFormation Templates that build the hosting environment
     └─ ...
 
- - `app` folder
- 
-    This folder contains everything needed to build the project. This may include:
+ - `app` folder  
+     This folder contains everything needed to build the project. This may include:
     - Build Scripts
     - Pipelines
     - Scripts that run tests
- - `infra` folder
- 
+ - `infra` folder  
     This folder contains everything needed to build the hosting environment. This is likely going to be:
     - Network
     - Application Hosting
 
-The idea is that anything in there are no dependencies between the `app` and `infra` folders. It should be possible to run the infrastructure templates without building the application and vice-versa.
+No dependencies between the `app` and `infra` folders should exist, allowing the application or infrastructure templates to be run independently from each other.
 
 ### Solution Items
 
@@ -132,6 +130,11 @@ Note: Simply renaming the directory to lower case letters will not change it. Re
 
 A *project items* directory is not created in each project as the items can be put directly under the Project heading.
 
+
+
 [1]: https://docs.microsoft.com/en-us/visualstudio/get-started/tutorial-projects-solutions?view=vs-2019#solutions-and-projects
 [2]: https://docs.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options?view=vs-2019
+[3]: https://docs.microsoft.com/en-us/dotnet/core/tools/global-json
+[4]: https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?view=vs-2019
+[5]: https://docs.microsoft.com/en-us/nuget/reference/nuget-config-file
 [Microsoft namespace naming conventions]: https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-namespaces

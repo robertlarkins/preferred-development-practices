@@ -46,18 +46,6 @@ DevelopmentPractices/CodeReviews.md
 
 # Things to add in (Taken from SolutionStructure)
 
-## Storage of Configuration (Debug, Release, etc.) settings
-
- - https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.2
- - https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.2#file-configuration-provider
- - https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-2.2
- - https://stackoverflow.com/questions/46364293/automatically-set-appsettings-json-for-dev-and-release-environments-in-asp-net-c
-
-### Storage of local settings
-
-Using Secret Manager
- - https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-2.2&tabs=windows
-
 ## Open Source Software (OSS) Projects to use as a basis
 
  - [EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore)

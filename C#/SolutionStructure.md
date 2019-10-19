@@ -1,4 +1,4 @@
-# C-Sharp Solution Structure
+# C# Solution Structure
 
 ## Creating a New Solution
 

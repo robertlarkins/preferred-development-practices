@@ -111,6 +111,20 @@ The build folder contains all the necessary templates and scripts to build the a
 
 No dependencies between the `app` and `infra` folders should exist, allowing the application or infrastructure templates to be run independently from each other.
 
+
+## Solution Folders
+
+Solution Folders in Visual Studio's Solution Explorer are virtual folders used as an organisation aid, they do not create a physical folder on disk. However, the solution folder structure should match the physical folder structure on disk. Therefore, the following solution folders should be added:
+
+ - `samples\` (optional)
+ - `src\`
+ - `tests\`
+
+**Further Reading**
+ - http://www.blackwasp.co.uk/VSSolutionFolders.aspx
+ - https://blogs.msdn.microsoft.com/zainnab/2010/03/27/using-solution-folders/
+ - http://mikehadlow.blogspot.com/2007/07/how-to-structure-visual-studio.html
+
 ### Solution Items
 
 When adding items directly to the Solution, Visual Studio creates a *Solution Items* solution directory to hold them as they cannot be put directly under the Solution heading. Visual Studio does not create a corresponding physical directory. This is the only directory that should remain virtual as items in this directory occur in the top-level physical folder for the solution. Examples of items common to this folder are:
@@ -129,7 +143,6 @@ To keep the naming convetions the same as other directories, make it lower case,
 Note: Simply renaming the directory to lower case letters will not change it. Rename it to something else, then back to *solution items*.
 
 A *project items* directory is not created in each project as the items can be put directly under the Project heading.
-
 
 
 [1]: https://docs.microsoft.com/en-us/visualstudio/get-started/tutorial-projects-solutions?view=vs-2019#solutions-and-projects

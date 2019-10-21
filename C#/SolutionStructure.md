@@ -51,7 +51,7 @@ $/
   Directory.Build.props
   Directory.Build.targets
   LICENSE
-  NuGet.Config
+  NuGet.config
   README.md
   build.cmd
   build.sh
@@ -72,7 +72,7 @@ $/
 - [`Directory.Build.props`][4] - 
 - `Directory.Build.targets` - 
 - `LICENSE` - 
-- [`NuGet.Config`][5] (optional) - Specifies NuGet behavior at the solution level.
+- [`NuGet.config`][5] (optional) - Specifies NuGet behavior at the solution level.
 - `build.cmd` - Bootstrap the build for windows
 - `build.sh` - Bootstrap the build for *nix
 - [`global.json`][3] (optional) - ASP.NET vNext only

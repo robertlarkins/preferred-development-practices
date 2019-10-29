@@ -1,5 +1,9 @@
 # C# Project Structure
 
+## Directory.build.targets
+
+https://www.strathweb.com/2018/07/solution-wide-nuget-package-version-handling-with-msbuild-15/
+
 ## Directory.build.props
 
 This provides base settings that get applied to all projects in the solution. An example of one is provided in C#/BaseFiles/Directory.Build.props.

@@ -51,7 +51,7 @@ StyleCop settings placed within the `<Project>` tag:
 > <PackageReference Update="StyleCop.Analyzers" Version="updated.version.no">
 > ```
 > will be added to the project's .csproj file.
-> The project will use the updated version, but if this is removed from the .csproj, the version will fall back to that in Directory.build.props.
+> The project will use the version specified in the .csproj, but if this is removed from the .csproj, the version will fall back to that in Directory.build.props.
 
 ## Adding a new project to a solution
 

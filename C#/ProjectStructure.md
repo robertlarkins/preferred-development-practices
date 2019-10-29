@@ -4,6 +4,10 @@
 
 https://www.strathweb.com/2018/07/solution-wide-nuget-package-version-handling-with-msbuild-15/
 
+This doesn't seem to play nice with 
+That overrules the version specified in the .csproj file. It will however have to be updated manually as updating NuGet packages through Visual Studio will only update the version in the .csproj file, which wont be the used version.
+
+
 ## Directory.build.props
 
 This provides base settings that get applied to all projects in the solution. An example of one is provided in C#/BaseFiles/Directory.Build.props.
@@ -39,13 +43,14 @@ StyleCop settings placed within the `<Project>` tag:
 </ItemGroup>
 ```
 
-> Note:
+> Note:  
 > The StyleCop.Analyzers Version number specified in the Directory.build.props file does not automatically update.
 > Therefore if StyleCop.Analyzers is updated for a project, a 
 > ```xml
 > <PackageReference Update="StyleCop.Analyzers" Version="updated.version.no">
 > ```
 > will be added to the project's .csproj file.
+> The project will use the updated version, but if this is removed from the .csproj, the version will fall back to that in Directory.build.props.
 
 ## Adding a new project to a solution
 

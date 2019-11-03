@@ -140,7 +140,7 @@ The `src` folder contains the main projects that comprise the software solution.
 
 ### `tests` Folder
 
-The `tests` folder contains the projects used to test the main projects. The subfolders will match the `src` folder:
+The `tests` folder contains the projects used to automatically test the main projects. The subfolders will match the `src` folder:
 
     .
     ├─ ...
@@ -150,6 +150,8 @@ The `tests` folder contains the projects used to test the main projects. The sub
     │  ├─ infrastructure         # 
     │  └─ presentation           # 
     └─ ...
+
+* This needs to be researched further as to whether integration testing can encompasses multiple projects. If it does then test projects that span multiple projects should live under the tests folder *.
 
 ## Solution Folders
 

@@ -67,7 +67,7 @@ $/
 - `src/` - Main projects (the product code)
 - `tests/` - Test projects
 - [`.editorconfig`][2] - Enforces consistent coding style at the solution level.
-- [`.gitignore`](https://git-scm.com/docs/gitignore) - Specifies files to be ignore and intentionally untracked in the repository.  
+- [`.gitignore`](https://git-scm.com/docs/gitignore) - Specifies files to be ignored and intentionally untracked in the repository.  
   The site [gitignore.io](http://gitignore.io/) creates useful .gitignore files for different environments.
 - `.gitattributes` - 
 - [`Directory.Build.props`][4] - 

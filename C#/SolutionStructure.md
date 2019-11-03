@@ -151,7 +151,11 @@ The `tests` folder contains the projects used to automatically test the main pro
     │  └─ presentation           # 
     └─ ...
 
-* This needs to be researched further as to whether integration testing can encompasses multiple projects. If it does then test projects that span multiple projects should live under the tests folder *.
+*This needs to be researched further as to whether integration testing can encompasses multiple projects, or if those types of tests have a different name. Test projects that span multiple projects should live under the tests folder.*
+
+https://www.atlassian.com/continuous-delivery/software-testing/types-of-software-testing
+http://www.continuousagile.com/unblock/test_types.html
+https://www.softwaretestinghelp.com/system-vs-end-to-end-testing/
 
 ## Solution Folders
 

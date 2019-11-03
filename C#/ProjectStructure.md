@@ -55,6 +55,27 @@ StyleCop settings placed within the `<Project>` tag:
 
 ## Adding a new project to a solution
 
+The requirements for a projects is dependent upon its purpose. The following are steps common to all projects.
+
+### The Type of Project
+
+The type of project being created determines where it should reside within the directory structure.
+The first is whether it is a main project (product source code), or a test project. A main project is defined futher split into:
+
+ - common
+ 
+ - core
+ 
+ - infrastructure
+ 
+ - presentation
+
+* Todo: add a description for each of these and examples of what types of projects go into each. *
+
+### Naming the project
+
+
+
 
 ## Analysers to add
 

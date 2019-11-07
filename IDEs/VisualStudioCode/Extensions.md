@@ -8,3 +8,4 @@
  - C# for Visual Studio Code (powered by OnmiSharp). *(Microsoft)*
  - XML Tools *(Josh Johnson)*
  - SQL Server (mssql) *(Microsoft)*
+ - Prettier - Code formatter *(Esben Petersen)*

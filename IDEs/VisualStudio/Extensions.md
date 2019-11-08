@@ -9,6 +9,7 @@ This is a list of useful Visual Studio extensions:
  - [Resharper](https://www.jetbrains.com/resharper/)
  - [EditorConfig Language Service](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.EditorConfig)
  - [MarkdownEditor](https://github.com/madskristensen/MarkdownEditor)
+ - [File Icons](https://github.com/madskristensen/FileIcons)
 
 ## Extensions that could be done as either an Extension or a Nuget Package
 
@@ -24,6 +25,6 @@ This is a list of useful Visual Studio extensions:
    This link provides the difference between sonarlint and the equivalent Nuget package SonarAnalyzer.CSharp: https://stackoverflow.com/questions/50194838/does-sonarlint-provide-any-advantage-over-sonaranalyzer-csharp
 
 ## Extensions yet to be tried
- - [File Icons](https://github.com/madskristensen/FileIcons)
+
  - [Oz Code](https://oz-code.com/)
  - [PostSharp](https://www.postsharp.net)

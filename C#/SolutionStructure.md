@@ -170,7 +170,7 @@ Solution Folders in Visual Studio's Solution Explorer are virtual folders used a
  - https://blogs.msdn.microsoft.com/zainnab/2010/03/27/using-solution-folders/
  - http://mikehadlow.blogspot.com/2007/07/how-to-structure-visual-studio.html
 
-### Solution Items
+## Solution Items
 
 When adding items directly to the Solution, Visual Studio creates a *Solution Items* solution directory to hold them as they cannot be put directly under the Solution heading. Visual Studio does not create a corresponding physical directory. This is the only directory that should remain virtual as items in this directory occur in the top-level physical folder for the solution. Examples of items common to this folder are:
 
@@ -188,6 +188,15 @@ To keep the naming convetions the same as other directories, make it lower case,
 Note: Simply renaming the directory to lower case letters will not change it. Rename it to something else, then back to *solution items*.
 
 A *project items* directory is not created in each project as the items can be put directly under the Project heading.
+
+### `.editorconfig`
+
+The `.editorconfig` file enforces a consistent coding style for the code base. The specified settings take precedence over the IDE's default settings. `.editorconfig` files have a hierarchical relationship, with the settings of ones deeper in the file hierarchy overruling those above it.
+
+A recommended solution level `.editorconfig` file can be found [here](BaseFiles/Solution/.editorconfig).
+
+**Further Reading**
+ - https://docs.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options?view=vs-2019
 
 
 [1]: https://docs.microsoft.com/en-us/visualstudio/get-started/tutorial-projects-solutions?view=vs-2019#solutions-and-projects

@@ -1,6 +1,3 @@
 # Docker
 
-## Useful commands
-
- - [`docker ps`](https://docs.docker.com/engine/reference/commandline/ps/)  
-   List running containers. Use `docker ps -a` to list all containers.
+Provides useful information, tools and resources for using Docker.

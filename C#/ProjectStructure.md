@@ -9,7 +9,7 @@ That overrules the version specified in the .csproj file. It will however have t
 **Directory.build.targets is unreliable**
 *This doesn't seem to work with Visual Studio at present, and will hopefully get better support in the future.*
 
-## Directory.build.props
+## Directory.Build.props
 
 This provides base settings that get applied to all projects in the solution. An example of one is provided in C#/BaseFiles/Directory.Build.props.
 
@@ -25,6 +25,50 @@ Recommended settings (placed inside a `<ProjectGroup>`) include:
 <!-- Each project will generate a documentation file, which is necessary for some analyzers -->
 <GenerateDocumentationFile>true</GenerateDocumentationFile>
 ```
+
+A Directory.Build.props file placed at the root-level of a solution allows for a place for elements common to all project .csproj files to be stored. This is useful if an analyser is used on every project, such as including a stylecop.json file. Or Assembly information such as company name.
+
+ - https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?view=vs-2019
+ - http://code.fitness/post/2018/03/directory-build-props.html
+ - https://stackoverflow.com/questions/42138418/equivalent-to-assemblyinfo-in-dotnet-core-csproj/42143079#42143079
+ - https://tpodolak.com/blog/2018/04/03/solution-wide-project-properties-directory-build-props/
+ - https://thomaslevesque.com/2017/09/18/common-msbuild-properties-and-items-with-directory-build-props/
+ - https://cezarypiatek.github.io/post/non-nullable-references-in-dotnet-core/
+
+## Example of Directory.Build.props
+
+```xml
+<Project>
+  <PropertyGroup>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)Root.Level.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  
+  <!-- StyleCop Analyzer -->
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.1-rc.114">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)stylecop.json" Link="stylecop.json" />
+  </ItemGroup>
+</Project>
+```
+
+The Element `<CodeAnalysisRuleSet>` allows a default ruleset file to be specified. If a ruleset file is specified in the .csproj file, it will override the ruleset file in Directory.Build.props. It seems that the .csproj file has higher precendence than Directory.Build.props. More documentation on build or include order would be useful to know exactly what occurs.
+
+If for any reason there needs to be a check to stop an already specified ruleset from being overridden by another ruleset file, then add the following `Condition` to `<CodeAnalysisRuleSet>` to check that a ruleset file has not already been included as part of the MSBuild pipeline:
+
+```xml
+<CodeAnalysisRuleSet Condition="'$(CodeAnalysisRuleSet)' == ''">$(MSBuildThisFileDirectory)Root.Level.ruleset</CodeAnalysisRuleSet>
+```
+
+This example came from: https://stackoverflow.com/questions/34919517/check-if-propertygroup-item-is-set-to-a-value-in-csproj/34919766#34919766
+
+### Variables
+
+ - $(MSBuildThisFileDirectory) variable refers to the directory containing the current MSBuild file.
+ - $(MSBuildProjectDirectory) variable refers to the directory containing the project being built.
 
 ### StyleCop Analyser
 

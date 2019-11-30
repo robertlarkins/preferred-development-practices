@@ -12,6 +12,8 @@ C#/SrcProjectStructure.md
 
 C#/Analysers.md
 
+Improve and maybe relocate Directory.Build.props that is in the C# Project Structure directory.
+
 C#/DevelopmentTools.md
  - Visual studio extensions
 

@@ -27,15 +27,18 @@ This rule would be ignored if `ValueObject` implements `IComparable<T>` or `IEqu
 `IEquatable<ValueObject>` could be implemented, but in the comments of this [article](https://enterprisecraftsmanship.com/posts/value-object-better-implementation/) Vladimir Khorikov states there is no need to implement `IEquatable<T>` as it is more for structs and has negligible benefit for reference types (removes a single cast), which `ValueObject` is. Additionally, if `IEquatable` is implemented, then [rule S4035](https://rules.sonarsource.com/csharp/RSPEC-4035) is applied in which `ValueObject` should be sealed. If this was to occur, then `ValueObject` could not be derived. The reason why `IEquatable` should be sealed is because it should always have the same behaviour as `Object.Equals`. If it is not sealed `IEquatable` could be implemented at different points in the object hierarchy without overriding `Object.Equals`, meaning they could each expressing equality differently.
 Further Reading: https://stackoverflow.com/questions/1868316/should-iequatablet-icomparablet-be-implemented-on-non-sealed-classes
 
-**Todo: Provide a description for why `Equals(ValueObject? obj)` is not implemented**
 Only `Equals(object? obj)` has been implemented as `Equals(ValueObject? obj)`, `Equals(ValueObject? obj)` would avoid boxing of the object, but this adds additional code to ValueObject for minimal benefit.
 https://docs.microsoft.com/en-us/dotnet/api/system.iequatable-1?view=netframework-4.8
 https://www.codeproject.com/Articles/20592/Implementing-IEquatable-Properly
+https://stackoverflow.com/questions/9092961/object-type-boxing-with-a-reference-type-variable
 
 In https://enterprisecraftsmanship.com/posts/value-object-better-implementation/ there is this comment:
 > There's no need in implementing IEquatable<t>, this interface was introduced specifically to avoid boxing/unboxing of .NET value types (structs) when dealing with comparison. As long as you implement ValueObject as class, you can safely omit implementing IEquatable<t>.
 
-which refers to by this Equals method isn't needed. Add the explanation to here.
+which refers to by this Equals method isn't needed. Add the explanation to here. In addition:
+ - `Equals(ValueObject? obj)` only needs to be implemented when implementing `IEquatable<ValueObject>`
+ - `Equals(ValueObject? obj)` as part of `IEquatable<T>` is used to avoid boxing/unboxing of .NET value types (structs) when dealing with comparison, but as `ValueObject` is a class, boxing/unboxing does not occur, as it is already a reference type. **Confirm this**
+ - Omitting `Equals(ValueObject? obj)` leaves the code in `ValueObject` cleaner and easier to read.
 
 There is no `ReferenceEquals(obj, this)` in `Equals(object? obj)`. `ReferenceEquals(obj, this)` would be used to check if `obj` had the same reference as `this`, and if it did it would just return `true`. No implementation I can find uses this to short-circuit checking each value. Should `ReferenceEquals(obj, this)` be included, or just ommitted and rely on checking each value?
  - Not using this keeps the code simpler.

@@ -35,9 +35,10 @@ https://stackoverflow.com/questions/9092961/object-type-boxing-with-a-reference-
 In https://enterprisecraftsmanship.com/posts/value-object-better-implementation/ there is this comment:
 > There's no need in implementing IEquatable<t>, this interface was introduced specifically to avoid boxing/unboxing of .NET value types (structs) when dealing with comparison. As long as you implement ValueObject as class, you can safely omit implementing IEquatable<t>.
 
-which refers to by this Equals method isn't needed. Add the explanation to here. In addition:
+which means that `Equals(ValueObject? obj)` isn't needed. In addition:
  - `Equals(ValueObject? obj)` only needs to be implemented when implementing `IEquatable<ValueObject>`
- - `Equals(ValueObject? obj)` as part of `IEquatable<T>` is used to avoid boxing/unboxing of .NET value types (structs) when dealing with comparison, but as `ValueObject` is a class, boxing/unboxing does not occur, as it is already a reference type. **Confirm this**
+ - `Equals(ValueObject? obj)` as part of `IEquatable<T>` is used to avoid boxing/unboxing of .NET value types (structs) when dealing with comparison, but as `ValueObject` is a class, boxing/unboxing does not occur, as it is already a reference type. The only benefit is that if `Equals(ValueObject? obj)` is `public` it would save having to perform a cast. Having to perform a cast should not be noticable performance wise. In the same enterprisecraftsmanship.com article there is this comment:
+   > Additional code always entails cost, there's rarely such thing as cost-free code. You might argue that this cost is not big and I would agree. But the benefit of having such code is also small, so all things being equal, I prefer adherence to YAGNI.
  - Omitting `Equals(ValueObject? obj)` leaves the code in `ValueObject` cleaner and easier to read.
 
 There is no `ReferenceEquals(obj, this)` in `Equals(object? obj)`. `ReferenceEquals(obj, this)` would be used to check if `obj` had the same reference as `this`, and if it did it would just return `true`. No implementation I can find uses this to short-circuit checking each value. Should `ReferenceEquals(obj, this)` be included, or just ommitted and rely on checking each value?

@@ -54,11 +54,11 @@ namespace Rezare.rSite.Domain.SeedWork
         public static bool operator !=(ValueObject? left, ValueObject? right) => !(left == right);
 
         /// <summary>
-        /// Determines whether the specified object is equal to this object.
+        /// Determines whether the given object is equal to this object.
         /// </summary>
         /// <param name="obj">The object to compare with this object.</param>
         /// <returns>
-        ///   <c>true</c> if the specified object is equal to this object; otherwise, <c>false</c>.
+        ///   <c>true</c> if the given object is equal to this object; otherwise, <c>false</c>.
         /// </returns>
         public override bool Equals(object? obj)
         {

@@ -17,6 +17,13 @@ ValueObject.cs provides the base implementation for value object classes.
  - https://blog.submain.com/stylecop-detailed-guide/
  - https://hackernoon.com/value-objects-like-a-pro-f1bfc1548c72
 
+### Tests
+
+The added tests require the NuGet packages:
+
+ - xUnit
+ - FluentAssertions
+
 ### Current Implementation
 
 The `==` operator overload has [rule S3875](https://rules.sonarsource.com/csharp/RSPEC-3875) suppressed.
@@ -24,7 +31,7 @@ This rule would be ignored if `ValueObject` implements `IComparable<T>` or `IEqu
 
 `IComparable<ValueObject>` is not suitable on ValueObject as the decision to implement this is for the derived class, as `CompareTo` is used for object sort order.
 
-`IEquatable<ValueObject>` could be implemented, but in the comments of this [article](https://enterprisecraftsmanship.com/posts/value-object-better-implementation/) Vladimir Khorikov states there is no need to implement `IEquatable<T>` as it is more for structs and has negligible benefit for reference types (removes a single cast), which `ValueObject` is. Additionally, if `IEquatable` is implemented, then [rule S4035](https://rules.sonarsource.com/csharp/RSPEC-4035) is applied in which `ValueObject` should be sealed. If this was to occur, then `ValueObject` could not be derived. The reason why `IEquatable` should be sealed is because it should always have the same behaviour as `Object.Equals`. If it is not sealed `IEquatable` could be implemented at different points in the object hierarchy without overriding `Object.Equals`, meaning they could each expressing equality differently.
+`IEquatable<ValueObject>` could be implemented, but in the comments of this [article](https://enterprisecraftsmanship.com/posts/value-object-better-implementation/) Vladimir Khorikov states there is no need to implement `IEquatable<T>` as it is more for structs and has negligible benefit for reference types (removes a single cast), which `ValueObject` is. Additionally, if `IEquatable` is implemented, then [rule S4035](https://rules.sonarsource.com/csharp/RSPEC-4035) is applied in which `ValueObject` should be sealed. If this was to occur, then `ValueObject` could not be derived. The reason why `IEquatable` should be sealed is because it should always have the same behaviour as `Object.Equals`. If it is not sealed `IEquatable` could be implemented at different points in the object hierarchy without overriding `Object.Equals`, meaning they could each expressing equality differently. If `Equals(ValueObject? obj)` is added then [rule S3897](https://rules.sonarsource.com/csharp/RSPEC-3897) expects that the class implements `IEquatable`.
 Further Reading: https://stackoverflow.com/questions/1868316/should-iequatablet-icomparablet-be-implemented-on-non-sealed-classes
 
 **Todo: Provide a description for why `Equals(ValueObject? obj)` is not implemented**

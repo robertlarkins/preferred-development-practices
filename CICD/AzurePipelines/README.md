@@ -10,6 +10,14 @@ Either Visual Studio test platform or Visual Studio are necessary on the agent t
 > Note:  
 > The task is only supported by Windows agents and cannot be used on other platforms.
 
+Here's an example of the task for using the latestStable provided from the official NuGet feed:
+
+```yaml
+- task: VisualStudioTestPlatformInstaller@1
+  inputs:
+    packageFeedSelector: 'nugetOrg'
+    versionSelector: 'latestStable'
+```
 
 ### [`VSTest`](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/test/vstest?view=azure-devops)
 

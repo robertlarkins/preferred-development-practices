@@ -1,5 +1,7 @@
 # Tasks
 
+`install` vs `update` for use with the `dotnet tool` command. `install` installs the tool if not already available, otherwise it will throw an error. `update` will install the tool if not available, if it is available it will update to the newest version, unless a version is specified (`dotnet tool update <PACKAGE_ID> [--version <VERSION>]`). If the latest version is installed the tool is reinstalled, so as to *repair* it (uninstall,reinstall) incase it has any issues.
+
 ## Testing
 
 ### [`VisualStudioTestPlatformInstaller`](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/tool/vstest-platform-tool-installer?view=azure-devops)

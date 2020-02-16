@@ -23,4 +23,6 @@ The Azure DevOps Publish task ignores the .git directory by default, as specifie
 
 ## Further Reading
 
-https://www.jfe.cloud/control-pipeline-artifacts-with-artifactignore-file/
+https://www.jfe.cloud/control-pipeline-artifacts-with-artifactignore-file/  
+https://docs.microsoft.com/en-us/azure/devops/pipelines/artifacts/pipeline-artifacts?view=azure-devops&tabs=yaml-task
+

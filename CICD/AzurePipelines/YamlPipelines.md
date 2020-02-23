@@ -44,11 +44,20 @@ The `install` command installs the tool if not already available, otherwise it w
 > Note:
 > Using the `update` command to install a package [requires dotnet core 3](https://github.com/dotnet/cli/pull/10205).
 
-## Artifacts
+## [Artifacts](https://docs.microsoft.com/en-us/azure/devops/pipelines/artifacts/artifacts-overview)
+Artifacts are the files produced by a pipeline that are then published in some manner. This includes packages that are constructed and published to package repositories (NuGet, npm, Maven, etc.), build artifacts and pipeline artifacts.
 
-### Publish
+### [Publish NuGet package](https://docs.microsoft.com/en-us/azure/devops/pipelines/artifacts/nuget)
 
-### Download
+### [Build Artifact](https://docs.microsoft.com/en-us/azure/devops/pipelines/artifacts/build-artifacts)
+
+Going forward build artifacts will be replaced with pipeline artifacts: https://github.com/MicrosoftDocs/vsts-docs/issues/2341#issuecomment-439483135
+
+### [Pipeline Artifact](https://docs.microsoft.com/en-us/azure/devops/pipelines/artifacts/pipeline-artifacts)
+
+#### Publish
+
+#### Download
 
 ## [Variables](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/variables)
 

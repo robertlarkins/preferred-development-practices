@@ -57,6 +57,19 @@ Going forward build artifacts will be replaced with pipeline artifacts: https://
 
 #### Publish
 
+```
+variables:
+  buildArtifactName: 'my_artifact_name'
+```
+
+```yaml
+- publish: $(System.DefaultWorkingDirectory)
+  artifact: $(buildArtifactName)
+  displayName: Publish artifact $(buildArtifactName)
+```
+
+The `publish` keyword is a shortcut for the `PublishPipelineArtifact` task.
+
 #### Download
 
 ## [Variables](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/variables)

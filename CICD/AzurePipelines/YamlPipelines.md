@@ -57,10 +57,14 @@ Going forward build artifacts will be replaced with pipeline artifacts: https://
 
 #### Publish
 
-```
+Publishing an artifact provides a way of sharing files between jobs or pipelines. The following example shows how to publish the *Default Working Directory* as a pipeline artifact. If a root level variable is provided for the artifact name, such as `buildArtifactName`:
+
+```yaml
 variables:
   buildArtifactName: 'my_artifact_name'
 ```
+
+then each job can reference this variable, either to publish or download. The following shows the publish task:
 
 ```yaml
 - publish: $(System.DefaultWorkingDirectory)
@@ -68,7 +72,7 @@ variables:
   displayName: Publish artifact $(buildArtifactName)
 ```
 
-The `publish` keyword is a shortcut for the `PublishPipelineArtifact` task.
+> Note: The `publish` keyword is a shortcut for the [`PublishPipelineArtifact`](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/publish-pipeline-artifact) task.
 
 #### Download
 

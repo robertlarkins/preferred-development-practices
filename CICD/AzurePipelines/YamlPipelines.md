@@ -74,7 +74,20 @@ then each job can reference this variable, either to publish or download. The fo
 
 > Note: The `publish` keyword is a shortcut for the [`PublishPipelineArtifact`](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/publish-pipeline-artifact) task.
 
-#### Download
+Control over what files should be included or excluded from the artifact can be specified using a [.artifactignore](ArtifactIgnore.md) file.
+
+#### [Download](https://docs.microsoft.com/en-us/azure/devops/pipelines/artifacts/pipeline-artifacts?view=azure-devops&tabs=yaml#downloading-artifacts)
+A job that needs to consume an artifact can download it. The following example uses the `download` keyword and would be used in conjunction with the [Publish](#publish) example:
+
+```yaml
+- download: current
+  artifact: $(buildArtifactName)
+  displayName: 'Retrieve build artifact'
+```
+
+which downloads the artifact to the [`$(Pipeline.Workspace)/`](https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml#pipeline-variables) directory.
+
+> Note: The [`download`](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema#download) keyword is a shortcut for the [`DownloadPipelineArtifact`](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/download-pipeline-artifact) task, which allows for further customisation, such as what directory to download the artifact to.
 
 ## [Variables](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/variables)
 

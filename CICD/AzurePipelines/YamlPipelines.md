@@ -13,7 +13,7 @@ https://docs.microsoft.com/en-us/azure/devops/pipelines/process/deployment-jobs?
 ## [Triggers](https://docs.microsoft.com/en-us/azure/devops/pipelines/build/triggers?view=azure-devops&tabs=yaml)
 
 ### [Paths](https://docs.microsoft.com/en-us/azure/devops/pipelines/build/triggers?view=azure-devops&tabs=yaml#paths)
-Paths can use [wildcards](https://docs.microsoft.com/en-us/azure/devops/pipelines/build/triggers?view=azure-devops&tabs=yaml#wildcards) in their syntax, but a `*` at the end of a directory name, such as `- src/*` is the same as specifying the directory by itself `- src`.
+Paths can use [wildcards](https://docs.microsoft.com/en-us/azure/devops/pipelines/build/triggers?view=azure-devops&tabs=yaml#wildcards) in their syntax, but a `*` at the end of a directory name, such as `- src/*` is the same as specifying the directory as just `- src`.
 
 ## Tasks
 

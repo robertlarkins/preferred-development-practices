@@ -30,4 +30,13 @@ This means that when the main version changes, the revision value increments but
 It is possible for the revision value to be adjusted, but this required further code in the yaml file.
 An alternative way is to use a DevOps extension to construct the build number.
 
-### GitVersion
+## GitVersion
+
+### [Configuration](https://gitversion.net/docs/configuration)
+
+### [Variables](https://gitversion.net/docs/more-info/variables)
+
+### BuildNumber
+
+The main version number to use that GitVersion produces is `GitVersion.SemVer`.
+This can be structured as Major.Minor.Patch-PreReleaseLabel.PreReleaseNumber.

@@ -2,7 +2,7 @@
 
 ## Setting BuildNumber
 
-There are different ways for setting the build number. The simplest is to use the [`name` property](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/run-number?view=azure-devops&tabs=yaml) with a desired value.
+There are different ways for setting the build number. The simplest is to use the [`name`](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/run-number?view=azure-devops&tabs=yaml) property with a desired value.
 However, the `$(Rev:r)` token *only* works when used with the `name` property, and its value cannot be changed using conditional statements.
 This means that if the build number needs to be changed based on the branch, or some other condition, then a different approach is needed.
 

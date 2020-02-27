@@ -40,3 +40,12 @@ An alternative way is to use a DevOps extension to construct the build number.
 
 The main version number to use that GitVersion produces is `GitVersion.SemVer`.
 This can be structured as Major.Minor.Patch-PreReleaseLabel.PreReleaseNumber.
+
+### [Versioning Modes](https://gitversion.net/docs/reference/versioning-modes/)
+This relates to the `mode` property in the gitversion.yml file.
+
+#### [Continuous Delivery](https://gitversion.net/docs/reference/versioning-modes/continuous-delivery)
+The default mode. This requires git tags to communicate to gitversion when a release is to be done, as this is an external manual decision.
+
+#### [Continuous Deployment](https://gitversion.net/docs/reference/versioning-modes/continuous-deployment)
+This approach increments the version on every commit.

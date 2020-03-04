@@ -41,3 +41,15 @@ In this example a variable `$(propertyCopyright)` is set and can be used in subs
 Other logging commands, like `task.setvariable` can be found [here](https://github.com/microsoft/azure-pipelines-tasks/blob/master/docs/authoring/commands.md).
 
 ### Date
+Storing the current date and time in a variable can be done using a `PowerShell@2` task. The following example shows how to get the current year for New Zealand and using it to store a copyright in a variable:
+```
+- task: PowerShell@2
+  displayName: Set propertyCopyright variable
+  inputs:
+    targetType: inline
+    script: |
+      $timeZoneId = 'New Zealand Standard Time'
+      $currentDateTime = [System.TimeZoneInfo]::ConvertTimeBySystemTimeZoneId([DateTime]::Now, $timeZoneId)
+      $copyright = "Copyright $($currentDateTime.year)"
+      Write-Host "##vso[task.setvariable variable=propertyCopyright]$copyright"
+```

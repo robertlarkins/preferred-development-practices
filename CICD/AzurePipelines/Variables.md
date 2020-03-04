@@ -22,3 +22,25 @@ These are variables that are stored in Azure Pipelines variable interface, and c
 ## [Predefined Variables](https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables)
 
 ## [Expressions](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/expressions)
+
+## Dynamic Values
+
+Pipeline variable values can be set from tasks such as `PowerShell@2`, which requires 
+
+```yaml
+variables:
+  propertyCopyright: '' # This variable is set by a task
+
+steps:
+- task: PowerShell@2
+  displayName: Set propertyCopyright variable
+  inputs:
+    targetType: inline
+    script: |
+      $copyright = 'Copyright 2020'
+      Write-Host "##vso[task.setvariable variable=propertyCopyright]$copyright"
+```
+
+https://github.com/microsoft/azure-pipelines-tasks/blob/master/docs/authoring/commands.md
+
+### Date

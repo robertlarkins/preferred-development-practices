@@ -42,7 +42,8 @@ Other logging commands, like `task.setvariable` can be found [here](https://gith
 
 ### Date
 Storing the current date and time in a variable can be done using a `PowerShell@2` task. The following example shows how to get the current year for New Zealand and using it to store a copyright in a variable:
-```
+
+```yaml
 - task: PowerShell@2
   displayName: Set propertyCopyright variable
   inputs:

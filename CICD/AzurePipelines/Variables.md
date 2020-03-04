@@ -38,10 +38,11 @@ A new pipeline variable can be set from a script tasks such as `PowerShell@2`. T
 ```
 In this example a variable `$(propertyCopyright)` is set and can be used in subsequent steps.
 
-Other logging commands, like `task.setvariable` can be found [here](https://github.com/microsoft/azure-pipelines-tasks/blob/master/docs/authoring/commands.md).
+### [Logging commands](https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/logging-commands?view=azure-devops&tabs=bash)
+Logging commands are how tasks and scripts communicated with the agent (Windows, Linux and macOS), and can be called from both Bash and PowerShell scripts. The available commands can be found [here](https://github.com/microsoft/azure-pipelines-tasks/blob/master/docs/authoring/commands.md).
 
 ### Date
-Storing the current date and time in a variable can be done using a `PowerShell@2` task. The following example shows how to get the current year for New Zealand and using it to store a copyright in a variable:
+Storing the current date and time in a variable can be done using a script task. The following example shows how to get the current year for New Zealand and using it to store a copyright in a variable using the [PowerShell task](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/powershell?view=azure-devops):
 
 ```yaml
 - task: PowerShell@2
@@ -53,4 +54,14 @@ Storing the current date and time in a variable can be done using a `PowerShell@
       $currentDateTime = [System.TimeZoneInfo]::ConvertTimeBySystemTimeZoneId([DateTime]::Now, $timeZoneId)
       $copyright = "Copyright $($currentDateTime.year)"
       Write-Host "##vso[task.setvariable variable=propertyCopyright]$copyright"
+```
+
+The equivalent can be done using a [Bash task](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/bash?view=azure-devops) aswell. This example uses the bash task shortcut syntax:
+
+```yaml
+- bash: |
+    currentYear=$(TZ=Pacific/Auckland date +"%Y")
+    copyright="Copyright $currentYear"
+    echo "##vso[task.setvariable variable=propertyCopyright]$copyright"
+  displayName: Set propertyCopyright variable
 ```

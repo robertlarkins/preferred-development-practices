@@ -23,15 +23,11 @@ These are variables that are stored in Azure Pipelines variable interface, and c
 
 ## [Expressions](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/expressions)
 
-## Dynamic Values
+## [Variable from Script](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch#set-variables-in-scripts)
 
-Pipeline variable values can be set from tasks such as `PowerShell@2`, which requires 
+A new pipeline variable can be set from a script tasks such as `PowerShell@2`. This does not require a job scoped variable to be defined, but does mean that the variable is only available to downstream steps within the same job.
 
 ```yaml
-variables:
-  propertyCopyright: '' # This variable is set by a task
-
-steps:
 - task: PowerShell@2
   displayName: Set propertyCopyright variable
   inputs:
@@ -41,6 +37,6 @@ steps:
       Write-Host "##vso[task.setvariable variable=propertyCopyright]$copyright"
 ```
 
-https://github.com/microsoft/azure-pipelines-tasks/blob/master/docs/authoring/commands.md
+Other logging commands, like `task.setvariable` can be found [here](https://github.com/microsoft/azure-pipelines-tasks/blob/master/docs/authoring/commands.md).
 
 ### Date

@@ -49,3 +49,8 @@ See:
  - https://docs.docker.com/engine/reference/commandline/rm/
  - https://docs.docker.com/engine/reference/commandline/container_rm/
  
+## Temporary Container
+Use the following command to create an image from a Dockerfile, run it on port 1880, then delete the container when closed:
+```powershell
+docker run --rm -p 1880:1880 -it --name mytest $(docker build -q .)
+```

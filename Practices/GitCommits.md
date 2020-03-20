@@ -30,6 +30,8 @@ The advantage of atomic commits are:
  - https://coderwall.com/p/jmqp0a/why-and-how-i-craft-atomic-commits-in-git
  - https://www.codewithjason.com/atomic-commits-testing/
  - https://en.wikipedia.org/wiki/Atomic_commit
+ - https://www.pauline-vos.nl/atomic-commits/
+ - https://www.continuousimprover.com/2020/03/keep-source-control-history-clean.html
 
 ## Commit comments
 

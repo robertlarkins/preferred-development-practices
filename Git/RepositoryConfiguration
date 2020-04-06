@@ -1,0 +1,15 @@
+# Repository Configuration
+
+## .gitattributes
+
+The .gitattributes file provides a way of configuring how git performs actions on the repo.
+
+https://git-scm.com/docs/gitattributes
+
+### Line Endings
+
+The line endings of specific file types can be set.
+For example to ensure git uses *lf* line endings for *.sh* files the following could be put in the .gitignore:
+```
+*.sh    text eol=lf
+```

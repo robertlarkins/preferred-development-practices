@@ -1,5 +1,19 @@
 # Git Commit Practices
 
+Before performing a commit, ensure the codebase compiles.
+
+## When to commit
+
+- When a piece of code has been removed (or would have been commented out), then commit this change. If this is related to other changes at this layer, then commit them together.
+- Refactoring a piece of code
+- Removing and sorting usings
+- Rearranging code
+- Updating an .md file
+
+### Slices
+
+Horizontal (system layer) and Vertical slices (features). A commit should be done at each layer of a vertical slice. Though to ensure that the commit is still atomic the feature needs to be thin or a concise addition to the code base.
+
 ## Atomic Commits
 
 When using any source control management (SCM) systems, whenever you check in code, you should be asking yourself 'if somebody else needs to look at this commit, will they be able to quickly understand what has been done and why'?

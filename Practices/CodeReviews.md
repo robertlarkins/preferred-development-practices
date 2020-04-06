@@ -20,3 +20,6 @@ It also has added benefits such as improving your ability to communicate ideas.
 Whenever you do a code review always give constructive feedback and never personal criticisms (you're reviewing code, not the person).
 
 The booklet _What To Look For In A Code Review_ by Trisha Gee is a good resource for getting inspiration for what things to consider or cover.
+
+Links:  
+- https://blog.pragmaticengineer.com/good-code-reviews-better-code-reviews/

@@ -111,6 +111,7 @@ There are lots of articles on how Pull Requests should be done, here are a few o
  - https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/
  - https://www.kenneth-truyers.net/2018/11/01/best-practices-good-pr/
  - https://holgerfrohloff.de/code-quality/best-practices-on-doing-pull-requests/
+ - https://blog.pragmaticengineer.com/pull-request-or-diff-best-practices/
 
 ## Tools
 

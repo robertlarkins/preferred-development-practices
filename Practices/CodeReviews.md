@@ -23,3 +23,4 @@ The booklet _What To Look For In A Code Review_ by Trisha Gee is a good resource
 
 Links:  
 - https://blog.pragmaticengineer.com/good-code-reviews-better-code-reviews/
+- https://blog.pragmaticengineer.com/bad-code/

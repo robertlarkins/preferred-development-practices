@@ -28,7 +28,7 @@ Larkins.CSharpKatas
 
 ### Source Control Repository
 
-A solution should be stored in a source control repository so that change can be tracked and managed. So create a repository (such as in git), put the solution here and commit any changes.
+A solution should be stored in a source control repository allowing changes to be tracked and managed. So create a repository (such as in git), put the solution here and commit any changes.
 
 See SourceControlPractices.md.
 

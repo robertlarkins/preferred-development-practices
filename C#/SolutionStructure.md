@@ -56,6 +56,7 @@ $/
   build.cmd
   build.sh
   global.json
+  global.ruleset
   {solution}.sln
 ```
 
@@ -76,6 +77,7 @@ $/
 - [`NuGet.config`][5] (optional) - Specifies NuGet behavior at the solution level.
 - `build.cmd` - Bootstrap the build for windows
 - `build.sh` - Bootstrap the build for *nix
+- `global.ruleset` (optional) - Global analyser rules that all other .ruleset set files will include.
 - [`global.json`][3] (optional) - ASP.NET vNext only
 - `{solution}.sln`
 
@@ -178,7 +180,7 @@ When adding items directly to the Solution, Visual Studio creates a *Solution It
  - `Directory.Build.props`
  - `README.md`
  - `LICENSE`
- - `{solution}.ruleset`
+ - `global.ruleset`
  - `stylecop.json`
 
 Creating a physical version of this folder is pointless, as the items would be put in here should remain at the top level of the directory. This maintains consistency with the recommended Physical Folder layout, which is necessary as other tools (Github) rely on files being at the top-level directory for the solution (eg: README.md, LICENSE).

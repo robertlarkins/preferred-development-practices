@@ -67,8 +67,8 @@ This example came from: https://stackoverflow.com/questions/34919517/check-if-pr
 
 ### Variables
 
- - $(MSBuildThisFileDirectory) variable refers to the directory containing the current MSBuild file.
- - $(MSBuildProjectDirectory) variable refers to the directory containing the project being built.
+ - `$(MSBuildThisFileDirectory)` variable refers to the directory containing the current MSBuild file.
+ - `$(MSBuildProjectDirectory)` variable refers to the directory containing the project being built.
 
 ### StyleCop Analyser
 

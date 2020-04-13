@@ -11,7 +11,7 @@ That overrules the version specified in the .csproj file. It will however have t
 
 ## Directory.Build.props
 
-This provides base settings that get applied to all projects in the solution. An example of one is provided in C#/BaseFiles/Directory.Build.props.
+Directory.Build.props provides base settings that are automatically imported and applied to all projects in the solution. An example of one is provided in C#/BaseFiles/Directory.Build.props.
 
 Recommended settings (placed inside a `<ProjectGroup>`) include:
 

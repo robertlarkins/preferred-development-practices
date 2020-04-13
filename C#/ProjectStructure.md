@@ -7,7 +7,8 @@ https://www.strathweb.com/2018/07/solution-wide-nuget-package-version-handling-w
 That overrules the version specified in the .csproj file. It will however have to be updated manually as updating NuGet packages through Visual Studio will only update the version in the .csproj file, which wont be the used version.
 
 **Directory.build.targets is unreliable**
-*This doesn't seem to work with Visual Studio at present, and will hopefully get better support in the future.*
+*This doesn't seem to work with Visual Studio at present, and will hopefully get better support in the future.*  
+Link somewhat explaining .targets usage: https://github.com/MicrosoftDocs/visualstudio-docs/issues/2774
 
 ## Directory.Build.props
 

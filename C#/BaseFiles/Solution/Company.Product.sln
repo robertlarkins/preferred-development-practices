@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DD909728-416A-4661-A4CF-BC7F6F059B71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F52A4A89-506D-4E31-B21E-2638442483F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{29389B10-BAD1-4D72-AD55-CED9147ECECD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{ED6CA295-70F8-4A22-9ABE-070F9C82937C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{49A81A4D-9F3C-4471-A671-631C19FD2892}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "presentation", "presentation", "{09ED8FB2-CE42-4F80-B519-A3CC4F9CE4FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{88F131ED-E16D-4E97-B0C1-8E65A329B86D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{00769182-CFCD-4CE9-B9D4-E4A54A31EDA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{217F2E0D-3D08-44A7-A6A9-8A709264AF05}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "presentation", "presentation", "{EF87EB42-9D96-4CB3-87BC-3C7D0C6D1AEA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution items", "solution items", "{5DD8F2F1-6600-4F8D-A728-D75B6D9D9D59}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		global.ruleset = global.ruleset
+		README.md = README.md
+		stylecop.json = stylecop.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{29389B10-BAD1-4D72-AD55-CED9147ECECD} = {DD909728-416A-4661-A4CF-BC7F6F059B71}
+		{ED6CA295-70F8-4A22-9ABE-070F9C82937C} = {DD909728-416A-4661-A4CF-BC7F6F059B71}
+		{49A81A4D-9F3C-4471-A671-631C19FD2892} = {DD909728-416A-4661-A4CF-BC7F6F059B71}
+		{09ED8FB2-CE42-4F80-B519-A3CC4F9CE4FF} = {DD909728-416A-4661-A4CF-BC7F6F059B71}
+		{88F131ED-E16D-4E97-B0C1-8E65A329B86D} = {F52A4A89-506D-4E31-B21E-2638442483F1}
+		{00769182-CFCD-4CE9-B9D4-E4A54A31EDA0} = {F52A4A89-506D-4E31-B21E-2638442483F1}
+		{217F2E0D-3D08-44A7-A6A9-8A709264AF05} = {F52A4A89-506D-4E31-B21E-2638442483F1}
+		{EF87EB42-9D96-4CB3-87BC-3C7D0C6D1AEA} = {F52A4A89-506D-4E31-B21E-2638442483F1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {55B2A14D-91DD-4530-818B-2065BF5DBDFC}
+	EndGlobalSection
+EndGlobal

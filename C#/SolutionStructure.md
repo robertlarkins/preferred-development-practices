@@ -57,6 +57,7 @@ $/
   build.sh
   global.json
   global.ruleset
+  stylecop.json
   {solution}.sln
 ```
 
@@ -67,18 +68,18 @@ $/
 - `samples/` (optional) - Sample projects
 - `src/` - Main projects (the product code)
 - `tests/` - Test projects
-- [`.editorconfig`][2] - Enforces consistent coding style at the solution level.
-- [`.gitignore`](https://git-scm.com/docs/gitignore) - Specifies files to be ignored and intentionally untracked in the repository.  
-  The site [gitignore.io](http://gitignore.io/) creates useful .gitignore files for different environments.
+- [`.editorconfig`][2] - Enforces consistent coding style at the solution level
+- [`.gitignore`](https://git-scm.com/docs/gitignore) - Specifies files to be ignored and intentionally untracked in the repository, the site [gitignore.io](http://gitignore.io/) creates useful .gitignore files for different environments
 - `.gitattributes` - 
-- [`Directory.Build.props`][4] - 
+- [`Directory.Build.props`][4] - Global preferences automatically applied to all projects
 - `Directory.Build.targets` - 
 - `LICENSE` - 
-- [`NuGet.config`][5] - Specifies NuGet behavior at the solution level.
+- [`NuGet.config`][5] - Specifies NuGet behavior at the solution level
 - `build.cmd` - Bootstrap the build for windows
 - `build.sh` - Bootstrap the build for *nix
-- `global.ruleset` (optional) - Global analyser rules that all other .ruleset set files will include.
+- `global.ruleset` (optional) - Global analyser rules that all other .ruleset set files will include
 - [`global.json`][3] (optional) - ASP.NET vNext only
+- [`stylecop.json`][6] (optional) - Customise the behaviour of stylecop
 - `{solution}.sln`
 
 Having folder names lower case rather than Pascal casing makes them less prominent. They are a way of grouping projects, and lower case makes them less conspicuous. It also helps differentiate these folder from ones that are used inside projects as part of the NameSpacing.
@@ -207,4 +208,5 @@ A recommended solution level `.editorconfig` file can be found [here](BaseFiles/
 [3]: https://docs.microsoft.com/en-us/dotnet/core/tools/global-json
 [4]: https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?view=vs-2019
 [5]: https://docs.microsoft.com/en-us/nuget/reference/nuget-config-file
+[6]: https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/Configuration.md
 [Microsoft namespace naming conventions]: https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-namespaces

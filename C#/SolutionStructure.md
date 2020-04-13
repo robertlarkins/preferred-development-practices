@@ -177,6 +177,7 @@ Solution Folders in Visual Studio's Solution Explorer are virtual folders used a
 When adding items directly to the Solution, Visual Studio creates a *Solution Items* solution directory to hold them as they cannot be put directly under the Solution heading. Visual Studio does not create a corresponding physical directory. This is the only directory that should remain virtual as items in this directory occur in the top-level physical folder for the solution. Examples of items common to this folder are:
 
  - `.editorconfig`
+ - `.gitignore`
  - `Directory.Build.props`
  - `README.md`
  - `LICENSE`

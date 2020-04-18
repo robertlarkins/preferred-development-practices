@@ -12,7 +12,13 @@ Before performing a commit, ensure the codebase compiles.
 
 ### Slices
 
-Horizontal (system layer) and Vertical slices (features). A commit should be done at each layer of a vertical slice. Though to ensure that the commit is still atomic the feature needs to be thin or a concise addition to the code base.
+Horizontal (system code layer) and Vertical slices (features). A commit should be done at each layer of a vertical slice. Though to ensure that the commit is still atomic the feature needs to be thin or a concise addition to the code base.
+
+## When committing what should be kept together
+
+- Tests should be committed with the code that is under test
+
+## When comitting, what should be kept separate
 
 ## Atomic Commits
 

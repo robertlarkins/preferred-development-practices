@@ -8,6 +8,16 @@ Create the repo in GitHub (or equivalent).
 
 ### Pull Request Setup
 
+All commits have to be part of a feature, automatically built, tests run, and code reviewed before it can be merged into the develop branch.
+
+### Branches
+
+Master, Develop, Feature branches
+
+### Versioning
+
+GitVersion
+
 ## Create Solution
 
 See C# documents

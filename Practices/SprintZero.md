@@ -28,6 +28,9 @@ Master, Develop, Feature branches
 
 GitVersion
 
+### Code Owners (GitHub)
+https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners
+
 ## Create Solution
 
 See C# documents

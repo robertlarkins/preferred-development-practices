@@ -1,5 +1,37 @@
 # Pull Requests
 
+This is the current approach, but still very much a work in progress.
+It will evolve as good practices become more ingrained.
+
+
+## GitHub Branches
+
+To setup pull requests in GitHub go to the Settings tab for a repo.
+
+### Default branch
+
+Change the default branch from *master* to *develop*, as this is the branch that pull requests will be merged into.
+
+### Branch protection rule
+
+This specifies the rules for how commits are merged into the branch(es) that match the *Branch name pattern*.
+
+Enable the following options:
+ - Require pull request reviews before merging  
+   - Required approving reviews  
+     This will vary based on team size, but can be set to 1 initially.
+   - Dismiss stale pull request approvals when new commits are pushed
+   - Require review from Code Owners *(Optional)*
+     This would be useful for specifying who should review which code. It would use the CodeOwners file.
+ - Require status checks to pass before merging
+   - Require branch to be up to date before merging  
+     A *Status Check* must be selected
+
+Review all other options to determine if they need to be selected.
+
+
+## Resources
+
 There are lots of articles on how Pull Requests should be done, here are a few of the first results on google:
 
  - https://github.community/t5/Support-Protips/Best-practices-for-pull-requests/ba-p/4104

@@ -13,3 +13,6 @@ For example to ensure git uses *lf* line endings for *.sh* files the following c
 ```
 *.sh    text eol=lf
 ```
+
+## GitHub Code Owners file
+https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners

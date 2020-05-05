@@ -2,7 +2,7 @@
 
 The things that should be setup for a new project before development begins.
 
-## Git Setup
+## Git Setup - GitHub
 
 Create the repositories in GitHub (or equivalent).
 
@@ -27,6 +27,9 @@ Master, Develop, Feature branches
 ### Versioning
 
 GitVersion
+
+### Code Owners
+https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners
 
 ## Create Solution
 

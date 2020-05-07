@@ -8,20 +8,34 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F52A4A89-506D-4E31-B21E-2638442483F1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{29389B10-BAD1-4D72-AD55-CED9147ECECD}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{ED6CA295-70F8-4A22-9ABE-070F9C82937C}"
+	ProjectSection(SolutionItems) = preProject
+		src\common\README.md = src\common\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{49A81A4D-9F3C-4471-A671-631C19FD2892}"
+	ProjectSection(SolutionItems) = preProject
+		src\infrastructure\README.md = src\infrastructure\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "presentation", "presentation", "{09ED8FB2-CE42-4F80-B519-A3CC4F9CE4FF}"
+	ProjectSection(SolutionItems) = preProject
+		src\presentation\README.md = src\presentation\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{88F131ED-E16D-4E97-B0C1-8E65A329B86D}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{00769182-CFCD-4CE9-B9D4-E4A54A31EDA0}"
+	ProjectSection(SolutionItems) = preProject
+		tests\common\README.md = tests\common\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{217F2E0D-3D08-44A7-A6A9-8A709264AF05}"
+	ProjectSection(SolutionItems) = preProject
+		tests\infrastructure\README.md = tests\infrastructure\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "presentation", "presentation", "{EF87EB42-9D96-4CB3-87BC-3C7D0C6D1AEA}"
+	ProjectSection(SolutionItems) = preProject
+		tests\presentation\README.md = tests\presentation\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution items", "solution items", "{5DD8F2F1-6600-4F8D-A728-D75B6D9D9D59}"
 	ProjectSection(SolutionItems) = preProject
@@ -33,19 +47,41 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution items", "solution 
 		stylecop.json = stylecop.json
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "application", "application", "{B03D3E1F-DF5B-42AB-918C-111581F4FFB8}"
+	ProjectSection(SolutionItems) = preProject
+		src\application\README.md = src\application\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "domain", "domain", "{E2EAE600-5EC6-480D-8B75-A7252124D706}"
+	ProjectSection(SolutionItems) = preProject
+		src\domain\README.md = src\domain\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "application", "application", "{E6497ECD-7A02-490D-84AE-3B56D0129AB0}"
+	ProjectSection(SolutionItems) = preProject
+		tests\application\README.md = tests\application\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "domain", "domain", "{9D1481F1-33C0-4E91-92C8-3AC6CFFEF40E}"
+	ProjectSection(SolutionItems) = preProject
+		tests\domain\README.md = tests\domain\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{29389B10-BAD1-4D72-AD55-CED9147ECECD} = {DD909728-416A-4661-A4CF-BC7F6F059B71}
-		{ED6CA295-70F8-4A22-9ABE-070F9C82937C} = {DD909728-416A-4661-A4CF-BC7F6F059B71}
 		{49A81A4D-9F3C-4471-A671-631C19FD2892} = {DD909728-416A-4661-A4CF-BC7F6F059B71}
 		{09ED8FB2-CE42-4F80-B519-A3CC4F9CE4FF} = {DD909728-416A-4661-A4CF-BC7F6F059B71}
 		{88F131ED-E16D-4E97-B0C1-8E65A329B86D} = {F52A4A89-506D-4E31-B21E-2638442483F1}
-		{00769182-CFCD-4CE9-B9D4-E4A54A31EDA0} = {F52A4A89-506D-4E31-B21E-2638442483F1}
 		{217F2E0D-3D08-44A7-A6A9-8A709264AF05} = {F52A4A89-506D-4E31-B21E-2638442483F1}
 		{EF87EB42-9D96-4CB3-87BC-3C7D0C6D1AEA} = {F52A4A89-506D-4E31-B21E-2638442483F1}
+		{B03D3E1F-DF5B-42AB-918C-111581F4FFB8} = {DD909728-416A-4661-A4CF-BC7F6F059B71}
+		{E2EAE600-5EC6-480D-8B75-A7252124D706} = {DD909728-416A-4661-A4CF-BC7F6F059B71}
+		{E6497ECD-7A02-490D-84AE-3B56D0129AB0} = {F52A4A89-506D-4E31-B21E-2638442483F1}
+		{9D1481F1-33C0-4E91-92C8-3AC6CFFEF40E} = {F52A4A89-506D-4E31-B21E-2638442483F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {55B2A14D-91DD-4530-818B-2065BF5DBDFC}

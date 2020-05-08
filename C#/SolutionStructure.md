@@ -123,8 +123,9 @@ The `src` folder contains the main projects that comprise the software solution.
     .
     ├─ ...
     ├─ src
+    │  ├─ application            # 
     │  ├─ common                 # 
-    │  ├─ core                   # 
+    │  ├─ domain                 # 
     │  ├─ infrastructure         # 
     │  └─ presentation           # 
     └─ ...
@@ -132,8 +133,11 @@ The `src` folder contains the main projects that comprise the software solution.
  - `common`  
    Projects containing classes that are generic and common for other projects are placed here. This will likely have a single *Common* project.
 
- - `core`  
-   Contains projects that relate to the Domain entities or the Application business rules.
+ - `domain`  
+   Contains projects that relate to the Domain entities
+   
+ - `application`
+   Projects that relate to business rules or perform the opperations of the application.
 
  - `infrastructure`  
    Any projects that implement or access anything external, such as persistent storage, are placed here.
@@ -148,8 +152,9 @@ The `tests` folder contains the projects used to automatically test the main pro
     .
     ├─ ...
     ├─ tests
+    │  ├─ application            # 
     │  ├─ common                 # 
-    │  ├─ core                   # 
+    │  ├─ domain                 # 
     │  ├─ infrastructure         # 
     │  └─ presentation           # 
     └─ ...

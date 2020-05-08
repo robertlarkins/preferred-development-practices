@@ -6,13 +6,17 @@ such as web or mobile applications.
 ## Create Project
 
 Under Solution Explorer (Visual Studio) go to the src/presentation folder, right click and go
+
 > Add > New Project...
+
 Find the *ASP.NET Core Web Application* project template and click Next to go through each of the following sections.
 
 ### Naming
 
 Give the project a name along the lines of
+
 > Company.Product.Api
+
 The *Company.Product* portion should match the solution name.
 
 This documentation for naming may be made more specific later, maybe Company.Product.Api.Presentation?

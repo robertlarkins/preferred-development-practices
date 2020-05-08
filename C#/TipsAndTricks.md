@@ -9,3 +9,5 @@ Update-Package -reinstall
 ```
 
 Some more details can be found here: https://ardalis.com/force-nuget-to-reinstall-packages-without-updating
+
+## Renaming a Project

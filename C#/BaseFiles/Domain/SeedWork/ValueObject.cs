@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-#pragma warning disable SA1300
-namespace Rezare.rSite.Domain.SeedWork
-#pragma warning restore SA1300
+namespace Company.Product.Domain.SeedWork
 {
     /// <summary>
     /// Value object base implementation.

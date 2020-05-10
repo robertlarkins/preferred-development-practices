@@ -11,7 +11,15 @@ Created using http://gitingnore.io using the angular, visualstudio, and visualst
 Not included, add if necessary.
 
 ## Directory.Build.props
-Update this line in Directory.Build.props under the StyleCop Analyzer section 
+
+Update the following lines in Directory.Build.props:
+
+Under `PropertyGroup` change the TargetFramework to latest .Net Core version
+```
+<TargetFramework>netcoreapp3.1</TargetFramework>
+```
+
+Under the StyleCop Analyzer section change the line
 ```
 <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.66">
 ```

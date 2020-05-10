@@ -32,3 +32,15 @@ Ensure .NET Core is selected, along with a version of ASP.NET Core, at this time
 Select the *API* template and click Create.
 
 This will likely create an example Controller and model (WeatherForecastController.cs and WeatherForecast.cs), which can be deleted.
+
+## Analyzers
+
+If analyzers are used, such as StyleCop then modify the code appropriately. For example adding XML documentation.
+
+## .csproj
+
+If the TargetFramework is specified in the Directory.Build.props then the TargetFramework in the csproj can be removed.
+
+## launchSettings.json
+
+Update the launchUrl to something appropriate.

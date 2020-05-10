@@ -41,6 +41,7 @@ A Directory.Build.props file placed at the root-level of a solution allows for a
 ```xml
 <Project>
   <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
     <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)Root.Level.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
@@ -65,6 +66,11 @@ If for any reason there needs to be a check to stop an already specified ruleset
 ```
 
 This example came from: https://stackoverflow.com/questions/34919517/check-if-propertygroup-item-is-set-to-a-value-in-csproj/34919766#34919766
+
+### Target Framework
+
+If the TargetFramework in a .csproj is removed, then it will default to the TragetFramework in the Directory.Build.props, if it has one.
+This is useful for being able to quickly change the TargetFramework for all projects.
 
 ### Variables
 

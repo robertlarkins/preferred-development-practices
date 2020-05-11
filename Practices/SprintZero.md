@@ -37,14 +37,26 @@ https://help.github.com/en/github/creating-cloning-and-archiving-repositories/ab
 
 See C# documents
 
-## CI/CD
+## Azure DevOps Setup
 
-### GitHub connections
+### Azure Boards
+
+#### GitHub connections
 
 To link GitHub to Azure Boards go Project Setting > Boards > GitHub connections and Connect a GitHub account.
 This will take you through the steps to connect the specific GitHub repo(s) to this project's Azure Boards.
 
-DevOps
+#### Modify Kanban Board
+
+The columns that can go in here are
+ - Ready for Dev
+ - Development
+ - Testing
+ - UAT
+ - Completed
+
+
+## CI/CD Pipelines
 
 ## Logging
 

@@ -53,7 +53,30 @@ Used for OpenAPI documentation generation.
 
 https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-3.1&tabs=visual-studio
 
+The Swagger Optoins can be put into their own private method and referencing like this:
 
+``` c#
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddSwaggerGen(GenerateSwaggerOptions);
+}
+
+private void GenerateSwaggerOptions(SwaggerGenOptions options)
+{
+    var openApiInfo = new OpenApiInfo
+    {
+        Title = "My API",
+        Version = "v1"
+    };
+
+    options.SwaggerDoc("v1", openApiInfo);
+
+    // Set the comments path for the Swagger JSON and UI.
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    options.IncludeXmlComments(xmlPath);
+}
+```
 
 ### Autofac
 

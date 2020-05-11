@@ -30,6 +30,13 @@ Enable the following options:
 Review all other options to determine if they need to be selected.
 
 
+## Automatic Building
+
+As part of the pull request process, the pull request should be tested by running it through a pipeline to ensure that it builds
+and all tests pass.
+
+See here for how to do this: https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/github?view=azure-devops&tabs=yaml#pr-triggers
+
 ## Resources
 
 There are lots of articles on how Pull Requests should be done, here are a few of the first results on google:

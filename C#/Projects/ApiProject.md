@@ -44,3 +44,23 @@ If the TargetFramework is specified in the Directory.Build.props then the Target
 ## launchSettings.json
 
 Update the launchUrl to something appropriate.
+
+## Nuget Packages
+
+### Swashbuckle.AspNetCore
+
+Used for OpenAPI documentation generation.
+
+https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-3.1&tabs=visual-studio
+
+
+
+### Autofac
+
+Used for dependency injection
+
+https://autofaccn.readthedocs.io/en/latest/integration/aspnetcore.html#asp-net-core-3-0-and-generic-hosting
+
+The following NuGet packages are needed:
+ - Autofac.Extensions.DependencyInjection  
+   This is used for the AutofacServiceProviderFactory in the Program.cs class.

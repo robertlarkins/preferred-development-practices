@@ -63,6 +63,10 @@ Commit messages should talk about WHAT changed, and WHY. Not HOW – how is the 
 
 Tip 4 in here: https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message gives some examples for what the commit message should cover.
 
+### Link to Task or Story
+
+https://docs.microsoft.com/en-us/azure/devops/boards/github/link-to-from-github?view=azure-devops
+
 ### 5WsH&R
 
 A commit should clearly and concisely convey details of the source code change so that it answers the following questions in a manner that makes it easy for a future reader to understand the intent of this commit. This provides context for what this commit accomplishes.

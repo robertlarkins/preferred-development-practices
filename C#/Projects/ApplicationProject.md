@@ -45,7 +45,7 @@ then the unit test project should be
 
 ### Location
 Do not use the default location, as this will place the project at the root of the repository.
-Instead select the src/application directory.
+Instead select the tests/application directory.
 
 ## Analyzers
 If analyzers are used, such as StyleCop then modify the code appropriately. For example adding XML documentation.

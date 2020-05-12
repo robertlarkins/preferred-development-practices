@@ -67,4 +67,5 @@ The following packages should also be installed
  - FluentAssertions.Autofac
  - FluentAssertions.Analyzers
  - xunit.analyzers
+ - Moq
 

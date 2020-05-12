@@ -66,7 +66,7 @@ These packages will likely need to be updated, though upgrading xunit to 2.4.1 m
 
 The following packages should also be installed
  - FluentAssertions
- - FluentAssertions.Autofac
+ - FluentAssertions.Autofac (This might only be necessary for the API project)
  - FluentAssertions.Analyzers
  - xunit.analyzers
 

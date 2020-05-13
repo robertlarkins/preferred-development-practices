@@ -9,6 +9,9 @@ https://www.igorkromin.net/index.php/2018/10/28/how-to-force-sourcetree-to-abort
 
 ### Installing SourceTree
 
+Version 3.3.8 of SourceTree does not add a Start Menu icon, so this will need to be done manually.
+Go to `%localappdata%\SourceTree` and right click SourceTree.exe and click Pin to Start.
+
 ### Staging Hunks
 
 In SourceTree you can stages hunks, but if you click a line in the hunk, you can stage the individual line.
@@ -21,7 +24,13 @@ https://community.atlassian.com/t5/Sourcetree-questions/SourceTree-commit-author
 
 https://blog.sourcetreeapp.com/2012/02/06/jira-integration-other-external-project-links/
 
-For Azure DevOps, the following link can be used: https://dev.azure.com/<organisation>/_workitems/edit/<storyid>
+In the repo go Settings > Advanced > Commit text links > Add
+For Azure DevOps set the Commit text link details to:  
+*Replacement type*: Other  
+*Regex pattern*: AB#(\d{4,})  
+*Link to URL*: https://dev.azure.com/[organisation]/_workitems/edit/$1
+
+For Azure DevOps, the following link can be used: 
 
 ### Update Embedded Git
 

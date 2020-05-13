@@ -27,7 +27,7 @@ https://blog.sourcetreeapp.com/2012/02/06/jira-integration-other-external-projec
 In the repo go Settings > Advanced > Commit text links > Add
 For Azure DevOps set the Commit text link details to:  
 *Replacement type*: Other  
-*Regex pattern*: AB#(\d{4,})  
+*Regex pattern*: AB#(\d+)  
 *Link to URL*: https://dev.azure.com/[organisation]/_workitems/edit/$1
 
 For Azure DevOps, the following link can be used: 

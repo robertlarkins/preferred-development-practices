@@ -2,9 +2,11 @@
 
 ## SourceTree
 
+### Installing SourceTree
+
 ### Clickable story links in Commit message
 
-
+### Update Embedded Git
 
 ### Line length indication
 https://stackoverflow.com/questions/30414091/keep-commit-message-subject-under-50-characters-in-sourcetree
@@ -18,6 +20,28 @@ So go to Settings, edit the origin Remote and updated the Remote Account.
 Unfortunately as at v3.3.8, SourceTree doesn't seem to save the account change. This appears to be a common issue (https://community.atlassian.com/t5/Sourcetree-questions/Sourcetree-is-showing-a-red-exclamation-mark-next-to-Remote/qaq-p/909571) so hopefully it will be fixed in a new version.
 
 ### Clearing an installed version of SourceTree
+
+If SourceTree has issues running properly, the first thing to try is upgrading to the latest version and seeing if that helps. If you download and install a new version, rather than updating, then ensure you are running the latest version, as sometimes the SourceTree shortcuts don't get updated, and older versions might be in Program Files, while newer versions are under AppData for the user.
+
+If this doesn't work, then uninstall and reinstall SourceTree. Start this by going to Control Panel > Programs > Programs and Features and uninstalling SourceTree. To ensure it has fully been removed from your system ensure SourceTree has been deleted from the following folders (put into address bar):
+ - `%programfiles%`
+ - `%programfiles(x86)%`
+ - `%localappdata%`
+ - `%localappdata%\Atlassian`  
+   There is likely two folders in here, *SourceTree* and *SourceTree.exe_Url_someuniquecode*
+
+It may be worth also checking that any credentials are cleared out, in case these are causing the issue.
+So go to `Control Panel\User Accounts\Credential Manager` click on Windows Credentials and remove any git or sourcetree related credentials.
+
+Then reinstall SourceTree with the latest version.
+
+Following this, if embedded Git is used, check that the latest version is used. Follow the other sections to personalise SourceTree.
+
+If for any reason credentials aren't working, then try [downloading Git](https://git-scm.com/downloads) and installing it directly. Then switch SourceTree to use System Git rather than embedded.
+
+### Adding credentials to SourceTree
+
+If you are prompted, use WinCred as your Authentication manager. If it appears in the popup list twice, use the first occurrence (not sure if this makes any difference though).
 
 ## Visual Studio Team Explorer
 

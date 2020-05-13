@@ -2,9 +2,26 @@
 
 ## SourceTree
 
+https://community.atlassian.com/t5/Sourcetree-questions/Stashing-selected-files/qaq-p/137139  
+https://confluence.atlassian.com/sourcetreekb/stash-a-file-with-sourcetree-785332122.html  
+https://www.atlassian.com/blog/sourcetree/interactive-rebase-sourcetree
+https://www.igorkromin.net/index.php/2018/10/28/how-to-force-sourcetree-to-abort-a-stuck-rebase/
+
 ### Installing SourceTree
 
-### Clickable story links in Commit message
+### Staging Hunks
+
+In SourceTree you can stages hunks, but if you click a line in the hunk, you can stage the individual line.
+
+### Repo Author Details
+
+https://community.atlassian.com/t5/Sourcetree-questions/SourceTree-commit-author-change-update/qaq-p/144926
+
+### Clickable issue links in commit message
+
+https://blog.sourcetreeapp.com/2012/02/06/jira-integration-other-external-project-links/
+
+For Azure DevOps, the following link can be used: https://dev.azure.com/<organisation>/_workitems/edit/<storyid>
 
 ### Update Embedded Git
 

@@ -37,7 +37,10 @@ By making it a console project then it can be run when necessary for updating th
 
 https://github.com/RicoSuter/NSwag/wiki/NSwag.MSBuild
 https://github.com/RicoSuter/NSwag/wiki/CommandLine
+https://github.com/RicoSuter/NSwag/wiki/Assembly-loading#net-core
+https://github.com/RicoSuter/NSwag/wiki/NSwag-Configuration-Document
 
+To run the NSwag build to generate new API models go into Package Manager Console and run `dotnet build`.
 
 
 ### NSwag.CodeGeneration.CSharp

@@ -32,18 +32,18 @@ can be removed from the .csproj.
 
 ### NSwag.MSBuild
 As NSwag will be used to generate the API model, the NSwag.MSBuild NuGet package is used as it can be 
-can be called from the command line using the NSwag.MSBuild NuGet package to generate the API models, .
+called from the command line using the NSwag.MSBuild NuGet package to generate the API models.
 By making it a console project then it can be run when necessary for updating the models.
 
-https://github.com/RicoSuter/NSwag/wiki/NSwag.MSBuild
-https://github.com/RicoSuter/NSwag/wiki/CommandLine
-https://github.com/RicoSuter/NSwag/wiki/Assembly-loading#net-core
-https://github.com/RicoSuter/NSwag/wiki/NSwag-Configuration-Document
+ - https://github.com/RicoSuter/NSwag/wiki/NSwag.MSBuild
+ - https://github.com/RicoSuter/NSwag/wiki/CommandLine
+ - https://github.com/RicoSuter/NSwag/wiki/Assembly-loading#net-core
+ - https://github.com/RicoSuter/NSwag/wiki/NSwag-Configuration-Document
+
+The easiest way to generate the nswag.json file is to use NSwagStudio. Specify the desired options and go File > Save.
+
+Some examples of what the output file can be named is MyApiModels or AcmeApiAccessModels or AcmeClientModels. Anything that conveys that this is an automatically generated file for accessing the API.
 
 To run the NSwag build to generate new API models go into Package Manager Console and run `dotnet build`.
-
-
-### NSwag.CodeGeneration.CSharp
-This package generates the models from the specified API. To configure it see the documentation [here](https://github.com/RicoSuter/NSwag/wiki/CSharpClientGenerator).
 
 

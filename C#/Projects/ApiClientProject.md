@@ -46,4 +46,14 @@ Some examples of what the output file can be named is MyApiModels or AcmeApiAcce
 
 To run the NSwag build to generate new API models go into Package Manager Console and run `dotnet build`.
 
+# Integration Testing
 
+To create an integration test project for the ApiClientProject start by selecting the *xUnit Test Project (.Net Core)* project template.
+
+It is undecided yet how to run the integration tests as xUnit runs its tests in parrallel and is better designed for unit testing.
+
+## Naming
+> Company.Product.*[ResourceName]*.Tests.Integration
+
+## Location
+Place in the tests/infrastructure folder.

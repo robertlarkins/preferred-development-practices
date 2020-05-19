@@ -69,6 +69,11 @@ If for any reason there needs to be a check to stop an already specified ruleset
 
 This example came from: https://stackoverflow.com/questions/34919517/check-if-propertygroup-item-is-set-to-a-value-in-csproj/34919766#34919766
 
+### Suppress Warnings
+It appears that the .ruleset files do not work for all rules, such as CS1591. If this occurs, then the alternative is to go into the
+project properties > Build > Errors and warnings > Suppress warnings and put in the rule number.
+
+
 ### Target Framework
 
 If the TargetFramework in a .csproj is removed, then it will default to the TragetFramework in the Directory.Build.props, if it has one.

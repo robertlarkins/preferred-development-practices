@@ -44,7 +44,9 @@ The easiest way to generate the nswag.json file is to use NSwagStudio. Specify t
 
 Some examples of what the output file can be named is MyApiModels or AcmeApiAccessModels or AcmeClientModels. Anything that conveys that this is an automatically generated file for accessing the API.
 
-To run the NSwag build to generate new API models go into Package Manager Console and run `dotnet build`.
+To run the NSwag build to generate new API models go into Package Manager Console and run `dotnet build`. Using the addition to the .csproj file, the client class will be rebuilt on each build.
+
+To incorporate authentication into the NSwag Client code, the HttpClient passed in via the constructor needs to facilitate the authentication, this isn't through NSwag: https://github.com/RicoSuter/NSwag/issues/1312
 
 # Integration Testing
 

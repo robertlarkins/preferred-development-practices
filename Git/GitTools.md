@@ -56,6 +56,8 @@ If this doesn't work, then uninstall and reinstall SourceTree. Start this by goi
  - `%localappdata%\Atlassian`  
    There is likely two folders in here, *SourceTree* and *SourceTree.exe_Url_someuniquecode*
 
+If any folders can't be deleted due to Git, then see if a System version of Git has been installed. If it has, then either kill the associated processes in Task Manager or uninstall Git, and then try again. It might be a good idea to do a pc restart.
+
 It may be worth also checking that any credentials are cleared out, in case these are causing the issue.
 So go to `Control Panel\User Accounts\Credential Manager` click on Windows Credentials and remove any git or sourcetree related credentials.
 

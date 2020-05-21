@@ -59,6 +59,7 @@ $/
   global.ruleset
   stylecop.json
   {solution}.sln
+  {solution}.sln.DotSettings
 ```
 
 - `artifacts/` - Build outputs go here. Doing a build.cmd/build.sh generates artifacts here (nupkgs, dlls, pdbs, etc.)
@@ -81,6 +82,7 @@ $/
 - [`global.json`][3] (optional) - ASP.NET vNext only
 - [`stylecop.json`][6] (optional) - Customise the behaviour of stylecop
 - `{solution}.sln`
+- [`{solution}.sln.DotSettings`][7] (optional) - ReSharper team-shared solution settings
 
 Having folder names lower case rather than Pascal casing makes them less prominent. They are a way of grouping projects, and lower case makes them less conspicuous. It also helps differentiate these folder from ones that are used inside projects as part of the NameSpacing.
 
@@ -207,6 +209,14 @@ A recommended solution level `.editorconfig` file can be found [here](BaseFiles/
 **Further Reading**
  - https://docs.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options?view=vs-2019
 
+### `.DotSettings`
+ReSharper solution settings for the entire team. This gets committed into the repo. The `.DotSettings.user` file is user specific and does not get committed.
+
+**Further Reading**
+ - https://stackoverflow.com/questions/22234617/do-i-need-to-maintain-resharpers-dotsettings-user-file-in-source-control
+ - https://www.jetbrains.com/help/resharper/Sharing_Configuration_Options.html#managing
+
+
 
 [1]: https://docs.microsoft.com/en-us/visualstudio/get-started/tutorial-projects-solutions?view=vs-2019#solutions-and-projects
 [2]: https://docs.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options?view=vs-2019
@@ -214,4 +224,5 @@ A recommended solution level `.editorconfig` file can be found [here](BaseFiles/
 [4]: https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?view=vs-2019
 [5]: https://docs.microsoft.com/en-us/nuget/reference/nuget-config-file
 [6]: https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/Configuration.md
+[7]: https://www.jetbrains.com/help/resharper/Sharing_Configuration_Options.html#managing
 [Microsoft namespace naming conventions]: https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-namespaces

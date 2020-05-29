@@ -37,7 +37,12 @@ For Azure DevOps, the following link can be used:
 ### Line length indication
 https://stackoverflow.com/questions/30414091/keep-commit-message-subject-under-50-characters-in-sourcetree
 
-### Pull Request config
+### Create Pull Request
+
+SourceTree can start a pull request directly in GitHub by right clicking on the local feature branch and going *Create pull request...*.
+Keep all the fields (Submit via remote, Local branch and Remote branch) as default and click *Create Pull Request On Web*. This will commit the feature branch to origin and open the pull request page in GitHub to request merging the feature into the branch that it was originally forked from.
+
+Note: Changing *Remote branch* to develop commits the feature directly into develop, though this has only been tested while being a GitHub admin, branch protection rules should stop this occurring.
 
 ### Red Exclamation Mark
 

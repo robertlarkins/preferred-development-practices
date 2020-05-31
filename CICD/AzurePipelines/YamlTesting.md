@@ -54,5 +54,8 @@ The yaml for this task is:
 See Also:
  - https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/VSTestIntegration.md
 
+## Quality Gates
+https://marketplace.visualstudio.com/items?itemName=mspremier.BuildQualityChecks
+
 [coverletNuGet]: https://www.nuget.org/packages/coverlet.collector/
 [reportGenerator]: https://marketplace.visualstudio.com/items?itemName=Palmmedia.reportgenerator

@@ -61,3 +61,18 @@ The Azure DevOps extension *Build Quality Checks* provides quality gates for cod
 
 [coverletNuGet]: https://www.nuget.org/packages/coverlet.collector/
 [reportGenerator]: https://marketplace.visualstudio.com/items?itemName=Palmmedia.reportgenerator
+
+## Mutation Testing
+Mutation testing can be performed on C# solutions using [stryker-net](https://github.com/stryker-mutator/stryker-net).
+For dotnet core 3.0+, stryker is installed at the project level: https://github.com/stryker-mutator/stryker-net#project-install
+
+Details about local tools: https://docs.microsoft.com/en-us/dotnet/core/tools/local-tools-how-to-use
+
+If when running `dotnet tool install dotnet-stryker` it gives a 401 (Unauthorized) error, try running it with the `--ignore-failed-sources` flag, `dotnet tool install dotnet-stryker --ignore-failed-sources`.
+
+Once added to each desired project the mutation testing can be run against the solution: https://stryker-mutator.io/blog/2019-04-05/announcing-dotnet-framework-support#start-using-stryker-net
+
+To add this into Azure Pipelines go to https://stryker-mutator.io/blog/2020-05-15/azure-pipelines-integration
+
+
+

@@ -57,5 +57,7 @@ See Also:
 ## Quality Gates
 https://marketplace.visualstudio.com/items?itemName=mspremier.BuildQualityChecks
 
+The Azure DevOps extension *Build Quality Checks* provides quality gates for code coverage. The task *Settings* provide good info links for explaining what each options provides.
+
 [coverletNuGet]: https://www.nuget.org/packages/coverlet.collector/
 [reportGenerator]: https://marketplace.visualstudio.com/items?itemName=Palmmedia.reportgenerator

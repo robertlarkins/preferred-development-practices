@@ -45,6 +45,7 @@ $/
   samples/
   src/
   tests/
+  .dockerignore
   .editorconfig
   .gitignore
   .gitattributes
@@ -69,6 +70,7 @@ $/
 - `samples/` (optional) - Sample projects
 - `src/` - Main projects (the product code)
 - `tests/` - Test projects
+- [`.dockerignore`](https://docs.docker.com/engine/reference/builder/#dockerignore-file) (optional) - Specifies files to exclude from Docker. Goes at the root of the build context, which will often be the repo root.
 - [`.editorconfig`][2] - Enforces consistent coding style at the solution level
 - [`.gitignore`](https://git-scm.com/docs/gitignore) - Specifies files to be ignored and intentionally untracked in the repository, the site [gitignore.io](http://gitignore.io/) creates useful .gitignore files for different environments
 - `.gitattributes` - 

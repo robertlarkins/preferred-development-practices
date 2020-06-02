@@ -63,5 +63,8 @@ The columns that can go in here are
 ## Definition of Ready, Definition of Done, Team Charter
 
 ## Feature Flags
+Ideally to be able to turn features on and off directly in production without needing to push new builds.
+
  - https://docs.microsoft.com/en-us/azure/azure-app-configuration/use-feature-flags-dotnet-core
  - https://featureflags.io/dotnet-feature-flags/
+

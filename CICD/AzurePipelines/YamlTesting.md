@@ -74,5 +74,5 @@ Once added to each desired project the mutation testing can be run against the s
 
 To add this into Azure Pipelines go to https://stryker-mutator.io/blog/2020-05-15/azure-pipelines-integration
 
-
+https://rajbos.github.io/blog/2019/09/03/Running-dotnet-tools-in-azure-devops
 

@@ -1,6 +1,11 @@
 # Docker Containerisation
 This provides the steps for setting up Docker containerisation for a .NET Core Application.
 
+## Dockerfile
+
+Some small insight into why it is structured the way it is:
+https://stackoverflow.com/questions/53460002/how-to-use-dotnet-restore-properly-in-dockerfile
+
 ## .dockerignore
 The .dockerignore file (name *.dockerignore*) lives 
 

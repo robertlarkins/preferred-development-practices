@@ -9,7 +9,13 @@ The way the Docker commands are presented here follows the same structure as the
    List running containers. Use `docker ps -a` to list all containers.
 
 ## Build
+To build a Dockerfile open powershell and go to the directory where the Dockerfile is, then run this command
+```ps
+docker image build --tag name:tag .
+```
+ensuring the dot on the end is included as this specifies the current directory.
 
+See https://docs.docker.com/engine/reference/commandline/build/
 
 ## Run
 

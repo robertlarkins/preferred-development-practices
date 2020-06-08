@@ -63,6 +63,12 @@ If this doesn't work, then uninstall and reinstall SourceTree. Start this by goi
 
 If any folders can't be deleted due to Git, then see if a System version of Git has been installed. If it has, then either kill the associated processes in Task Manager or uninstall Git, and then try again. It might be a good idea to do a pc restart.
 
+If the desire is to use System Git, then either uninstall and reinstall, or in powershell run the command
+```
+git update-git-for-windows
+```
+to update to the latest version.
+
 It may be worth also checking that any credentials are cleared out, in case these are causing the issue.
 So go to `Control Panel\User Accounts\Credential Manager` click on Windows Credentials and remove any git or sourcetree related credentials.
 
@@ -75,6 +81,13 @@ If for any reason credentials aren't working, then try [downloading Git](https:/
 ### Adding credentials to SourceTree
 
 If you are prompted, use WinCred as your Authentication manager. If it appears in the popup list twice, use the first occurrence (not sure if this makes any difference though).
+
+Another option which may or may not work is to append your username before the repo path. So for example if your repo path is
+https://github.com/myorg/myrepo.git
+then change it to
+https://mygithubusername@github.com/myorg/myrepo.git
+
+Another way of doing authentication is to add a Remote account. This is done by clicking the + for a new tab > Remote > Add an account... and adding in the account you want to use.
 
 ## Visual Studio Team Explorer
 

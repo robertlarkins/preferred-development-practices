@@ -19,7 +19,11 @@ Give the project a name along the lines of
 
 The *Company.Product* portion should match the solution name.
 
-This documentation for naming may be made more specific later, maybe Company.Product.Api.Presentation?
+API project naming may be made more specific later if it is needed (more than one API is required).
+Maybe Company.Product.Api.Presentation?
+This could be done either based on the platform/system that is to be supported, e.g.: Company.Product.Api.Mobile,
+or based on the functional area to support, e.g.: Company.Product.Api.UserManagement.
+
 
 ### Location
 

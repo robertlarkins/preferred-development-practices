@@ -40,7 +40,7 @@ Bool class members and variables should be named with an affirmative phrase (Can
 - Acceptable, though need to be checked
   - _was_ [link](https://softwareengineering.stackexchange.com/questions/232213/should-i-always-use-is-as-prefix-for-boolean-variables)
     - was is the past tense of _is_, but should it be used?
-  
+    - it is likely that _has_ can be used by changing the name.
   - _should_ [link](https://stackoverflow.com/questions/3874350/naming-conventions-for-java-methods-that-return-booleanno-question-mark) or [link2](https://petroware.no/javastyle.html#Specific)
   - _any_ [link](https://stackoverflow.com/questions/2691463/is-or-are-to-prefix-boolean-values)
   - _all_ [link](https://stackoverflow.com/questions/2691463/is-or-are-to-prefix-boolean-values)

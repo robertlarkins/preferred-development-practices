@@ -51,7 +51,22 @@ The yaml for this task is:
     summaryFileLocation: 'combinedreport/Cobertura.xml'
 ```
 
-See Also:
+### coverlet.runsettings
+Coverlet can have a specific settings file. This should be called `coverlet.runsettings`.
+
+https://github.com/coverlet-coverage/coverlet/issues/889
+https://docs.microsoft.com/en-us/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file  
+https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/VSTestIntegration.md
+
+### Running Coverlet Locally
+
+#### Command Line
+The usage for running Coverlet from the command line is found [here](https://github.com/coverlet-coverage/coverlet#usage).
+
+#### *Run Coverlet Report* Visual Studio Extension
+
+
+### Further Reading
  - https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/VSTestIntegration.md
 
 ## Quality Gates

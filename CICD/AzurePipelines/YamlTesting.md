@@ -74,6 +74,10 @@ https://marketplace.visualstudio.com/items?itemName=mspremier.BuildQualityChecks
 
 The Azure DevOps extension *Build Quality Checks* provides quality gates for code coverage. The task *Settings* provide good info links for explaining what each options provides.
 
+### Reset Base Coverage
+If the base coverage needs to be reset for any reason, then go into DevOps and *Run pipeline*, then under Variables add the variable `BQC.ForceNewBaseline` and set its value to `true`. More info can be found [here](https://marketplace.visualstudio.com/items?itemName=mspremier.BuildQualityChecks).
+
+
 [coverletNuGet]: https://www.nuget.org/packages/coverlet.collector/
 [reportGenerator]: https://marketplace.visualstudio.com/items?itemName=Palmmedia.reportgenerator
 

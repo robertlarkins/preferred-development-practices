@@ -50,6 +50,10 @@ The red exclamation mark on the Remote button is there because the Remote accoun
 So go to Settings, edit the origin Remote and updated the Remote Account.
 Unfortunately as at v3.3.8, SourceTree doesn't seem to save the account change. This appears to be a common issue (https://community.atlassian.com/t5/Sourcetree-questions/Sourcetree-is-showing-a-red-exclamation-mark-next-to-Remote/qaq-p/909571) so hopefully it will be fixed in a new version.
 
+### Remove old branches from Remotes list
+Git keeps a local record of remote branches, even if they have been removed from origin.
+To clean these up from the Remotes > origin list in SourceTree, click Fetch, check *Prune tracking branches no longer present on remote(s)*, and click Ok.
+
 ### Clearing an installed version of SourceTree
 
 If SourceTree has issues running properly, the first thing to try is upgrading to the latest version and seeing if that helps. If you download and install a new version, rather than updating, then ensure you are running the latest version, as sometimes the SourceTree shortcuts don't get updated, and older versions might be in Program Files, while newer versions are under AppData for the user.

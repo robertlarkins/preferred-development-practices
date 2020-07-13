@@ -93,6 +93,19 @@ https://mygithubusername@github.com/myorg/myrepo.git
 
 Another way of doing authentication is to add a Remote account. This is done by clicking the + for a new tab > Remote > Add an account... and adding in the account you want to use.
 
+### Askpass.exe application error
+SourceTree may at times have a pop-up error with:
+
+Askpass.exe - Application Error  
+The application was unable to start correctly (0xc0000142).  
+Click OK to close the application.
+
+This would seem to be an error with the saved git passwords under Options > Authentication. It seems the easiest way to fix this is to delete all the saved passwords.
+
+Further Reading:
+ - https://community.atlassian.com/t5/Sourcetree-questions/Askpass-exe-application-error/qaq-p/1312523
+ - https://community.atlassian.com/t5/Sourcetree-questions/What-is-askpass-exe/qaq-p/134504
+
 ## Visual Studio Team Explorer
 
 Team Explorer in Visual Studio allows a quick way to access the command prompt for running git commands: https://docs.microsoft.com/en-us/vsts/git/command-prompt

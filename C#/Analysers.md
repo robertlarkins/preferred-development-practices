@@ -94,6 +94,18 @@ If the warning for the removed rule still occurs, then try unloading and reloadi
 
 In the ruleset file, the `Action` field of `Include` determines how the rules should be treated for the parent ruleset. This is usually `Default`, but could be any of the other action values, such as `Error` or `Warning`.
 
+**Example**
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Company.Product.Domain ruleset" Description="The analyzer rules customized specific for the Domain project" ToolsVersion="16.0">
+  <Include Path="../../../global.ruleset" Action="Default" />
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <Rule Id="SA1413" Action="None" />
+    <Rule Id="SA1600" Action="None" />
+  </Rules>
+</RuleSet>
+```
+
 ## .editorconfig file
 
 According to https://github.com/dotnet/roslyn-analyzers/issues/1844#issuecomment-427422189 rulesets are the legacy file format, and there is a shift towards using .editorconfig configurations instead. Implementation of .editorconfig files appears to be a work in progress, with the .editorconfig files being the preferred modern way, and [ruleset files being the legacy configuration](https://github.com/dotnet/roslyn-analyzers/issues/1844#issuecomment-427428400).

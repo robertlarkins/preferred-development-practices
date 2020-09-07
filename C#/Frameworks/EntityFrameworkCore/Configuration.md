@@ -30,7 +30,7 @@ A composite key can be formed using this syntax
 .HasAlternateKey(x => new { x.PropOneId, x.PropTwoId });
 ```
 but it requires `PropOneId` and `PropTwoId` be actual properties on the class.
-If these correpsond to navigation properties `PropOne` and `PropTwo`, then the syntax can be written as
+If these correspond to navigation properties `PropOne` and `PropTwo`, then the syntax can be written as
 ```C#
 .HasAlternateKey("PropOneId", "PropTwoId" });
 ```

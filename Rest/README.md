@@ -7,6 +7,9 @@ https://restfulapi.net/resource-naming/
 
 To Add: How these should be done with C# WebAPI and Swagger.
 
+### Path Params vs Query Params
+https://stackoverflow.com/questions/30967822/when-do-i-use-path-params-vs-query-params-in-a-restful-api#:~:text=Best%20practice%20for%20RESTful%20API,to%20sort%2Ffilter%20those%20resources.
+
 ## Paging
 https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/
 

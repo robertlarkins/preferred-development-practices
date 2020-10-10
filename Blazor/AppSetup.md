@@ -21,3 +21,7 @@ Additional options:
    - Based on the example project name above, the solution name should be _Company.Product_.
 3. Create a new Blazor App
    Choose between a Blazor Server App or a WebAssembly App
+
+> Note:  
+> Currently Blazor WebAssembly apps will only run on Windows, not Linux:  
+> https://docs.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/webassembly?view=aspnetcore-3.1#azure-app-service

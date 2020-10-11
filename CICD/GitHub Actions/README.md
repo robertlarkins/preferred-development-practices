@@ -6,6 +6,8 @@ This does have a problem with the generated secret that can be found in the GitH
 To fix this requires regenerating the PublishSetting (by going to the desired App Service's Overview and clicking Get publish profile) and changing the MSDeploy publishUrl to `publishUrl="[my-app-name].scm.azurewebsites.net:443"`. This is discussed here: 
 https://github.com/Azure/webapps-deploy/issues/28#issuecomment-660698494
 
+> This seems to work fine when running on a Windows OS.
+
 See also:
  - https://github.com/Azure/actions-workflow-samples/blob/master/assets/create-secrets-for-GitHub-workflows.md
 

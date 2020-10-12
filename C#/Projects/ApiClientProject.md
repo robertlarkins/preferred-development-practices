@@ -48,6 +48,18 @@ To run the NSwag build to generate new API models go into Package Manager Consol
 
 To incorporate authentication into the NSwag Client code, the HttpClient passed in via the constructor needs to facilitate the authentication, this isn't through NSwag: https://github.com/RicoSuter/NSwag/issues/1312
 
+The NSwag client code should be stored in the repo, rather than being created at deployment time. This means that the client code used in the deployment can be seen and debugged without trying to extract what might be used within the live environment. 
+
+NSwag is setup to build the client code using NSwag.MSBuild, which is called from the csproj file at compile time. See https://github.com/RicoSuter/NSwag/wiki/NSwag.MSBuild .
+
+There is a MSBuild condition on the NSwag .csproj target so that the NSwag client code is only built if a custom MSBuild property `GenerateNSwagClientCode` is used.
+This was added to stop DevOps trying to build a new Client, which might result in different Client code being used in the containers than what is in the repository.
+The addition of this property is based on https://blog.sanderaernouts.com/autogenerate-csharp-api-client-with-nswag .
+
+In a DevOps pipeline, a custom MSBuild property can be added by adding '-p:GenerateNSwagClientCode=False' to the arguments section in the dotnet core build task.
+While the `GenerateNSwagClientCode` property is being provided for every project, if a project does not use it, it will be ignored.
+The `dotnet test` task also needs this property specified as `test` seems to rebuild all projects.
+
 # Integration Testing
 
 To create an integration test project for the ApiClientProject start by selecting the *xUnit Test Project (.Net Core)* project template.

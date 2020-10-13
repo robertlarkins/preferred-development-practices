@@ -21,3 +21,9 @@ https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorti
 ### Libraries to do Versioning
  - https://github.com/microsoft/aspnet-api-versioning
  - https://www.infoworld.com/article/3562355/how-to-use-api-versioning-in-aspnet-core.html
+
+## HAL
+HAL is an implementation of HATEOAS.
+ - https://medium.com/@johncmckim/halcyon-hal-for-net-ebc416844152
+ - https://restfulapi.net/hateoas/
+ - https://github.com/visualeyes/halcyon

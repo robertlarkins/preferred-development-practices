@@ -32,6 +32,8 @@ An alternative way is to use a DevOps extension to construct the build number.
 
 ## GitVersion
 
+https://github.com/GitTools/GitVersion
+
 ### [Configuration](https://gitversion.net/docs/configuration)
 
 ### [Variables](https://gitversion.net/docs/more-info/variables)

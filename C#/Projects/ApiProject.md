@@ -28,7 +28,7 @@ or based on the functional area to support, e.g.: Company.Product.Api.UserManage
 ### Location
 
 Do not use the default location, as this will place the project at the root of the repository.
-Instead select the src/presentation directory.
+Instead select the src/application directory.
 
 ### Template
 

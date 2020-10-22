@@ -141,13 +141,13 @@ The `src` folder contains the main projects that comprise the software solution.
    Contains projects that relate to the Domain entities
    
  - `application`
-   Projects that relate to business rules or perform the opperations of the application.
+   Projects that relate to business rules or perform the opperations of the application. This includes the API projects, as it applies the permissions.
 
  - `infrastructure`  
    Any projects that implement or access anything external, such as persistent storage, are placed here.
  
  - `presentation`
-   Projects related to presentation, including Api projects, go here.
+   Projects related to presentation, such Console and MVC Controllers. Other presentation projects such as SPAs (Blazor, Angular, React) and Mobile should go into their own repository.
 
 ### `tests` Folder
 

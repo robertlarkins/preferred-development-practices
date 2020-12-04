@@ -60,6 +60,9 @@ In a DevOps pipeline, a custom MSBuild property can be added by adding '-p:Gener
 While the `GenerateNSwagClientCode` property is being provided for every project, if a project does not use it, it will be ignored.
 The `dotnet test` task also needs this property specified as `test` seems to rebuild all projects.
 
+> Note:
+> To test the OpenAPI spec go to https://editor.swagger.io/ and go File > Import URL to see if the API will be generated.
+
 # Integration Testing
 
 To create an integration test project for the ApiClientProject start by selecting the *xUnit Test Project (.Net Core)* project template.

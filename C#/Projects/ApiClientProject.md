@@ -60,8 +60,9 @@ In a DevOps pipeline, a custom MSBuild property can be added by adding '-p:Gener
 While the `GenerateNSwagClientCode` property is being provided for every project, if a project does not use it, it will be ignored.
 The `dotnet test` task also needs this property specified as `test` seems to rebuild all projects.
 
-> Note:
-> To test the OpenAPI spec go to https://editor.swagger.io/ and go File > Import URL to see if the API will be generated.
+> Notes:
+> - To test the OpenAPI spec go to https://editor.swagger.io/ and go File > Import URL to see if the API will be generated.
+> - The URL for the OpenAPI schema can either be a URL or a local path. If the schema is defined in a settings.json file and at the root of the client project, then the url in the nswag.json file would simply be `"url":"settings.json"`.
 
 # Integration Testing
 

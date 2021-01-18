@@ -25,4 +25,5 @@ All projects referencing the one with the name change will need to be updated. T
 
 select the new project name and click OK.
 
-The namespaces on all the files will need to be updated (using ReSharper go *Refactore > Adjust Namespaces...*). If there is a ruleset file, its name will need to be updated as well.
+The namespaces on all the files will need to be updated (using ReSharper go *Refactore > Adjust Namespaces...*).  
+If there is a ruleset file, its name will need to be updated as well, along with the reference to it in the csproj.

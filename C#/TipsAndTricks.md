@@ -25,5 +25,8 @@ All projects referencing the one with the name change will need to be updated. T
 
 select the new project name and click OK.
 
-The namespaces on all the files will need to be updated (using ReSharper go *Refactore > Adjust Namespaces...*).  
-If there is a ruleset file, its name will need to be updated as well, along with the reference to it in the csproj.
+The namespaces on all the files will need to be updated (using ReSharper go *Refactore > Adjust Namespaces...*).
+
+Other things to check
+ - If there is a ruleset file, its name will need to be updated as well, along with the reference to it in the csproj
+ - If a unit test project has been renamed, then the csproj of the project it tests might have an InternalsVisibleTo attribute that references the test project

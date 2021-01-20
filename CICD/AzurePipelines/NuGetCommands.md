@@ -5,3 +5,5 @@
 ```powershell
 nuget list -PreRelease -AllVersions -Source [NuGetSourceUrl]
 ```
+
+E.G.: `nuget list -PreRelease -AllVersions -Source https://mynugetfeed.com/somepath/`

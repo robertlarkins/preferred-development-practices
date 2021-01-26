@@ -1,5 +1,17 @@
 # Git Tools
 
+## Git
+
+### Windows Installation
+
+The Windows installation of Git can be updated using PowerShell by running the following command:
+
+```
+C:\> git update-git-for-windows
+```
+
+This comes from here: https://stackoverflow.com/questions/13790592/how-to-upgrade-git-on-windows-to-the-latest-version
+
 ## SourceTree
 
 https://community.atlassian.com/t5/Sourcetree-questions/Stashing-selected-files/qaq-p/137139  

@@ -64,6 +64,8 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 These two extension methods remove pluralisation and convert the postgres naming to snake case. They can be added by creating a `ModelBuilderExtensions` class.
 
 ```C#
+using Humanizer;
+
 internal static class ModelBuilderExtensions
 {
     /// <summary>
@@ -151,4 +153,8 @@ internal static class ModelBuilderExtensions
         }
     }
 }
+
+> Note:
+> This uses the Humanizer NuGet package to singularize words.
+> https://github.com/Humanizr/Humanizer#singularize
 ```

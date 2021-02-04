@@ -93,19 +93,14 @@ internal static class ModelBuilderExtensions
 	          
             // By default the table name is the property name on the dbContext (if set), which has an 's' on the end.
             // Where as the .DisplayName() is the class name of the entity.
-            // Because of this simple difference, it is assumed that when the tableName is the same as the displayName
-            // then we can remove the pluralizing by just taking the displayName.
-            // This however does not account for using the FluentAPI method .ToTable("some_name") being used.
-            // If the tableName is not the same as the displayName then this assumes that ToTable may have been used,
-            // so the tableName is used instead, allowing the set .ToTable() value to be applied.
+            // Because of this difference, we remove the pluralisation of the tableName. While we could take the displayName
+	    // this does not account for using the FluentAPI method .ToTable("some_name") being used.
+	    // Or a different DbSet property name being chosen.
+            // Therefore we just take the tableName and singularize it.
             var tableName = entity.GetTableName();
-            var displayName = entity.DisplayName();
-	          
-            // Sometimes the pluralisation of the dbContext property is manually changed to be correct,
-            // Such as Society to Societies, this should change it back to the singular form.
-            var nameToSet = tableName == displayName ? displayName : tableName.Singularize(false);
-	          
-            entity.SetTableName(nameToSet);
+	    var tableNameAsSingular = tableName.Singularize(false);
+
+            entity.SetTableName(tableNameAsSingular);
         }
     }
     

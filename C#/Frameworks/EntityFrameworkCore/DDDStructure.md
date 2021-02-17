@@ -100,3 +100,241 @@ public class CompanyConfiguration : IEntityTypeConfiguration<Company>
 
 > Note:
 > Whether `Address` is an Entity or ValueObject depends on your application needs.
+
+## Database Seeding
+Seeding the database can be done from code, allowing the database to be updated with the latest seeding changes by doing an `add-migration` and running the solution.
+One way this can be done is with an extensions class:
+
+```C#
+public class CompanyContext : DbContext
+{
+    public CompanyContext(DbContextOptions options) : base(options)
+    {
+    }
+    
+    public CompanyContext()
+    {
+    }
+    
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        // Configuration
+        
+        // Seed Data
+        modelBuilder.SeedInspectionStatus();
+    }
+}
+
+public class CompanyStatus : Entity<int>
+{
+    public static readonly CompanyStatus Open = new(1, "Open");
+    public static readonly CompanyStatus Closed = new(2, "Closed");
+    public static readonly CompanyStatus AfterHours = new(3, "AfterHours");
+    
+    protected CompanyStatus()
+    {
+    }
+    
+    private CompanyStatus(int id, string statusCode) : base(id)
+    {
+        StatusCode = statusCode;
+    }
+    
+    public string StatusCode { get; private set; } = string.Empty;
+}
+
+public static class ModelBuilderSeedingExtensions
+{
+    public static void SeedInspectionStatus(this ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<CompanyStatus>().HasData(
+            CompanyStatus.Open,
+            CompanyStatus.Closed,
+            CompanyStatus.AfterHours);
+    }
+}
+```
+
+### Seeding with a simple ValueObject
+If an Entity has a ValueObject for a property, but the conversion is simple
+
+```C#
+public class ProductCode : ValueObject
+{
+    protected ProductCode()
+    {
+    }
+
+    private ProductCode(string value)
+    {
+        Value = value;
+    }
+
+    public string Value { get; } = string.Empty;
+
+    public static Result<ProductCode> Create(string code)
+    {
+        return new ProductCode(code.ToUpper());
+    }
+
+    protected override IEnumerable<object> GetEqualityComponents()
+    {
+        yield return Value.ToUpper();
+    }
+}
+
+public class Product : Entity<int>
+{
+    protected Product()
+    {
+    }
+    
+    public ProductCode(int id, string statusCode) : base(id)
+    {
+        StatusCode = statusCode;
+    }
+    
+    public string StatusCode { get; private set; } = string.Empty;
+}
+
+public class ProductCodeConfiguration : IEntityTypeConfiguration<ProductCode>
+{
+    public void Configure(EntityTypeBuilder<ProductCode> builder)
+    {
+        builder.HasKey(k => k.id);
+        
+        // Straight property
+        builder.Property(p => p.Name);
+        
+        // ValueObject with multiple property conversion
+        builder.OwnsOne(p => p.Address, p =>
+        {
+            p.Property(pp => pp.StreetNumber).HasColumnName("street_number");
+            p.Property(pp => pp.StreetName).HasColumnName("street_name");
+            p.Property(pp => pp.City).HasColumnName("city");
+        });
+    }
+}
+```
+
+
+
+### Seeding for an Entity with Owned Properties
+In cases where there are owned properties which create split tables, the entity's values need to be assigned followed by
+the owned properties, which are linked by the shadow primary key name.
+
+The following shows an example of this where the `Code` and `DisplayName` are stored in a ValueObject which is an owned entity of Gender.
+
+> Note:
+> This is a simple example, `Code` and `DisplayName` would normally live in the Entity rather than having a GenderType ValueObject.
+
+Entity and ValueObject
+```C#
+public class AnimalSex : Entity<int>
+{
+    public static readonly Gender Male = new(1, GenderType.Create("M", "Male").Value);
+    public static readonly Gender Female = new(2, GenderType.Create("F", "Female").Value);
+    public static readonly Gender Unknown = new(3, GenderType.Create("U", "Unknown").Value);
+
+    protected Gender()
+    {
+    }
+
+    private Gender(int id, GenderType genderType)
+        : base(id)
+    {
+        GenderType = genderType;
+    }
+
+    public virtual GenderType GenderType { get; private set; } = null!;
+}
+
+public class SexType : ValueObject
+{
+    protected SexType()
+    {
+    }
+
+    private SexType(string code, string displayName)
+    {
+        Code = code;
+        DisplayName = displayName;
+    }
+
+    public string Code { get; } = string.Empty;
+    public string DisplayName { get; } = string.Empty;
+
+    public static Result<SexType> Create(string code, string displayName)
+    {
+        return new SexType(code, displayName);
+    }
+
+    protected override IEnumerable<object> GetEqualityComponents()
+    {
+        yield return Code;
+    }
+}
+```
+
+The Configuration
+```C#
+public void Configure(EntityTypeBuilder<Gender> builder)
+{
+    builder.HasKey(k => k.Id);
+
+    builder.OwnsOne(
+        p => p.GenderType, p =>
+        {
+            p.Property(pp => pp.Code).HasColumnName("gender_type_code");
+            p.Property(pp => pp.DisplayName).HasColumnName("display_name");
+        });
+}
+```
+Seeding:
+```C#
+modelBuilder.Entity<Gender>().HasData(
+    new { Id = 1 },
+    new { Id = 2 },
+    new { Id = 3 });
+
+modelBuilder.Entity<Gender>().OwnsOne(p => p.GenderType).HasData(
+    new { GenderId = 1, Code = "M", DisplayName = "Male" },
+    new { GenderId = 2, Code = "F", DisplayName = "Female" },
+    new { GenderId = 3, Code = "U", DisplayName = "Unknown" });
+```
+
+This can alternatively be written like this:
+```C#
+modelBuilder.Entity<Gender>(
+    e =>
+    {
+        e.HasData(
+            new { Id = 1 },
+            new { Id = 2 },
+            new { Id = 3 });
+        e.OwnsOne(p => p.GenderType).HasData(
+            new { GenderId = 1, Code = "M", DisplayName = "Male" },
+            new { GenderId = 2, Code = "F", DisplayName = "Female" },
+            new { GenderId = 3, Code = "U", DisplayName = "Unknown" });
+    });
+```
+
+See:
+ - https://csharp.christiannagel.com/2018/09/12/efcoreseeding/
+ - https://stackoverflow.com/questions/50862525/seed-entity-with-owned-property
+ - https://docs.microsoft.com/en-us/ef/core/modeling/data-seeding
+ - https://stackoverflow.com/questions/55172288/avoid-exposing-private-collection-properties-to-entity-framework-ddd-principles
+
+Once the seeding data has been added to the code, the next step is to add a new migration.
+
+> Note:
+> If the database already has the same seeded data, then the database data needs to be removed and the primary key reset.
+> See section [Truncate a Table](#truncate-a-table) for how to do this.
+
+### Further Notes
+If the Entity can not be instantiated directly with an id or does not have a hardcoded static type,
+then EF Core can accept anonymous types with properties defined. The following provides more detail:
+ - https://docs.microsoft.com/en-us/archive/msdn-magazine/2018/august/data-points-deep-dive-into-ef-core-hasdata-seeding#hasdata-with-anonymous-types
+
+Additional `HasData` info can be found in the same article: https://docs.microsoft.com/en-us/archive/msdn-magazine/2018/august/data-points-deep-dive-into-ef-core-hasdata-seeding
+

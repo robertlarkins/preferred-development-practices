@@ -249,13 +249,13 @@ public class AnimalSex : Entity<int>
     public virtual GenderType GenderType { get; private set; } = null!;
 }
 
-public class SexType : ValueObject
+public class GenderType : ValueObject
 {
-    protected SexType()
+    protected GenderType()
     {
     }
 
-    private SexType(string code, string displayName)
+    private GenderType(string code, string displayName)
     {
         Code = code;
         DisplayName = displayName;
@@ -264,9 +264,9 @@ public class SexType : ValueObject
     public string Code { get; } = string.Empty;
     public string DisplayName { get; } = string.Empty;
 
-    public static Result<SexType> Create(string code, string displayName)
+    public static Result<GenderType> Create(string code, string displayName)
     {
-        return new SexType(code, displayName);
+        return new GenderType(code, displayName);
     }
 
     protected override IEnumerable<object> GetEqualityComponents()

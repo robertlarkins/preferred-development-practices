@@ -156,25 +156,25 @@ public static class ModelBuilderSeedingExtensions
 ```
 
 ### Seeding with a simple ValueObject
-If an Entity has a ValueObject for a property, but the conversion is simple
+If an Entity has a ValueObject for a property, but the conversion is simple (see the Status code conversion)
 
 ```C#
-public class ProductCode : ValueObject
+public class StatusCode : ValueObject
 {
-    protected ProductCode()
+    protected StatusCode()
     {
     }
 
-    private ProductCode(string value)
+    private StatusCode(string value)
     {
         Value = value;
     }
 
     public string Value { get; } = string.Empty;
 
-    public static Result<ProductCode> Create(string code)
+    public static Result<StatusCode> Create(string code)
     {
-        return new ProductCode(code.ToUpper());
+        return new StatusCode(code.ToUpper());
     }
 
     protected override IEnumerable<object> GetEqualityComponents()
@@ -185,39 +185,70 @@ public class ProductCode : ValueObject
 
 public class Product : Entity<int>
 {
+    public static readonly Product Unknown = new(1, "Unknown", StatusCode.Create("unknown").Value);
+    public static readonly Product Fandangle = new(2, "Fandangle", StatusCode.Create("new_release").Value);
+
     protected Product()
     {
     }
     
-    public ProductCode(int id, string statusCode) : base(id)
+    private Product(int id, string name, StatusCode statusCode) : base(id)
     {
         StatusCode = statusCode;
     }
     
-    public string StatusCode { get; private set; } = string.Empty;
+    public string Name { get; private set; } = string.Empty;
+    
+    public StatusCode StatusCode { get; private set; } = null!;
 }
 
-public class ProductCodeConfiguration : IEntityTypeConfiguration<ProductCode>
+public class ProductConfiguration : IEntityTypeConfiguration<Product>
 {
-    public void Configure(EntityTypeBuilder<ProductCode> builder)
+    public void Configure(EntityTypeBuilder<Product> builder)
     {
         builder.HasKey(k => k.id);
         
         // Straight property
         builder.Property(p => p.Name);
         
-        // ValueObject with multiple property conversion
-        builder.OwnsOne(p => p.Address, p =>
-        {
-            p.Property(pp => pp.StreetNumber).HasColumnName("street_number");
-            p.Property(pp => pp.StreetName).HasColumnName("street_name");
-            p.Property(pp => pp.City).HasColumnName("city");
-        });
+        // ValueObject with single property conversion
+        builder.Property(p => p.StatusCode)
+            .HasConversion(p => p.Value, p => StatusCode.Create(p).Value)
+            .HasColumnName("product_status_code"); // The column name to use in the database for StatusCode
     }
 }
 ```
 
+then the seeding for the `Product` class will look like this:
 
+```C#
+public static class ModelBuilderSeedingExtensions
+{
+    public static void SeedProducts(this ModelBuilder modelBuilder)
+    {
+        var products = ProductGeneration();
+    
+        modelBuilder.Entity<Product>().HasData(
+            Product.Unknown,
+            CompanyStatus.Closed,
+            CompanyStatus.AfterHours);
+            
+        statuc object[] ProductGeneration()
+        {
+            return new object[]
+            {
+                new { Product.Unknown.Id, Product.Unknown.Name, Product.Unknown.StatusCode },
+                new { Product.Fandangle.Id, Product.Fandangle.Name, Product.Fandangle.StatusCode },
+                
+                // Items that are not statically defined on Product but are still seeded into the database
+                new { Id = 3, Name = "Doodad", StatusCode = StatusCode.Create("generic").Value },
+                new { Id = 4, Name = "Gismo", StatusCode = StatusCode.Create("generic").Value }
+            }
+        }
+    }
+}
+```
+For seeding `StatusCode` into the database requires that status code be passed as a StatusCode ValueObject.
 
 ### Seeding for an Entity with Owned Properties
 In cases where there are owned properties which create split tables, the entity's values need to be assigned followed by

@@ -11,7 +11,7 @@ The associated git repo is: https://github.com/vkhorikov/DddAndEFCore
 
 When linking a ValueObject with multiple properties to an Entity we need to set the ValueObject property to virtual so that Entity Framework can populate it.
 
-The `private set` on the Entity properties is needed to allows Entity Framework to access the property.
+The `private set` on the Entity properties is put in place to allow methods with specific actions to modify the property. Entity Framework does not need the `private set` as it accesses the corresponding shadow property directly for setting the value.
 
 For example if we had wanted a list of static companies:
 

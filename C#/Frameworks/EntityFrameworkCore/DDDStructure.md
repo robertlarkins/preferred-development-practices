@@ -67,7 +67,7 @@ public class Address : ValueObject
         string streetName,
         string city)
     {
-        return new Company(streetNumber, streetName, city);
+        return new Address(streetNumber, streetName, city);
     }
     
     protected override IEnumerable<object> GetEqualityComponents()

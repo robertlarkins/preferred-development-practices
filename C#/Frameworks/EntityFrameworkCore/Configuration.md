@@ -23,8 +23,36 @@ modelBuilder.Entity<ContactDetails>()
 See also:
  - https://www.learnentityframeworkcore.com/configuration/one-to-one-relationship-configuration
  - https://www.entityframeworktutorial.net/efcore/configure-one-to-one-relationship-using-fluent-api-in-ef-core.aspx
- 
+
+## Index
+
+An index is a mechanism for making lookups based on a column more efficient.
+
+```C#
+modelBuilder.Entity<Blog>()
+  .HasIndex(b => b.Url);
+```
+
+See: https://docs.microsoft.com/en-us/ef/core/modeling/indexes?tabs=fluent-api
+
+## Unique Index
+
+Be default indexes are not unique, that is, multiple rows can have the same value(s) for an index.
+If an index must contain unique values, then it can be made unique by doing:
+
+```C#
+modelBuilder.Entity<Blog>()
+  .HasIndex(b => b.Url)
+  .IsUnique();
+```
+
+See: https://docs.microsoft.com/en-us/ef/core/modeling/indexes?tabs=fluent-api#index-uniqueness
+
 ## Alternate Key
+
+An alternate key can be used instead of a unique index/constraint to provide an addition to the primary key.
+This allows it to be used as the target of a relationship, such as being the target of a foreign key.
+
 A composite key can be formed using this syntax
 ```C#
 modleBuilder.Entity<MyModel>()
@@ -42,6 +70,7 @@ The EF Core naming convention for shadow properties can be found [here](https://
 See also:
  - https://stackoverflow.com/a/56519109/1926027
  - https://docs.microsoft.com/en-us/ef/core/modeling/keys?tabs=data-annotations#alternate-keys
+
 
 # PostgreSQL Item Naming
 The recommended naming convention for PostGres tables and columns is snake case without pluralisation, eg: `student_course`, or `first_name`.

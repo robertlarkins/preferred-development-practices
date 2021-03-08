@@ -27,12 +27,14 @@ See also:
 ## Alternate Key
 A composite key can be formed using this syntax
 ```C#
-.HasAlternateKey(x => new { x.PropOneId, x.PropTwoId });
+modleBuilder.Entity<MyModel>()
+  .HasAlternateKey(x => new { x.PropOneId, x.PropTwoId });
 ```
 but it requires `PropOneId` and `PropTwoId` be actual properties on the class.
 If these correspond to navigation properties `PropOne` and `PropTwo`, then the syntax can be written as
 ```C#
-.HasAlternateKey("PropOneId", "PropTwoId" });
+modleBuilder.Entity<MyModel>()
+  .HasAlternateKey("PropOneId", "PropTwoId");
 ```
 which leverages the [Shadow Properties](https://docs.microsoft.com/en-us/ef/core/modeling/shadow-properties) on the class.
 The EF Core naming convention for shadow properties can be found [here](https://docs.microsoft.com/en-us/ef/core/modeling/shadow-properties#foreign-key-shadow-properties).

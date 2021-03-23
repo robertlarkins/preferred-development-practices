@@ -37,6 +37,9 @@ Bool class members and variables should be named with an affirmative phrase (Can
   - _can_, future tense
   - _has_, past tense, eg: `HasBeen...`;
   
+- Acceptable Method names:
+  - _Contains_, this is used to ascertain if the object contains the provided object. .Net has this on `List`, NodaTime has this on `Interval`.
+  
 - Acceptable, though need to be checked
   - _was_ [link](https://softwareengineering.stackexchange.com/questions/232213/should-i-always-use-is-as-prefix-for-boolean-variables)
     - was is the past tense of _is_, but should it be used?
@@ -50,7 +53,6 @@ The following prefixes might seem appropriate, but should still be avoided:
  - _does_, this can be switched to use is [link](https://stackoverflow.com/questions/5887450/does-a-method-name-starting-with-does-look-good). Ie:
    - doesUserExist to isExistingUser
    - doesNameHaveValue to isNameEntered.
- 
 
 If a method returns a bool then it should have a verb name in the form of a yes/no question.
 https://stackoverflow.com/questions/1370840/naming-conventions-what-to-name-a-method-that-returns-a-boolean

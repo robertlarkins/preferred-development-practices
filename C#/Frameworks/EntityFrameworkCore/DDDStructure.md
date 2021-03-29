@@ -369,3 +369,41 @@ then EF Core can accept anonymous types with properties defined. The following p
 
 Additional `HasData` info can be found in the same article: https://docs.microsoft.com/en-us/archive/msdn-magazine/2018/august/data-points-deep-dive-into-ef-core-hasdata-seeding
 
+### Adding a column to an already seeded table
+If a table has already been seeded and a new column is to be added (that may reference another entity/table), you may get the following error:
+
+> The seed entity for entity type 'MyEntity' cannot be added because there was no value provided for the required property 'MyEntityTypeId'.
+
+It is likely that this is due to the seeding not able to link the `MyEntityType.Id` to a column called `MyEntityTypeId`.
+
+If the seeding code was simply
+```C#
+modelBuilder.Entity<MyEntity>().HasData(
+                MyEntity.Unknown,
+                MyEntity.One,
+                MyEntity.Two);
+```
+
+Then converting it to look something like this should work:
+```C#
+var myEntities = new[] {
+    MyEntity.Unknown,
+    MyEntity.One,
+    MyEntity.Two
+};
+var seedValues = MyEntitySeedDataGeneration(myEntities);
+
+modelBuilder.Entity<MyEntity>().HasData(seedValues);
+
+static List<object> MyEntitySeedDataGeneration(
+    IEnumerable<MyEntity> myEntities)
+{
+    return myEntities.Select(
+        myEntity => (object)new
+        {
+            myEntity.Id,
+            myEntity.SomeProperty,
+            MyEntityTypeId = myEntity.MyEntityType.Id
+        }).ToList();
+}
+```

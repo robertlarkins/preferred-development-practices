@@ -3,6 +3,14 @@
 This uses the approach described by Vladimir Khorikov in his [*DDD and EF Core: Preserving Encapsulation* course on pluralsight](https://app.pluralsight.com/library/courses/ddd-ef-core-preserving-encapsulation).
 The associated git repo is: https://github.com/vkhorikov/DddAndEFCore
 
+## Static Entities
+
+Static entities allow a type or status to be defined in code and used without consulting directly with the database.
+
+Links:
+ - https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/enumeration-classes-over-enum-types#implement-an-enumeration-base-class
+ - https://fanzootechnology.com/blog/static-entity-implementation-with-domain-driven-design/
+
 ## Linking ValueObjects to Entities
 
 ### Single Value

@@ -49,3 +49,5 @@ public Schedule? GetById(int scheduleId)
         .SingleOrDefault(x => x.Id == scheduleId);
 }
 ```
+
+See: https://github.com/vkhorikov/DddAndEFCore/issues/3

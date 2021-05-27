@@ -19,7 +19,12 @@ Links:
 
 When linking a ValueObject with multiple properties to an Entity we need to set the ValueObject property to virtual so that Entity Framework can populate it.
 
-The `private set` on the Entity properties is put in place to allow methods with specific actions to modify the property. Entity Framework does not need the `private set` as it accesses the corresponding shadow property directly for setting the value.
+The `private set` on the Entity properties is put in place to allow methods with specific actions to modify the property. 
+The EF convention does not automatically map properties without setters, so if there is no EF Configuration for this property
+then the `private set` is needed to tell EF to map the values. If the there is a EF configuration for this property, then
+EF will know to accesses the corresponding shadow property directly for setting the value.
+
+See: https://docs.microsoft.com/en-us/ef/core/modeling/constructors#read-only-properties
 
 For example if we had wanted a list of static companies:
 

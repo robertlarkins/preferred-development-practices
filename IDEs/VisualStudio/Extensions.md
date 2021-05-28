@@ -8,7 +8,7 @@ This is a list of useful Visual Studio extensions:
  - [GhostDoc](https://submain.com/products/ghostdoc.aspx)
  - [Resharper](https://www.jetbrains.com/resharper/)
  - [EditorConfig Language Service](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.EditorConfig)
- - [MarkdownEditor](https://github.com/madskristensen/MarkdownEditor)
+ - [Markdown Editor](https://github.com/madskristensen/MarkdownEditor)
  - [File Icons](https://github.com/madskristensen/FileIcons)
 
 ## Extensions that could be done as either an Extension or a Nuget Package

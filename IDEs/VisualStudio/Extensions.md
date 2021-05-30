@@ -28,3 +28,4 @@ This is a list of useful Visual Studio extensions:
 
  - [Oz Code](https://oz-code.com/)
  - [PostSharp](https://www.postsharp.net)
+ - [Run Coverlet Report](https://github.com/the-dext/RunCoverletReport)

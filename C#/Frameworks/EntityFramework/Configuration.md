@@ -71,6 +71,82 @@ See also:
  - https://stackoverflow.com/a/56519109/1926027
  - https://docs.microsoft.com/en-us/ef/core/modeling/keys?tabs=data-annotations#alternate-keys
 
+## Ignored and Ignoring Properties
+
+### Automatically Ignored Properties
+By convention Entity Framework automatically [ignores read-only properties](https://docs.microsoft.com/en-us/ef/core/modeling/constructors#read-only-properties).
+
+An example of this is the `FullName` property which is ignored by EF Core:
+```C#
+public class Student : Entity<int>
+{
+    public string FirstName { get; private set; } = string.Empty;
+    public string LastName { get; private set; } = string.Empty;
+
+    public string FullName => ConstructFullName();
+    
+    private string ConstructFullName()
+    {
+        if (string.IsNullOrEmpty(LastName))
+        {
+	    return FirstName;
+        }
+
+        if (string.IsNullOrEmpty(FirstName))
+        {
+	    return LastName;
+        }
+
+        return $"{FirstName} {LastName}";
+    }
+}
+```
+Explicitely mapping `FullName` will cause a migration exception as it has no setter and no backing field.
+
+### Manually Ignoring Properties
+Sometimes properties in an entity need to be explicitely ignored in the Configuration file.
+This occurs if an entity needs a property in code, but does not need to be persisted to a database, or to stop EF Core performing some other undesired migration behaviour.
+
+The simplest example is adding a property with both a public getter and setter:
+```C#
+public class Address : Entity
+{
+    public DateTime LoadedFromDatabase { get; set; }
+}
+```
+then the Context can ignore `LoadedFromDatabase` by doing this:
+```C#
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    modelBuilder.Entity<Address>()
+        .Ignore(p => p.LoadedFromDatabase);
+}
+```
+
+
+Another example is `CancelledAppointments` getter property, which triggers EF to produce an additional foreign key index (possibly it is seen as another navigation property)
+```C#
+public class Schedule : Entity<int>
+{
+    private readonly List<Appointment> appointments = new();
+    
+    protected Schedule() { } // Protected Constructor needed for lazy-loading 
+
+    public virtual IReadOnlyList<Appointment> Appointments => appointments.AsReadOnly()
+    
+    public List<Appointment> CancelledAppointments => Appointments.Where(x => x.Status == AppointmentStatus.Cancelled);
+}
+```
+
+`CancelledAppointments` can be ignored the same as above
+```C#
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    modelBuilder.Entity<Address>()
+        .Ignore(p => p.CancelledAppointments);
+}
+```
+
 
 # PostgreSQL Item Naming
 The recommended naming convention for PostGres tables and columns is snake case without pluralisation, eg: `student_course`, or `first_name`.

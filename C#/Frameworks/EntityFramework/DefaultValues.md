@@ -11,6 +11,7 @@ builder.Property(p => p.Score)
 
 See:
  - https://docs.microsoft.com/en-us/ef/core/modeling/generated-properties?tabs=fluent-api
+ - https://www.learnentityframeworkcore.com/configuration/fluent-api/hasdefaultvalue-method
 
 
 ## Foreign Key Default Value

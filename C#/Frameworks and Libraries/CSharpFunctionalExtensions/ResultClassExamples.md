@@ -1,9 +1,10 @@
 # Result class examples
 
-The result 
+Examples for how the Result class can be used.
 
-## Returning a Failed Result with the object instance
-When returning a failed result, sometimes it is useful to include the object instance that caused the failure, particularly if it is a List of results being returned.
+## Result with custom error
+When returning a failed result, sometimes it is useful to use a custom error object.
+One use case for this is returning the object instance that caused the failure, particularly if it is a List of results being returned.
 
 The `Result` class can also have the signature `Result<T, E>` where `T` is the result value and `E` is a custom error type.
 An example would be if there were two entities, `Vehicle` and `Ferry`, and a Ferry can have Vehicles added to it for a voyage.

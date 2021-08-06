@@ -14,4 +14,4 @@ and change the path in the Projects locations text box.
 
 To place the `System` directives first when sorting usings check the following:
 
-Text Editor > C# > Formatting > Organize Usings > Place 'System' directives first when sorting usings
+> Tools > Options > Text Editor > C# > Formatting > Organize Usings > Place 'System' directives first when sorting usings

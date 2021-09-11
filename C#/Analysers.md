@@ -106,6 +106,9 @@ In the ruleset file, the `Action` field of `Include` determines how the rules sh
 </RuleSet>
 ```
 
+The `RuleSet` start tag includes a `ToolsVersion` attribute. This attribute specifies the MSBuild Toolset version to use.
+See https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-toolset-toolsversion?view=vs-2019 for more info.
+ 
 ## .editorconfig file
 
 According to https://github.com/dotnet/roslyn-analyzers/issues/1844#issuecomment-427422189 rulesets are the legacy file format, and there is a shift towards using .editorconfig configurations instead. Implementation of .editorconfig files appears to be a work in progress, with the .editorconfig files being the preferred modern way, and [ruleset files being the legacy configuration](https://github.com/dotnet/roslyn-analyzers/issues/1844#issuecomment-427428400).

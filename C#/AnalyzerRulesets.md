@@ -59,3 +59,44 @@ In the ruleset file, the `Action` field of `Include` determines how the rules sh
 
 The `RuleSet` start tag includes a `ToolsVersion` attribute. This attribute specifies the MSBuild Toolset version to use, and is linked to the major Visual Studio version number.
 See https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-toolset-toolsversion?view=vs-2019 for more info.
+
+ 
+## Suppress Warnings
+ 
+Suppressing certain rules via the ruleset file does not seem to work. This more appears to be related to the compiler warnings such as CS1591.
+Instead, they can be added to the project's Suppress warnings list (Right click your project > Properties > Build > Errors and warnings > Suppress warnings).
+For example if you want to suppress rules CS1701, CS1702, and CS1591, then added them to the Suppress warnings textbox like as `1701;1702;1591`, this will added them to the .csproj.
+Alternatively they can be added directly to the .csproj by going
+```xml
+<PropertyGroup>
+  <NoWarn>$(NoWarn);1591</NoWarn>
+</PropertyGroup>
+```
+
+### `$(NoWarn)`
+The `$(NoWarn)` MSBuild macro contains the error codes 1701 and 1702. So it can be used in place of putting in `1701;1702` into the `<NoWarn>` element.
+ 
+> Note:
+> A MSBuild macro in this context corresponds to a MSBuild property, `$(NoWarn)` is the macro, `NoWarn` is the property.
+ 
+See:
+ - https://github.com/dotnet/AspNetCore.Docs/issues/9708
+ - https://github.com/dotnet/sdk/blob/2eb6c546931b5bcb92cd3128b93932a980553ea1/src/Tasks/Microsoft.NET.Build.Tasks/targets/Microsoft.NET.Sdk.CSharp.props#L16
+ - https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/errors-warnings
+
+
+### CS1701 and CS1702
+These two rules appear to be redundant now and are disabled by default. It appears they are a relic from early .Net Framework.
+
+See:
+ - https://github.com/dotnet/roslyn/issues/19640
+
+ 
+### CS1591
+CS1591 occurs when the DocumentationFile compiler option is enabled (Right click your project > Properties > Build > Output > XML documentation file).
+But if `<GenerateDocumentationFile>true</GenerateDocumentationFile>` is used in Directory.Build.props then the CS1591 warning will occur.
+One scenarios for disabling CS1591 warnings would be unit test projects, as often the xml docs do not provide anything additional over the test name.
+ 
+See:
+ - https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/cs1591
+ 

@@ -35,7 +35,7 @@ To add the ruleset to project, it needs to (at present) be manually added to the
 ```xml
 <PropertyGroup>
   ...
-  <CodeAnalysisRuleSet>..\custom.ruleset</CodeAnalysisRuleSet>
+  <CodeAnalysisRuleSet>custom.ruleset</CodeAnalysisRuleSet>
 </PropertyGroup>
 ```
 

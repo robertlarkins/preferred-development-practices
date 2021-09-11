@@ -56,7 +56,7 @@ The following includes instructions for having a child (global) ruleset with par
  - https://docs.microsoft.com/en-us/visualstudio/code-quality/how-to-create-a-custom-rule-set?view=vs-2019
  - https://docs.microsoft.com/en-us/visualstudio/code-quality/using-rule-sets-to-group-code-analysis-rules?view=vs-2019
 
-Add a ruleset file to *solution items* by right clicking *solution items* and going Add->New Item, select Code Analysis Rule Set and giving it the name <solution name>.ruleset
+Add a ruleset file to *solution items* by right clicking *solution items* and going Add->New Item, select Code Analysis Rule Set and giving it the name &lt;solution name&gt;.ruleset
 
 Double click the ruleset file to open it (if not already open). Click the wrench at the top with the tooltip *Edit ruleset properties in the Properties window* and give it a Name and a Description.
 

@@ -49,7 +49,7 @@ StyleCop is looking at using the editorconfig file in the future:
 
 ## .ruleset file
 
-See Ruleset.md
+See AnalyzerRulesets.md
 
 ## .editorconfig file
 

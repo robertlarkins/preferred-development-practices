@@ -87,6 +87,7 @@ See:
 
 ### CS1701 and CS1702
 These two rules appear to be redundant now and are disabled by default. It appears they are a relic from early .Net Framework.
+Infact it appears that 1701 & 1702 are built in supressions and deleting the `<NoWarn>` element from the .csproj and going back to the Build properties they still persist.
 
 See:
  - https://github.com/dotnet/roslyn/issues/19640

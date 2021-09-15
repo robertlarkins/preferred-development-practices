@@ -11,3 +11,9 @@
 
 
 ## Aggregates
+
+### Aggregate Root
+
+
+## Domain Service
+https://enterprisecraftsmanship.com/posts/domain-vs-application-services/

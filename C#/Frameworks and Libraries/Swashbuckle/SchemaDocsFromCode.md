@@ -38,7 +38,7 @@ The following tags don't seem to provide anything to the docs
 The specific properties inside these parameter classes can have their own docs. These properties are the parameters visible to the client of this API.
 - `<summary>` This goes into the parameter's description, as well as the description in the parameter's schema field
 - `<example>` This can be used to provide an example of what the parameter value can be.  
-  Examples only seem to appear in the schema for properties that have a primitive type. A property using a reference type (list or custom class) don't appear to work.  
+  Examples only seem to appear in the schema for properties that have a primitive type. A property using a reference (list or custom class) or value (struct) type don't appear to work.  
   At present, the open and close tags need to be on the same line (`<example>1234</example>`), if they are spread across multiple lines the example does not appear to be put into the docs.
 
 > Note:

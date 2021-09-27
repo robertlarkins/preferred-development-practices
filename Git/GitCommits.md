@@ -63,6 +63,18 @@ Commit messages should talk about WHAT changed, and WHY. Not HOW – how is the 
 
 Tip 4 in here: https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message gives some examples for what the commit message should cover.
 
+
+There is some other conventions and suggestions for how to present the title of a git commit.
+These include using structural elements to communicate intent:
+ - https://www.conventionalcommits.org/en/v1.0.0-beta.4/
+ - https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format
+ - https://medium.com/rupesh-tiwari/conventional-git-commit-messages-and-linting-76e1fbb9e14a
+
+There is also the idea of using emojis for visually conveying the purpose of a commit:
+ - https://gitmoji.dev/
+Though this should _not_ be used at the exclusion of a message as well.
+Also there is likely git clients that will not display emojis.
+
 ### Link to Task or Story
 
 https://docs.microsoft.com/en-us/azure/devops/boards/github/link-to-from-github?view=azure-devops

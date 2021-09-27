@@ -6,6 +6,7 @@ The schema docs can be added to from several sources, all of which are driven fr
 
 ## XML Comments
 XML comments are the standard comments that appear above an action, class, or property. I _don't think_ method docs go into the schema docs.
+If XML comments are likely to come from multiple projects, then these projects need to generate XML docs, and the xml comments need to be included from each: https://github.com/domaindrivendev/Swashbuckle.WebApi/issues/93#issuecomment-458690098
 
 ### Action
 The following XML tags on an Action occur in the schema docs.

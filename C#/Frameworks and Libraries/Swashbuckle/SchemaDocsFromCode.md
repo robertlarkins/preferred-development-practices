@@ -11,7 +11,9 @@ XML comments are the standard comments that appear above an action, class, or pr
 The following XML tags on an Action occur in the schema docs.
 - `<summary>Goes into the summary field for the http call</summary>` While tags such as `<para>` and `<code>` can be used inside this, their tags get displayed in the swagger UI
 - `<remarks>The description field for the http call.</remarks>` There are further tags, such as `<para>` and `<code>`, that can be used inside this.
-- `<param name="someParam">The parameter description</param>` If the parameter is using a primitive type, then this will become the parameter description. If the parameter is a class this description will not go into the swagger docs, but is still useful for a developer reading the code.
+- `<param name="someParam">The parameter description</param>` This becomes the parameter description in the schema docs, but it depends on where the parameter is sorced from, that being attribute used for parameter binding.
+  - `[FromRoute]` this param comment does not go into the schema docs.
+  - `[FromBody]` this param comment goes into the schema docs as the requestBody description.
 - `<response code="someHttpCode">The response title</response>` The description for the response with the given http code
 
 > Note:
@@ -25,7 +27,8 @@ The following tags don't seem to provide anything to the docs
 
 ### Classes
 Often the parameters into an action are a class or nested class that contains multiple properties.
-ASP.Net will map the passed in parameter values into class properties, for both `[FromRoute]` and `[FromBody]`.
+ASP.Net will map the passed in parameter values into class properties (based on the name).
+This will be done for both `[FromRoute]` and `[FromBody]`.
 
 The following XML tags applied to the class occur in the schema docs:
 - `<summary>` This goes into the object's description that contains the params

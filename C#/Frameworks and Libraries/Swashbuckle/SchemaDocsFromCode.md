@@ -76,6 +76,15 @@ This also applies if the parameters are mapped to a class inside the action and 
 
 Therefore, if there are rules to be mapped to the schema, they need to be in a validator that is applied to a class that is a parameter in the Action signature.
 
+> Note:  
+> There seems to be some strange behaviour in that route parameters are sometimes case sensitive.
+> For example if the property in the nested RouteParamsDto class was `public Guid MyId { get; set; }`,
+> then the route parameter that maps to this property would need to match the case `MyEntity/{MyId}`.
+> If the case between the two did not match (such as if the route was `MyEntity/{myId}`) then a 400 error (Bad Request) occurs,
+> with an error message like `"The value '{myId}' is not valid for MyId."`.
+> This is not consistent, as if the property is of type `string`, then the case between route parameter and property do not need to match.
+> See: https://stackoverflow.com/questions/61345815/is-route-parameter-name-case-sensitive-in-web-api-core-c-sharp
+
 ## Example
 The following is an example of how these pieces can be used:
 

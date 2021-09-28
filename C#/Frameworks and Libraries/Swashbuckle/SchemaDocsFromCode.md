@@ -76,14 +76,22 @@ This also applies if the parameters are mapped to a class inside the action and 
 
 Therefore, if there are rules to be mapped to the schema, they need to be in a validator that is applied to a class that is a parameter in the Action signature.
 
-> Note:  
-> There seems to be some strange behaviour in that route parameters are sometimes case sensitive.
-> For example if the property in the nested RouteParamsDto class was `public Guid MyId { get; set; }`,
-> then the route parameter that maps to this property would need to match the case `MyEntity/{MyId}`.
-> If the case between the two did not match (such as if the route was `MyEntity/{myId}`) then a 400 error (Bad Request) occurs,
-> with an error message like `"The value '{myId}' is not valid for MyId."`.
-> This is not consistent, as if the property is of type `string`, then the case between route parameter and property do not need to match.
-> See: https://stackoverflow.com/questions/61345815/is-route-parameter-name-case-sensitive-in-web-api-core-c-sharp
+# Further Notes
+The behaviour with mapping a route parameter to a class property (using `[FromRoute]`) appears to be case sensitive,
+which differs from the expectation that these are case insensitive.
+
+For example if the property in the nested RouteParamsDto class was `public Guid MyId { get; set; }`,
+then the route parameter that maps to this property would need to match the case `MyEntity/{MyId}`.
+If the case between the two did not match (such as if the route was `MyEntity/{myId}`) then a 400 error (Bad Request) occurs,
+with an error message like `"The value '{myId}' is not valid for MyId."`.
+
+This behaviour is consistent with all types. If the property type is a `string` then it gives the apperance of working,
+but the value provided in the action is not the provided value, but the route parameter name, eg: `"{myId}"`.
+
+I am unsure whether this could be fixed by customising the route mapping, but simply making the case match seems to fix the issue.
+
+See:
+ - https://stackoverflow.com/questions/61345815/is-route-parameter-name-case-sensitive-in-web-api-core-c-sharp
 
 ## Example
 The following is an example of how these pieces can be used:

@@ -2,6 +2,9 @@
 
 Install the MediatR NuGet package.
 
+See:
+ - https://github.com/jbogard/MediatR/wiki#aspnet-core
+
 ## With AutoFac
 
 Install the following NuGet packages

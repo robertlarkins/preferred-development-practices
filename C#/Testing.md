@@ -14,3 +14,6 @@ to see its internal classes:
   </AssemblyAttribute>
 </ItemGroup>
 ```
+
+See:
+ - https://www.meziantou.net/declaring-internalsvisibleto-in-the-csproj.htm

@@ -2,6 +2,23 @@
 
 Notes on different aspects of leadership
 
+## Culture
+Diverse teams are smarter
+
+Culture add, not culture fit
+- a different perspective
+- build trust
+
+Trust (team) and psychological (self) safety are core elements of high performing teams.
+
+- Support and represent your team
+- Invite your team to challenge you
+- Model vulnerability
+- Encourage
+
+See also:
+- [re:Work](https://rework.withgoogle.com/)
+
 ## Mental Health
 
 The following is notes from a talk by Dr. Karen Jones (Umbrella Wellbeing Ltd)

@@ -37,12 +37,18 @@ https://community.atlassian.com/t5/Sourcetree-questions/SourceTree-commit-author
 https://blog.sourcetreeapp.com/2012/02/06/jira-integration-other-external-project-links/
 
 In the repo go Settings > Advanced > Commit text links > Add
-For Azure DevOps set the Commit text link details to:  
+
+#### Azure DevOps
+Set the Commit text link details to:  
 *Replacement type*: Other  
 *Regex pattern*: AB#(\d+)  
 *Link to URL*: https://dev.azure.com/[organisation]/_workitems/edit/$1
 
-For Azure DevOps, the following link can be used: 
+#### Jira
+Set the Commit text link details to:  
+*Replacement type*: Jira  
+*Regex pattern*: [PROJECT_PREFIX]  
+*Link to URL*: https://[organisation].atlassian.net
 
 ### Update Embedded Git
 

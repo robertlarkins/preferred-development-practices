@@ -19,6 +19,56 @@ Trust (team) and psychological (self) safety are core elements of high performin
 See also:
 - [re:Work](https://rework.withgoogle.com/)
 
+## Making New Leaders
+Notes from the talk Ignite the Fire - management that sparks new leaders - by Nick Caldwell  
+Notes from somebody else: https://www.selikoff.net/2019/06/26/qcon-2019-light-the-fire-how-managers-can-spark-new-leaders/  
+https://www.youtube.com/watch?v=URynuPW8fPg  
+https://www.infoq.com/presentations/managers-launch-leaders/  
+https://www.linkedin.com/pulse/worst-career-advice-i-ever-received-nick-caldwell
+
+Management that sparks new leaders.
+How to transform somebody into a leader
+- Need a leadership/management structure.
+- Freedom and Power to make changes across the organisation
+- Specialisation and focus
+
+How can we scale leadership
+1. Leadership isn't management
+   - Managers keep the company running in a predictable fashion
+   - Leadership is working with goals & vision. Management is working with objectives
+   - Positional leadership doesn't scale - you don’t have to be a manager to lead
+   - To scale we must
+   - Both ask ideas, and present problems and ask for solutions
+   - Sponsor, reward, repeat
+   - Participation
+   - Golden Question - What would you do if you had another pair of hands
+2. Anyone can be a leader
+   - Don't needs books, conferences, courses, seminars, MBA
+   - Leadership potential - how do you know whether a person can be a leader?
+   - Ask what a person wants to do, is passionate about
+   - Instead of traits, look for passion
+   - Ask teammates what they think I'm good at, compare with what you think you're good at.
+3. Create Leadership moments
+   - Leaders take responsibility for what happends next
+   - Create a culture that people feel safe to takes risks
+   - Create a leadership culture
+   - Nordstrom employee handbook
+   - Mentor vs Sponsor
+   - Find sponsors with opportunities for you
+
+Leadership needs the folling to spark: _Passion, Permission and opportunity_
+
+Modern leadership tips:
+- Embrace change
+- Increase your network
+- Leaders make new leaders
+
+Conflicts in leadership don't tend to happen
+- Number of people stepping up is pretty low
+- Passionate people group together
+- You can both be a manager and a leader
+- Management doesn't scale, leadership does
+
 ## Mental Health
 
 The following is notes from a talk by Dr. Karen Jones (Umbrella Wellbeing Ltd)

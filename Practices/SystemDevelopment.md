@@ -35,3 +35,15 @@ TDD
 
 Break and iterate
 
+Make iterations small to better course correct.
+
+More frequent commits
+- What was done, why, when
+- how do I go back
+
+- Version Control
+- Backups
+- Code reviews
+- Peer programming
+
+Making the right trade-offs

@@ -47,3 +47,9 @@ More frequent commits
 - Peer programming
 
 Making the right trade-offs
+
+Understand what tools are needed and how to use them (correctly). Often learnt from practice.
+
+Think of coding from a different perspective, it is a craft.
+
+Do something different, break and iterate.

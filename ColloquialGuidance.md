@@ -11,3 +11,9 @@ References:
 - https://martinfowler.com/articles/preparatory-refactoring-example.html
 
 ---
+
+## Phrases
+> Slow is smooth, and smooth is fast
+> \- Navy SEALS saying
+
+---

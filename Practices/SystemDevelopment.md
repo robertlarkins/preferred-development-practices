@@ -53,3 +53,29 @@ Understand what tools are needed and how to use them (correctly). Often learnt f
 Think of coding from a different perspective, it is a craft.
 
 Do something different, break and iterate.
+
+---
+
+Paying off technical debt
+
+- maintainability
+- performance & scalability
+  - better use of cloud services
+- developer experience - will they enjoy it and be more productive
+
+The software built wasn't really the software needed (like having Trello but needing Jira).
+
+- UX can differentiate a product - engage end users
+- To build simple requires a lot of design and thought
+- Don't want team members waiting for help
+- Aim for better, not perfect - we don't have infinite time
+- Have unit tests that describe what the user will be doing (behaviour tests), make them higher level.
+- Efficiency vs. Effectiveness - How to approach development
+
+_I don't know_ does not mean _no_
+
+Engineering and design are creative practices. Uncertainty can make better produces, people and leaders.
+Uncertainty is profoundly uncomfortable for people: reframe, get curious, work with the situation.
+- Have a curious mindset
+- Have people you trust and who trust you - listen
+- Ask for, or accept help

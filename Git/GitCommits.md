@@ -55,7 +55,7 @@ The advantage of atomic commits are:
 
 ## Commit comments
 
-A great article on how we should approach git comments and why: https://chris.beams.io/posts/git-commit/
+A great article on how we should approach git comments and why: https://chris.beams.io/posts/git-commit/ (now https://cbea.ms/git-commit/)
 
 An older article that gives a bit more detail on what the message body should contain: http://who-t.blogspot.co.nz/2009/12/on-commit-messages.html . I would suggest following the recommendation of 50 characters or less for the commit summary ( https://chris.beams.io/posts/git-commit/ ).
 

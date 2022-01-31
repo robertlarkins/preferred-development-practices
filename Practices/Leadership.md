@@ -2,6 +2,16 @@
 
 Notes on different aspects of leadership
 
+
+## Empowering
+
+How do you empower people to ask questions and get help?
+
+- Hero - Just fixes
+- Helper - Takes people on the journey to find and fixes the issue so they learn as well
+
+Cultural vs Technical - Make it easy for people to report issues (both clients and staff).
+
 ## Culture
 Diverse teams are smarter
 

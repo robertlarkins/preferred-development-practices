@@ -43,3 +43,34 @@ Human Rights - These are things worth giving a damn about:
 - The right to what is agreed
 
 What kind of person do you want to be?
+
+## Becoming a better developer
+
+- time management and getting things done
+
+### Time Tracking
+
+Get things out of your brain and put them down somewhere, such as on paper.
+
+#### Track your time 
+
+- [emergent task time](https://davidseah.com/node/the-emergent-task-timer/)
+- [toggl]
+
+#### Emails
+
+- Don't respond straight away to emails
+- Only deal with email 1-2 times a day
+- delete, do, delegate, defer
+- Keep emails short
+  - Five sentences or less policy - http://five.sentenc.es/
+
+
+### Resources and Tools
+
+- [The dash plus system](https://patrickrhone.com/dashplus/)
+- [KanbanFor1](https://nomad8.com/articles/everyone-needs-kanbanfor1)
+  - Don't specify projects, put down actions
+  - Follow through on promises to yourself
+- Code Complete - the latest version
+

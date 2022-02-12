@@ -63,11 +63,14 @@ public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int ex
 }
 ```
 
-InlineData can only have parameters that are primitive types **Link to list**, string, and CLR type conversions **Link to list if available** (eg: string to Guid).
+InlineData can only have parameters that are [primitive types](https://github.com/robertlarkins/software-engineering-glossary/blob/master/Types.md#primitive-or-simple) (also known as simple types or built-in value types), string, and implicit CLR type conversions, such as
+- `string` to `Guid` (the string must be a valid Guid, eg: "7834200c-0748-4b77-ac77-624f950c0b96")
+- `string` to `DateTime` (the string must be a valid DateTime, eg: "1989-5-13" or "2012-12-31T23:59:59.999Z")
 
 If there are many test scenarios, then an alternatie DataAttribute may allow this data to be presented more clearly and concisely.
 
 See
+- https://github.com/xunit/xunit/issues/2131#issuecomment-670980154
 - https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#using-the-theory-attribute-to-create-parameterised-tests-with-inlinedata-
 
 

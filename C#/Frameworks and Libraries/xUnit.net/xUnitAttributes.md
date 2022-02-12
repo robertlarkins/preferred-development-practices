@@ -1,9 +1,31 @@
 # xUnit Attributes
 
+The following attributes are what xUnit uses to identify a method as a test. They also specify what the test type is and how it runs.
+
 ## `[Fact]`
 
-Facts are tests which are always true. They test invariant conditions.
+Facts are tests which provide a _fact_ about the system that should always be true. They test invariant conditions.
+
 As such Facts are parameterless methods.
+
+Here is an example of a `Fact` 
+
+```C#
+[Fact]
+public void MultiplicationOfTwoNumbers()
+{
+  // Arrange
+  var firstNumber = 7;
+  var secondNumber = 13;
+  var sut = new Calculator();
+  
+  // Act
+  var result = sut.Multiply(firstNumber, secondNumber);
+  
+  // Assert
+  result.Should().Be(91);
+}
+```
 
 
 Fact has the following parameters

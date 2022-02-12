@@ -8,8 +8,6 @@ Facts are tests which provide a _fact_ about the system that should always be tr
 
 As such Facts are parameterless methods.
 
-Here is an example of a `Fact` 
-
 ```C#
 [Fact]
 public void MultiplicationOfTwoNumbers()
@@ -26,7 +24,6 @@ public void MultiplicationOfTwoNumbers()
   result.Should().Be(91);
 }
 ```
-
 
 Fact has the following parameters
 - `Skip`
@@ -48,7 +45,7 @@ Additionally, a single Theory test can have the same DataAttribute as many times
 
 ### `[InlineData]`
 
-InlineData is the simplest way of providing scenario data into a theory test. It allows primitive data types to be provided as parameters.
+InlineData is the simplest way of providing scenario data into a theory test. It allows data to be provided as parameters. The order of the attribute parameters is the same order as the method parameters.
 
 ```C#
 [Theory]
@@ -66,6 +63,9 @@ public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int ex
 }
 ```
 
+InlineData can only have parameters that are primitive types **Link to list**, string, and CLR type conversions **Link to list if available** (eg: string to Guid).
+
+If there are many test scenarios, then an alternatie DataAttribute may allow this data to be presented more clearly and concisely.
 
 See
 - https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#using-the-theory-attribute-to-create-parameterised-tests-with-inlinedata-

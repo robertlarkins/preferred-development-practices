@@ -48,6 +48,25 @@ Additionally, a single Theory test can have the same DataAttribute as many times
 
 ### `[InlineData]`
 
+InlineData is the simplest way of providing scenario data into a theory test. It allows primitive data types to be provided as parameters.
+
+```C#
+[Theory]
+[InlineData(7, 13, 91)]
+[InlineData(0, 1, 0)]
+[InlineData(2, 4, 8)]
+[InlineData(-2, -11, 22)]
+public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int expected)
+{
+  var sut = new Calculator();
+  
+  var result = sut.Multiply(firstNumber, secondNumber);
+  
+  result.Should().Be(expected);
+}
+```
+
+
 See
 - https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#using-the-theory-attribute-to-create-parameterised-tests-with-inlinedata-
 

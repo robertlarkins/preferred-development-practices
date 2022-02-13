@@ -69,7 +69,7 @@ InlineData can only have parameters that are [primitive types](https://github.co
 - `string` to `Guid` (the string must be a valid Guid, eg: "7834200c-0748-4b77-ac77-624f950c0b96")
 - `string` to `DateTime` (the string must be a valid DateTime, eg: "1989-5-13" or "2012-12-31T23:59:59.999Z")
 
-If there are many test scenarios, then an alternatie DataAttribute may allow this data to be presented more clearly and concisely.
+If there are many test scenarios, then an alternative DataAttribute may allow this data to be presented more clearly and concisely.
 
 See
 - https://github.com/xunit/xunit/issues/2131#issuecomment-670980154

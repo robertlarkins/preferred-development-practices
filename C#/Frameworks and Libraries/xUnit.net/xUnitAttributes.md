@@ -106,7 +106,7 @@ public class CalculatorMultiplicationScenarios : TheoryData<int, int, int>
 
 See
 - https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#using-a-dedicated-data-class-with-classdata-
-
+- https://andrewlock.net/creating-strongly-typed-xunit-theory-test-data-with-theorydata/#using-theorydata-with-the-classdata-attribute
 
 ### `[MemberData]`
 

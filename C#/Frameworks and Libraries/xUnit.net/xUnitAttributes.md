@@ -42,7 +42,7 @@ These DataAttributes are InlineData, ClassData and MemberData, detailed below.
 Additionally, a single Theory test can have the same DataAttribute as many times as needed to provide the desired data scenarios.
 
 > Notes:  
-> XUnit use to have the attribute `[PropertyData]`, but this is now obsolete and superseded `[MemberData]`.
+> XUnit use to have the attribute `[PropertyData]`, but this is now obsolete and superseded by `[MemberData]`.
 
 
 ### `[InlineData]`

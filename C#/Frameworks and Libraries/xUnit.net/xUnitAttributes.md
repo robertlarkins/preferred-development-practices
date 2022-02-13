@@ -78,6 +78,31 @@ See
 
 ### `[ClassData]`
 
+```C#
+[Theory]
+[ClassData(typeof(CalculatorMultiplicationScenarios))]
+public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int expected)
+{
+  var sut = new Calculator();
+  
+  var result = sut.Multiply(firstNumber, secondNumber);
+  
+  result.Should().Be(expected);
+}
+
+public class CalculatorMultiplicationScenarios : TheoryData<int, int, int>
+{
+    public CalculatorMultiplicationScenarios()
+    {
+        Add(7, 13, 91);
+        Add(0, 1, 0);
+        Add(2, 4, 8);
+        Add(-2, -11, 22);
+    }
+}
+```
+
+**Does anything special need to be done if class is in its own file?**
 
 See
 - https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#using-a-dedicated-data-class-with-classdata-

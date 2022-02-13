@@ -26,7 +26,9 @@ public void MultiplicationOfTwoNumbers()
 ```
 
 Fact has the following parameters
-- `Skip`
+- `Skip` - 
+- `DisplayName` - 
+- `Timeout` - 
 
 See:
 - https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#basic-tests-using-xunit-fact-

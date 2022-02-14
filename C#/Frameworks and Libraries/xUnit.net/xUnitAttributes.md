@@ -114,7 +114,7 @@ MemberData can be a property or method in the same class or a separate class.
 
 See
 - https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#using-generator-properties-with-the-memberdata-properties
-
+- https://andrewlock.net/creating-strongly-typed-xunit-theory-test-data-with-theorydata/#using-theorydata-with-the-memberdata-attribute
 
 ### `TheoryData`
 

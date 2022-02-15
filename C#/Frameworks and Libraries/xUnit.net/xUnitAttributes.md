@@ -67,7 +67,9 @@ public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int ex
 
 InlineData can only have parameters that are [primitive types](https://github.com/robertlarkins/software-engineering-glossary/blob/master/Types.md#primitive-or-simple) (also known as simple types or built-in value types), string, and implicit CLR type conversions, such as
 - `string` to `Guid` (the string must be a valid Guid, eg: "7834200c-0748-4b77-ac77-624f950c0b96")
-- `string` to `DateTime` (the string must be a valid DateTime, eg: "1989-5-13" or "2012-12-31T23:59:59.999Z")
+- `string` to `DateTime`  
+  the string must be a valid DateTime, eg: "1989-5-13" or "2012-12-31T23:59:59.999Z"
+  Note: Check the DateTime.Kind of the param as while `Z` might be provided it maybe converted to Local kind, which changes the presented datetime (it is still the correct time in UTC, just presented in the local time).
 
 If there are many test scenarios, then an alternative DataAttribute may allow this data to be presented more clearly and concisely.
 

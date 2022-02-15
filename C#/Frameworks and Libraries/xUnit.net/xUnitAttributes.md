@@ -57,11 +57,11 @@ InlineData is the simplest way of providing scenario data into a theory test. It
 [InlineData(-2, -11, 22)]
 public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int expected)
 {
-  var sut = new Calculator();
+    var sut = new Calculator();
   
-  var result = sut.Multiply(firstNumber, secondNumber);
+    var result = sut.Multiply(firstNumber, secondNumber);
   
-  result.Should().Be(expected);
+    result.Should().Be(expected);
 }
 ```
 
@@ -85,11 +85,11 @@ See
 [ClassData(typeof(CalculatorMultiplicationScenarios))]
 public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int expected)
 {
-  var sut = new Calculator();
+    var sut = new Calculator();
   
-  var result = sut.Multiply(firstNumber, secondNumber);
+    var result = sut.Multiply(firstNumber, secondNumber);
   
-  result.Should().Be(expected);
+    result.Should().Be(expected);
 }
 
 public class CalculatorMultiplicationScenarios : TheoryData<int, int, int>
@@ -113,6 +113,31 @@ See
 ### `[MemberData]`
 
 MemberData can be a property or method in the same class or a separate class.
+
+```C#
+[Theory]
+[MemberData(typeof(CalculatorPositiveMultiplicationScenarios))]
+public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int expected)
+{
+    var sut = new Calculator();
+  
+    var result = sut.Multiply(firstNumber, secondNumber);
+  
+    result.Should().Be(expected);
+}
+
+public static TheoryData<int, int, int> CalculatorPositiveMultiplicationScenarios()
+{
+    return new TheoryData<int, int, int>
+    {
+        { 7, 13, 91 },
+        { 2, 4, 8 }
+    }
+}
+```
+Add separate file and property examples.  
+Add MemberData parameter example to show how memberdata can pass a parameter into the scenario method.
+
 
 See
 - https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#using-generator-properties-with-the-memberdata-properties

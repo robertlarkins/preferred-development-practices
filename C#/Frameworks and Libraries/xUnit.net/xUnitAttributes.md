@@ -117,6 +117,7 @@ MemberData can be a property or method in the same class or a separate class.
 ```C#
 [Theory]
 [MemberData(typeof(CalculatorPositiveMultiplicationScenarios))]
+[MemberData(typeof(CalculatorNegativeMultiplicationScenarios))]
 public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int expected)
 {
     var sut = new Calculator();
@@ -126,6 +127,7 @@ public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int ex
     result.Should().Be(expected);
 }
 
+// Memberdata using a Method
 public static TheoryData<int, int, int> CalculatorPositiveMultiplicationScenarios()
 {
     return new TheoryData<int, int, int>
@@ -134,6 +136,13 @@ public static TheoryData<int, int, int> CalculatorPositiveMultiplicationScenario
         { 2, 4, 8 }
     }
 }
+
+// Memberdata using a Property
+public static TheoryData<int, int, int> CalculatorNegativeMultiplicationScenarios =>
+    new TheoryData<int, int, int>
+    {
+        { -2, -11, 22 }
+    };
 ```
 Add separate file and property examples.  
 Add MemberData parameter example to show how memberdata can pass a parameter into the scenario method.

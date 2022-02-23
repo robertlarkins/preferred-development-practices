@@ -115,36 +115,61 @@ See
 MemberData can be a property or method in the same class or a separate class.
 
 ```C#
-[Theory]
-[MemberData(typeof(CalculatorPositiveMultiplicationScenarios))]
-[MemberData(typeof(CalculatorNegativeMultiplicationScenarios))]
-public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int expected)
+public class MemberDataExamples
 {
-    var sut = new Calculator();
-  
-    var result = sut.Multiply(firstNumber, secondNumber);
-  
-    result.Should().Be(expected);
-}
-
-// Memberdata using a Method
-public static TheoryData<int, int, int> CalculatorPositiveMultiplicationScenarios()
-{
-    return new TheoryData<int, int, int>
+    [Theory]
+    [MemberData(nameof(CalculatorPositiveMultiplicationScenarios))]
+    [MemberData(nameof(CalculatorNegativeMultiplicationScenarios))]
+    [MemberData(nameof(MoreCalculatorScenarios.MultiplicationWithZeroScenarios, MemberType=typeof(MoreCalculatorScenarios)))]
+    [MemberData(nameof(MoreCalculatorScenarios.PositiveTimesNegativeScenarios, MemberType=typeof(MoreCalculatorScenarios)))]
+    public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int expected)
     {
-        { 7, 13, 91 },
-        { 2, 4, 8 }
+        var sut = new Calculator();
+  
+        var result = sut.Multiply(firstNumber, secondNumber);
+  
+        result.Should().Be(expected);
     }
+
+    // Memberdata using a Method
+    public static TheoryData<int, int, int> CalculatorPositiveMultiplicationScenarios()
+    {
+        return new TheoryData<int, int, int>
+        {
+            { 7, 13, 91 },
+            { 2, 4, 8 }
+        }
+    }
+
+    // Memberdata using a Property
+    public static TheoryData<int, int, int> CalculatorNegativeMultiplicationScenarios =>
+        new TheoryData<int, int, int>
+        {
+            { -2, -11, 22 }
+        };
 }
 
-// Memberdata using a Property
-public static TheoryData<int, int, int> CalculatorNegativeMultiplicationScenarios =>
-    new TheoryData<int, int, int>
+public class MoreCalculatorScenarios
+{
+    // Memberdata Scenarios using a Method in another Class
+    public static TheoryData<int, int, int> MultiplicationWithZeroScenarios()
     {
-        { -2, -11, 22 }
-    };
+        return new TheoryData<int, int, int>
+        {
+            { 7, 0, 0 },
+            { -2, 0, 0 }
+        }
+    }
+    
+    // Memberdata Scenarios using a Property in another Class
+    public static TheoryData<int, int, int> PositiveTimesNegativeScenarios =>
+        new TheoryData<int, int, int>
+        {
+            { -2, 11, -22 }
+        };
+}
 ```
-Add separate file and property examples.  
+
 Add MemberData parameter example to show how memberdata can pass a parameter into the scenario method.
 
 

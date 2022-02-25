@@ -33,6 +33,9 @@ See https://docs.docker.com/engine/reference/commandline/build/
 
 ## Run
 
+```ps
+docker run name:tag
+```
 
 ## Explore
 

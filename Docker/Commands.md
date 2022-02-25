@@ -5,8 +5,10 @@ The way the Docker commands are presented here follows the same structure as the
 
 ## General
 
- - [`docker ps`](https://docs.docker.com/engine/reference/commandline/ps/)  
+- [`docker ps`](https://docs.docker.com/engine/reference/commandline/ps/)  
    List running containers. Use `docker ps -a` to list all containers.
+- [`docker images`](https://docs.docker.com/engine/reference/commandline/images/)
+  List images.
 
 ## Build
 To build a Dockerfile open powershell and go to the directory where the Dockerfile is, then run this command

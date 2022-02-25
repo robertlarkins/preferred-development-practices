@@ -15,6 +15,8 @@ docker image build --tag name:tag .
 ```
 ensuring the dot on the end is included as this specifies the current directory.
 
+the `name` portion of `--tag` must be lowercase.
+
 See https://docs.docker.com/engine/reference/commandline/build/
 
 ## Run

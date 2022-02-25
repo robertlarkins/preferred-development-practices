@@ -16,10 +16,20 @@ To build a Dockerfile open powershell and go to the directory where the Dockerfi
 docker image build --tag name:tag .
 ```
 ensuring the dot on the end is included as this specifies the current directory.
+The build command can be called from a different directory to the Dockerfile simply by replacing the `.` with either the absolute directory or the path relative to where the command is being called from.
 
-the `name` portion of `--tag` must be lowercase.
+If the Dockerfile resides in a different location from where the paths inside it start at, then the build command can be called from where the Dockerfile expects to be called from and instead telling the build command where the Dockerfile is located:
+```ps
+docker image build --tag name:tag -f a/different/directory/Dockerfile .
+```
+
+The `name` portion of `--tag` must be lowercase.
+
+
 
 See https://docs.docker.com/engine/reference/commandline/build/
+
+
 
 ## Run
 

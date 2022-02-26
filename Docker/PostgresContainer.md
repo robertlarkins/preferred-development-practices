@@ -5,6 +5,7 @@ This will allow the database to be accessed from a running application.
 
 See:
 - https://www.optimadata.nl/blogs/1/n8dyr5-how-to-run-postgres-on-docker-part-1
+- https://dev.to/shree_j/how-to-install-and-run-psql-using-docker-41j2
 
 ## Postgres Image
 
@@ -66,9 +67,10 @@ Get the container IP:
 docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' some-postgres
 ```
 
-Host: The IP from above
-Port: 5432
-Database: 
+- Host: localhost  
+  The IP from above doesn't seem to work
+- Port: 5432
+- Database: postgres
 
 Authentication
 - Username: postgres

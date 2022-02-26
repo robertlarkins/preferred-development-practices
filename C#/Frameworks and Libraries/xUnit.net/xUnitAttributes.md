@@ -12,31 +12,35 @@ As such Facts are parameterless methods.
 [Fact]
 public void MultiplicationOfTwoNumbers()
 {
-  // Arrange
-  var firstNumber = 7;
-  var secondNumber = 13;
-  var sut = new Calculator();
+    // Arrange
+    var firstNumber = 7;
+    var secondNumber = 13;
+    var sut = new Calculator();
   
-  // Act
-  var result = sut.Multiply(firstNumber, secondNumber);
+    // Act
+    var result = sut.Multiply(firstNumber, secondNumber);
   
-  // Assert
-  result.Should().Be(91);
+    // Assert
+    result.Should().Be(91);
+}
+
+[Fact(Skip = "Unimplemented test.")]
+public void DivisionOfTwoNumbers()
+{
+    var sut = new Calculator();
+    // var result = sut.Division(99, 11);
+    result.Should().Be(9);
 }
 ```
 
 See:
 - https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#basic-tests-using-xunit-fact-
 
+
 ### Parameters
 
-Fact has the following parameters
 - `Skip`  
   When given a non-null, non-empty string (the skip *reason*), the test is not run.
-- `DisplayName`  
-  A custom name for the test
-- `Timeout`  
-  Some timeout (in milliseconds) for the test. Only works when parallelisation is disabled.
 
 
 ## `[Theory]`
@@ -61,6 +65,7 @@ InlineData is the simplest way of providing scenario data into a theory test. It
 [InlineData(0, 1, 0)]
 [InlineData(2, 4, 8)]
 [InlineData(-2, -11, 22)]
+[InlineData(2.5, 4, 10, Skip = "Floating point (real) numbers are not supported yet.")]
 public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int expected)
 {
     var sut = new Calculator();
@@ -82,6 +87,12 @@ If there are many test scenarios, then an alternative DataAttribute may allow th
 See
 - https://github.com/xunit/xunit/issues/2131#issuecomment-670980154
 - https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#using-the-theory-attribute-to-create-parameterised-tests-with-inlinedata-
+
+
+### Parameters
+
+- `Skip`  
+  When given a non-null, non-empty string (the skip *reason*), the test is not run.
 
 
 ### `[ClassData]`

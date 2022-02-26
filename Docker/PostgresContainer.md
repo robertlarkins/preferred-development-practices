@@ -53,8 +53,17 @@ psql
 
 ## Connect to Database
 
+Get the container IP:
 ```ps
-docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' some-postgres
 ```
+
+Host: The IP from above
+Port: 5432
+Database: 
+
+Authentication
+- Username: postgres
+- Password: password
 
 Use the following to connect to the database

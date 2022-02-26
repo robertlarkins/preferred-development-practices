@@ -79,7 +79,8 @@ If there are many test scenarios, then an alternative *DataAttribute* may allow 
 - `Skip`  
   When given a non-null, non-empty string (the skip *reason*), the test is not run.
 
-InlineData can only have parameters that are constant [primitive types](https://github.com/robertlarkins/software-engineering-glossary/blob/master/Types.md#primitive-or-simple) (also known as simple types or built-in value types), string, and implicit CLR type conversions, such as
+InlineData can only have parameters that are constant expressions, such as [primitive types](https://github.com/robertlarkins/software-engineering-glossary/blob/master/Types.md#primitive-or-simple) (also known as simple types or built-in value types), strings, and implicit CLR type conversions.
+Examples of type conversions:
 - `string` to `Guid` (the string must be a valid Guid, eg: "7834200c-0748-4b77-ac77-624f950c0b96")
 - `string` to `DateTime`  
   the string must be a valid `DateTime`, eg: "1989-5-13" or "2012-12-31T23:59:59.999Z"  

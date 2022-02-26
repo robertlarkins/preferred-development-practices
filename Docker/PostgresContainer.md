@@ -16,7 +16,7 @@ docker pull postgres
 ## Run Postgres Container
 
 ```ps
-docker run --name some-postgres -e POSTGRES_PASSWORD=password -d postgres
+docker run --name some-postgres -p 5432:5432 -e POSTGRES_PASSWORD=password -d postgres
 ```
 
 
@@ -30,7 +30,15 @@ docker restart some-postgres
 
 ```ps
 docker stop some-postgres
+```
+
+```ps
 docker rm some-postgres
+```
+
+Clean up all images and data
+```ps
+docker system prune
 ```
 
 

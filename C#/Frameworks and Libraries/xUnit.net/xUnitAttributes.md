@@ -25,13 +25,19 @@ public void MultiplicationOfTwoNumbers()
 }
 ```
 
-Fact has the following parameters
-- `Skip` - When given a non-null, non-empty string (the skip *reason*), the test is not run.
-- `DisplayName` - A custom name for the test
-- `Timeout` - Some timeout (in milliseconds) for the test. Only works when parallelisation is disabled.
-
 See:
 - https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#basic-tests-using-xunit-fact-
+
+### Parameters
+
+Fact has the following parameters
+- `Skip`  
+  When given a non-null, non-empty string (the skip *reason*), the test is not run.
+- `DisplayName`  
+  A custom name for the test
+- `Timeout`  
+  Some timeout (in milliseconds) for the test. Only works when parallelisation is disabled.
+
 
 ## `[Theory]`
 
@@ -112,7 +118,7 @@ See
 
 ### `[MemberData]`
 
-MemberData can be a property or method in the same class or a separate class.
+The `MemberData` attribute allows test data to be retrieved from a property or method. This property or method can reside in the same class as the tests or a separate class.
 
 ```C#
 public class MemberDataExamples

@@ -120,8 +120,8 @@ public class MemberDataExamples
     [Theory]
     [MemberData(nameof(CalculatorPositiveMultiplicationScenarios))]
     [MemberData(nameof(CalculatorNegativeMultiplicationScenarios))]
-    [MemberData(nameof(MoreCalculatorScenarios.MultiplicationWithZeroScenarios, MemberType=typeof(MoreCalculatorScenarios)))]
-    [MemberData(nameof(MoreCalculatorScenarios.PositiveTimesNegativeScenarios, MemberType=typeof(MoreCalculatorScenarios)))]
+    [MemberData(nameof(MoreCalculatorScenarios.MultiplicationWithZeroScenarios, MemberType = typeof(MoreCalculatorScenarios)))]
+    [MemberData(nameof(MoreCalculatorScenarios.PositiveTimesNegativeScenarios, MemberType = typeof(MoreCalculatorScenarios)))]
     public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int expected)
     {
         var sut = new Calculator();

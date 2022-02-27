@@ -111,6 +111,9 @@ public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int ex
 
 ### `[ClassData]`
 
+The `ClassData` attribute allows test data to be defined as a class. Each scenario set would be its own class.
+This also allows references types to be provided as parameters.
+
 *References*:
 - https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#using-a-dedicated-data-class-with-classdata-
 - https://andrewlock.net/creating-strongly-typed-xunit-theory-test-data-with-theorydata/#using-theorydata-with-the-classdata-attribute
@@ -127,6 +130,7 @@ public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int ex
 ```C#
 [Theory]
 [ClassData(typeof(CalculatorMultiplicationScenarios))]
+[ClassData(typeof(UnimplementedScenarios), Skip = "Unimplemented")]
 public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int expected)
 {
     var sut = new Calculator();
@@ -146,12 +150,17 @@ public class CalculatorMultiplicationScenarios : TheoryData<int, int, int>
         Add(-2, -11, 22);
     }
 }
+
+public class UnimplementedScenarios : TheoryData<int, int, int>
+{
+}
 ```
 
 
 ### `[MemberData]`
 
-The `MemberData` attribute allows test data to be retrieved from a property or method. This property or method can reside in the same class as the tests or a separate class.
+The `MemberData` attribute allows test data to be retrieved from a property or method. This property or method can reside in the same class as the tests or in a separate class.
+This also allows references types to be provided as parameters.
 
 *References*:
 - https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#using-generator-properties-with-the-memberdata-properties
@@ -160,7 +169,8 @@ The `MemberData` attribute allows test data to be retrieved from a property or m
 
 #### Parameters
 
-
+- `Skip`  
+  When given a non-null, non-empty string (the skip *reason*), the test is not run.
 
 
 #### Examples
@@ -172,7 +182,7 @@ public class MemberDataExamples
     [MemberData(nameof(CalculatorPositiveMultiplicationScenarios))]
     [MemberData(nameof(CalculatorNegativeMultiplicationScenarios))]
     [MemberData(nameof(MoreCalculatorScenarios.MultiplicationWithZeroScenarios, MemberType = typeof(MoreCalculatorScenarios)))]
-    [MemberData(nameof(MoreCalculatorScenarios.PositiveTimesNegativeScenarios, MemberType = typeof(MoreCalculatorScenarios)))]
+    [MemberData(nameof(MoreCalculatorScenarios.SkipExample, MemberType = typeof(MoreCalculatorScenarios)), Skip = "Skip this scenario")]
     public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int expected)
     {
         var sut = new Calculator();
@@ -213,7 +223,7 @@ public class MoreCalculatorScenarios
     }
     
     // Memberdata Scenarios using a Property in another Class
-    public static TheoryData<int, int, int> PositiveTimesNegativeScenarios =>
+    public static TheoryData<int, int, int> SkipExample =>
         new TheoryData<int, int, int>
         {
             { -2, 11, -22 }

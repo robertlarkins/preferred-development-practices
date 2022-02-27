@@ -66,6 +66,11 @@ Get the container IP:
 ```ps
 docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' some-postgres
 ```
+or from https://docs.docker.com/samples/dotnetcore/:
+```ps
+docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" some-postgres
+```
+
 
 - Host: localhost  
   The IP from above doesn't seem to work

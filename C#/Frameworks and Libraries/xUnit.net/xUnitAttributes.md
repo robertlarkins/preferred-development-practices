@@ -169,9 +169,12 @@ This also allows references types to be provided as parameters.
 
 #### Parameters
 
+`MemberData` must a parameter that provides the name of the member where the data is coming from.
+
 - `Skip`  
   When given a non-null, non-empty string (the skip *reason*), the test is not run.
-
+- `DisableDiscoveryEnumeration`
+- `MemberType`
 
 #### Examples
 

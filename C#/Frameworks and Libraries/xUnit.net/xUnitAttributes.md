@@ -159,7 +159,7 @@ public class UnimplementedScenarios : TheoryData<int, int, int>
 
 ### `[MemberData]`
 
-The `MemberData` attribute allows test data to be retrieved from a property or method. This property or method can reside in the same class as the tests or in a separate class.
+The `MemberData` attribute allows test data to be retrieved from a field, property or method. These members can reside in the same class as the tests or in a separate class.
 This also allows references types to be provided as parameters.
 
 *References*:

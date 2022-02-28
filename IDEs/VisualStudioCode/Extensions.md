@@ -9,3 +9,4 @@
  - XML Tools *(Josh Johnson)*
  - SQL Server (mssql) *(Microsoft)*
  - Prettier - Code formatter *(Esben Petersen)*
+ - EditorConfig for VS Code

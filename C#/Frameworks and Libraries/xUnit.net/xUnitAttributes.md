@@ -159,8 +159,9 @@ public class UnimplementedScenarios : TheoryData<int, int, int>
 
 ### `[MemberData]`
 
-The `MemberData` attribute allows test data to be retrieved from a field, property or method. These members can reside in the same class as the tests or in a separate class.
-This also allows references types to be provided as parameters.
+The `MemberData` attribute allows test data to be retrieved from a field, property or method.
+These members can reside in the same class as the tests or in a separate class.
+This test data can also contain references types.
 
 *References*:
 - https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#using-generator-properties-with-the-memberdata-properties
@@ -182,9 +183,10 @@ This also allows references types to be provided as parameters.
 public class MemberDataExamples
 {
     [Theory]
-    [MemberData(nameof(CalculatorPositiveMultiplicationScenarios))]
-    [MemberData(nameof(CalculatorNegativeMultiplicationScenarios))]
-    [MemberData(nameof(MoreCalculatorScenarios.MultiplicationWithZeroScenarios, MemberType = typeof(MoreCalculatorScenarios)))]
+    [MemberData(nameof(MultiplicationScenariosInField))]
+    [MemberData(nameof(MultiplicationScenariosInProperty))]
+    [MemberData(nameof(MultiplicationScenariosInMethod))]
+    [MemberData(nameof(MoreCalculatorScenarios.MultiplicationScenarios, MemberType = typeof(MoreCalculatorScenarios)))]
     [MemberData(nameof(MoreCalculatorScenarios.SkipExample, MemberType = typeof(MoreCalculatorScenarios)), Skip = "Skip this scenario")]
     public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int expected)
     {
@@ -195,8 +197,23 @@ public class MemberDataExamples
         result.Should().Be(expected);
     }
 
+    // Memberdata using a Field
+    // The readonly modifier is an expression of intent to convey that this value is immutable. This value shouldn't be changed by the tests anyway.
+    public static readonly TheoryData<int, int, int> MultiplicationScenariosInField =
+        new TheoryData<int, int, int>
+        {
+            { 7, 4, 28 }
+        };
+
+    // Memberdata using a Property
+    public static TheoryData<int, int, int> MultiplicationScenariosInProperty =>
+        new TheoryData<int, int, int>
+        {
+            { -2, -11, 22 }
+        };
+
     // Memberdata using a Method
-    public static TheoryData<int, int, int> CalculatorPositiveMultiplicationScenarios()
+    public static TheoryData<int, int, int> MultiplicationScenariosInMethod()
     {
         return new TheoryData<int, int, int>
         {
@@ -204,19 +221,12 @@ public class MemberDataExamples
             { 2, 4, 8 }
         }
     }
-
-    // Memberdata using a Property
-    public static TheoryData<int, int, int> CalculatorNegativeMultiplicationScenarios =>
-        new TheoryData<int, int, int>
-        {
-            { -2, -11, 22 }
-        };
 }
 
 public class MoreCalculatorScenarios
 {
     // Memberdata Scenarios using a Method in another Class
-    public static TheoryData<int, int, int> MultiplicationWithZeroScenarios()
+    public static TheoryData<int, int, int> MultiplicationScenarios()
     {
         return new TheoryData<int, int, int>
         {

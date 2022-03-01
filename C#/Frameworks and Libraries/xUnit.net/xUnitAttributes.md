@@ -198,7 +198,8 @@ public class MemberDataExamples
     }
 
     // Memberdata using a Field
-    // The readonly modifier is an expression of intent to convey that this value is immutable. This value shouldn't be changed by the tests anyway.
+    // The readonly modifier is an expression of intent to convey that this value is immutable.
+    // This value shouldn't be changed by the tests anyway.
     public static readonly TheoryData<int, int, int> MultiplicationScenariosInField =
         new TheoryData<int, int, int>
         {

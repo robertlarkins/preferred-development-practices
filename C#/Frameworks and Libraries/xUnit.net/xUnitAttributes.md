@@ -186,8 +186,8 @@ public class MemberDataExamples
     [MemberData(nameof(MultiplicationScenariosInField))]
     [MemberData(nameof(MultiplicationScenariosInProperty))]
     [MemberData(nameof(MultiplicationScenariosInMethod))]
-    [MemberData(nameof(MoreCalculatorScenarios.MultiplicationScenarios, MemberType = typeof(MoreCalculatorScenarios)))]
-    [MemberData(nameof(MoreCalculatorScenarios.SkipExample, MemberType = typeof(MoreCalculatorScenarios)), Skip = "Skip this scenario")]
+    [MemberData(nameof(MoreCalculatorScenarios.MultiplicationScenarios), MemberType = typeof(MoreCalculatorScenarios))]
+    [MemberData(nameof(MoreCalculatorScenarios.SkipExample), MemberType = typeof(MoreCalculatorScenarios), Skip = "Skip this scenario")]
     public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int expected)
     {
         var sut = new Calculator();

@@ -174,13 +174,15 @@ This test data can also contain references types.
 - `memberName`  
   a required parameter for providing the name of the member where the data is coming from.
 - `parameters`  
-  an optional params parameter for supplying parameters into the member that provides the scenario data. If the member is not a method then these parameters are ignored.
+  an optional params parameter for supplying parameters into the member that provides the scenario data.
+  Like `InlineData`, these parameters must be constant expressions. If the member is not a method then these parameters are ignored.
 
 The following are attribute properties, they are *optional* parameters that need to be *named* to be set:
 - `Skip`  
   When given a non-null, non-empty string (the skip *reason*), the test is not run.
 - `DisableDiscoveryEnumeration`
 - `MemberType`
+
 
 #### Examples
 
@@ -226,6 +228,11 @@ public class MemberDataExamples
             { 7, 13, 91 },
             { 2, 4, 8 }
         }
+    }
+    
+    public static TheoryData<int, int, int> MultiplicationScenariosInMethodWithParameters()
+    {
+        
     }
 }
 

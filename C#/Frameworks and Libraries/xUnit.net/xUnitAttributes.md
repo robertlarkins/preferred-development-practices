@@ -170,7 +170,7 @@ This test data can also contain references types.
 
 #### Parameters
 
-`MemberData` has the following two parameters (provided into its constructor):
+`MemberData` has the following two parameters (provided into its constructor) that must appear before the attribute properties:
 - `memberName`  
   a required parameter for providing the name of the member where the data is coming from.
 - `parameters`  
@@ -195,6 +195,10 @@ public class MemberDataExamples
     [MemberData(nameof(MultiplicationScenariosInMethod))]
     [MemberData(nameof(MoreCalculatorScenarios.MultiplicationScenarios), MemberType = typeof(MoreCalculatorScenarios))]
     [MemberData(nameof(MoreCalculatorScenarios.SkipExample), MemberType = typeof(MoreCalculatorScenarios), Skip = "Skip this scenario")]
+    [MemberData(nameof(MultiplicationScenariosWithOneParameter), 1)]
+    [MemberData(nameof(MultiplicationScenariosWithMultipleParameters), parameters: new object[] { 1, false })]  // naming the parameters param is optional
+    [MemberData(nameof(MoreCalculatorScenarios.WithMultipleParameters), new object[] { 5, true }, MemberType = typeof(MoreCalculatorScenarios))]
+    WithMultipleParameters
     public void MultiplicationOfTwoNumbers(int firstNumber, int secondNumber, int expected)
     {
         var sut = new Calculator();
@@ -204,8 +208,8 @@ public class MemberDataExamples
         result.Should().Be(expected);
     }
 
-    // Memberdata using a Field
     // The readonly modifier is an expression of intent to convey that this value is immutable.
+    // It is only applicable to a field.
     // This value shouldn't be changed by the tests anyway.
     public static readonly TheoryData<int, int, int> MultiplicationScenariosInField =
         new TheoryData<int, int, int>
@@ -213,14 +217,12 @@ public class MemberDataExamples
             { 7, 4, 28 }
         };
 
-    // Memberdata using a Property
     public static TheoryData<int, int, int> MultiplicationScenariosInProperty =>
         new TheoryData<int, int, int>
         {
             { -2, -11, 22 }
         };
 
-    // Memberdata using a Method
     public static TheoryData<int, int, int> MultiplicationScenariosInMethod()
     {
         return new TheoryData<int, int, int>
@@ -230,9 +232,20 @@ public class MemberDataExamples
         }
     }
     
-    public static TheoryData<int, int, int> MultiplicationScenariosInMethodWithParameters()
+    public static TheoryData<int, int, int> MultiplicationScenariosWithOneParameter(int p1)
     {
-        
+        return new TheoryData<int, int, int>
+        {
+            { p1, 0, 0 }
+        };
+    }
+    
+    public static TheoryData<int, int, int> MultiplicationScenariosWithMultipleParameters(int p1, bool p2)
+    {
+        return new TheoryData<int, int, int>
+        {
+            { p2? p1 : 7, 0, 0 }
+        };
     }
 }
 
@@ -254,12 +267,16 @@ public class MoreCalculatorScenarios
         {
             { -2, 11, -22 }
         };
+        
+    public static TheoryData<int, int, int> WithMultipleParameters(int p1, bool p2)
+    {
+        return new TheoryData<int, int, int>
+        {
+            { p2? p1 : 7, 0, 0 }
+        };
+    }
 }
 ```
-
-Add MemberData parameter example to show how memberdata can pass a parameter into the scenario method.
-
-
 
 
 ### `TheoryData` Type

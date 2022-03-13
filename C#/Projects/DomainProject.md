@@ -32,11 +32,14 @@ If the TargetFramework is specified in the Directory.Build.props then the Target
 When creating the domain project, an associated test project should also be created.
 
 ## Create Project
+
 Go to the *Solution Explorer > tests > domain* folder, right click and go *Add > New Project...*
 
 Find the *xUnit Test Project (.NET Core)* project template and click Next.
 
+
 ### Naming
+
 Give the project a name that matches the Domain project, so if the domain project is
 
 > Company.Product.Domain
@@ -45,17 +48,20 @@ then the unit test project should be
 
 > Company.Product.Domain.Tests.Unit
 
+
 ### Location
+
 Do not use the default location, as this will place the project at the root of the repository.
 Instead select the tests/domain directory.
 
+
 ## Analyzers
+
 If analyzers are used, such as StyleCop then modify the code appropriately. For example adding XML documentation.
 
-## .csproj
-If the TargetFramework is specified in the Directory.Build.props then the TargetFramework in the csproj can be removed.
 
 ## NuGet Packages
+
 This project type includes the following NuGet Packages
  - xunit
  - xunit.runner.visualstudio

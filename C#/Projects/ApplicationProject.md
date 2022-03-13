@@ -15,15 +15,14 @@ The Company.Product portion should match the solution name.
 This name may be made more specific if there will be multiple application projects. Maybe Company.Product.Application.AppArea?
 
 ### Location
+
 Do not use the default location, as this will place the project at the root of the repository.
 Instead select the src/application directory.
 
+
 ## Analyzers
+
 If analyzers are used, such as StyleCop then modify the code appropriately. For example adding XML documentation.
-
-## .csproj
-If the TargetFramework is specified in the Directory.Build.props then the TargetFramework in the csproj can be removed.
-
 
 
 # Application Unit Test Project

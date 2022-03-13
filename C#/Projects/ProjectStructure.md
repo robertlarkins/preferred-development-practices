@@ -36,6 +36,7 @@ A Directory.Build.props file placed at the root-level of a solution allows for a
  - https://thomaslevesque.com/2017/09/18/common-msbuild-properties-and-items-with-directory-build-props/
  - https://cezarypiatek.github.io/post/non-nullable-references-in-dotnet-core/
 
+
 ## Example of Directory.Build.props
 
 ```xml
@@ -59,7 +60,7 @@ A Directory.Build.props file placed at the root-level of a solution allows for a
 </Project>
 ```
 
-The Element `<CodeAnalysisRuleSet>` allows a default ruleset file to be specified. If a ruleset file is specified in the .csproj file, it will override the ruleset file in Directory.Build.props. It seems that the .csproj file has higher precendence than Directory.Build.props. More documentation on build or include order would be useful to know exactly what occurs.
+The Element `<CodeAnalysisRuleSet>` allows a default ruleset file to be specified. If a ruleset file is specified in the .csproj file, it will override the ruleset file in Directory.Build.props. The .csproj file has higher precendence than Directory.Build.props. ***More documentation on build or include order would be useful to know exactly what occurs.***
 
 If for any reason there needs to be a check to stop an already specified ruleset from being overridden by another ruleset file, then add the following `Condition` to `<CodeAnalysisRuleSet>` to check that a ruleset file has not already been included as part of the MSBuild pipeline:
 
@@ -69,15 +70,21 @@ If for any reason there needs to be a check to stop an already specified ruleset
 
 This example came from: https://stackoverflow.com/questions/34919517/check-if-propertygroup-item-is-set-to-a-value-in-csproj/34919766#34919766
 
+
 ### Suppress Warnings
+
 It appears that the .ruleset files do not work for all rules, such as CS1591. If this occurs, then the alternative is to go into the
 project properties > Build > Errors and warnings > Suppress warnings and put in the rule number.
 
 
 ### Target Framework
 
-If the TargetFramework in a .csproj is removed, then it will default to the TragetFramework in the Directory.Build.props, if it has one.
-This is useful for being able to quickly change the TargetFramework for all projects.
+If the TargetFramework in a .csproj is removed, then it will default to the TargetFramework in the Directory.Build.props, if it has one.
+While having the `<TargetFramework>` property in Directory.Build.props can be useful for quickly change the target for all projects, it isn't recommended.
+This is because projects may target multiple frameworks, or target NetStandard, so having this pinned in the Directory.Build.props could cause confusion,
+and is an additional step to remove when adding a new project to a solution.
+Removing `<TargetFramework>` from the .csproj could cause problems for *dcproj* files or other non .net proj files (if there are any).
+
 
 ### Variables
 

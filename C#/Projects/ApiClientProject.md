@@ -16,17 +16,10 @@ A project that consumes an API is often referred to as a client. Therefore it is
 where *ResourceName* is the name of the resource or service that whose API is being accessed.
 
 ### Location
+
 Do not use the default location for the project location, as this will place it at the root of the repository.
 Instead select the src/infrastructure directory.
 
-## .csproj
-If the TargetFramework is specified in the Directory.Build.props then
-```
-<PropertyGroup>
-  <TargetFramework>netcoreapp3.1</TargetFramework>
-</PropertyGroup>
-```
-can be removed from the .csproj.
 
 ## NuGet Packages
 

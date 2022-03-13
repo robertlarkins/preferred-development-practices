@@ -30,6 +30,7 @@ or based on the functional area to support, e.g.: Company.Product.Api.UserManage
 Do not use the default location, as this will place the project at the root of the repository.
 Instead select the src/application directory.
 
+
 ### Template
 
 Ensure .NET Core is selected, along with a version of ASP.NET Core, at this time .NET Core 3.1 is the latest.
@@ -37,17 +38,16 @@ Select the *API* template and click Create.
 
 This will likely create an example Controller and model (WeatherForecastController.cs and WeatherForecast.cs), which can be deleted.
 
+
 ## Analyzers
 
 If analyzers are used, such as StyleCop then modify the code appropriately. For example adding XML documentation.
 
-## .csproj
-
-If the TargetFramework is specified in the Directory.Build.props then the TargetFramework in the csproj can be removed.
 
 ## launchSettings.json
 
 Update the launchUrl to something appropriate.
+
 
 ## Nuget Packages
 

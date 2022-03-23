@@ -10,6 +10,7 @@ This is a list of useful Visual Studio extensions:
  - [EditorConfig Language Service](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.EditorConfig)
  - [Markdown Editor v2](https://github.com/MadsKristensen/MarkdownEditor2022) - this is the VS2022 version
  - [File Icons](https://github.com/madskristensen/FileIcons)
+ - [Tweaks 2022](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.Tweaks2022)
 
 ## Extensions that could be done as either an Extension or a Nuget Package
 

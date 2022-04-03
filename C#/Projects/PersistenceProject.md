@@ -6,9 +6,9 @@ When developing locally, one place for storing a connection string (or strings) 
 file under the `ConnectionStrings` property:
 ```json
 {
-  ConnectionStrings: {
-    MyDatabaseConnection: "User ID=postgres;Password=\"password\";Host=localhost;Port=5432;Database=my_db;",
-    SomeOtherConnection: "some connection details"
+  "ConnectionStrings": {
+    "MyDatabaseConnection": "User ID=postgres;Password=\"password\";Host=localhost;Port=5432;Database=my_db;",
+    "SomeOtherConnection": "some connection details"
   }
 }
 ```

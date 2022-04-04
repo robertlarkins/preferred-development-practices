@@ -2,6 +2,8 @@
 
 ## Connection String
 
+While the connection string is used for the persistence project's connection to the database, it gets used by the composition root (likely the Api project).
+
 When developing locally, one place for storing a connection string (or strings) is in the appsettings.json
 file under the `ConnectionStrings` property:
 ```json

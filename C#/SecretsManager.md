@@ -24,3 +24,4 @@ Go to the directory in terminal and enter `dotnet user-secrets set "key" "value"
 
 ## How to inject the key
 
+Simply inject IConfiguration into a file and access the parameter from it. Eg: `configuration["MyKey"]`.

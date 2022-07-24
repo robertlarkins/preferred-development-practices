@@ -10,7 +10,7 @@ to see its internal classes:
 ```xml
 <ItemGroup>
   <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
-    <_Parameter1>My.Project.Ding.The.Tests.Unit</_Parameter1>
+    <_Parameter1>My.Project.Doing.The.Tests.Unit</_Parameter1>
   </AssemblyAttribute>
 </ItemGroup>
 ```

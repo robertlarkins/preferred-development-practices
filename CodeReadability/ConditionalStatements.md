@@ -26,13 +26,13 @@ else
 If the if statement exists without the else, then it might be more suitable to keep the negative conditional.
 
 Another example is:
-```
+```csharp
 if (loggedIn)
 {
 }
 ```
 is easier to read and understand more quickly than
-```
+```csharp
 if (!isNotLoggedIn)
 {
 }

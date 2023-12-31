@@ -9,6 +9,8 @@
 
 ## Entities
 
+Internal entity creation: https://github.com/vkhorikov/CSharpFunctionalExtensions/issues/226#issuecomment-683090868
+
 
 ## Aggregates
 

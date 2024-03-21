@@ -10,3 +10,7 @@ and then the mobile or web consume those end points.
 
 The follow Microsoft article has good points:
 https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design
+
+### API endpoints should avoid using bools
+
+https://medium.com/geekculture/why-you-shouldnt-use-booleans-in-rest-apis-2747b187876c

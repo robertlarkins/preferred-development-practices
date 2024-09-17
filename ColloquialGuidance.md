@@ -8,6 +8,7 @@
 
 References:
 - [original quote](https://twitter.com/kentbeck/status/250733358307500032)
+- [original quote on x.com](https://x.com/KentBeck/status/250733358307500032?lang=en)
 - https://martinfowler.com/articles/preparatory-refactoring-example.html
 
 ---

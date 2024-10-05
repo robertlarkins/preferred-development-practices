@@ -18,3 +18,7 @@ References:
 > \- Navy SEALS saying
 
 ---
+
+##
+
+Make code readable, maintainable, reliable, scalable
